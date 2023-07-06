@@ -1,0 +1,111 @@
+[
+	{
+		"navTitle": "Home",
+		"navbarDropdown": {
+			"items": [
+				{
+					"title": "Action",
+					"description": "This is a description",
+					"link": "#"
+				},
+				{
+					"title": "Another action",
+					"description": "This is a description",
+					"link": "#"
+				},
+				{
+					"title": "Something else here",
+					"description": "This is a description",
+					"link": "#"
+				}
+			]
+		}
+	},
+	{
+		"navTitle": "About",
+		"navbarDropdown": {
+			"items": [
+				{
+					"title": "Action",
+					"description": "This is a description",
+					"link": "#"
+				},
+				{
+					"title": "Another action",
+					"description": "This is a description",
+					"link": "#"
+				},
+				{
+					"title": "Something else here",
+					"description": "This is a description",
+					"link": "#"
+				}
+			]
+		}
+	},
+	{
+		"navTitle": "Media",
+		"navbarDropdown": {
+			"items": [
+				{
+					"title": "Action",
+					"description": "This is a description",
+					"link": "#"
+				},
+				{
+					"title": "Another action",
+					"description": "This is a description",
+					"link": "#"
+				},
+				{
+					"title": "Something else here",
+					"description": "This is a description",
+					"link": "#"
+				}
+			]
+		}
+	},
+	{
+		"navTitle": "Services",
+		"navbarDropdown": {
+			"items": [
+				{
+					"title": "Action",
+					"description": "This is a description",
+					"link": "#"
+				},
+				{
+					"title": "Another action",
+					"description": "This is a description",
+					"link": "#"
+				},
+				{
+					"title": "Something else here",
+					"link": "#"
+				}
+			]
+		}
+	},
+	{
+		"navTitle": "Contact",
+		"navbarDropdown": {
+			"items": [
+				{
+					"title": "Action",
+					"description": "This is a description",
+					"link": "#"
+				},
+				{
+					"title": "Another action",
+					"description": "This is a description",
+					"link": "#"
+				},
+				{
+					"title": "Something else here",
+					"description": "This is a description",
+					"link": "#"
+				}
+			]
+		}
+	}
+]
