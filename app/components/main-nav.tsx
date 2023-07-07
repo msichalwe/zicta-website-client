@@ -39,34 +39,35 @@ export const MainNav = ({
 		},
 	]
 	return (
-		<nav className={cn('flex items-center space-x-4 lg:space-x-6', className)}>
-			<NavigationMenu>
+		<nav>
+			<NavigationMenu
+				className={cn('flex items-center space-x-4 lg:space-x-6', className)}>
 				<NavigationMenuList className="gap-2">
-					{data.map((item) => (
+					{data.map((nav) => (
 						<NavigationMenuItem>
-							{!item.navbarDropdown ? (
+							{!nav.items ? (
 								<Link
 									href={
-										item.navTitle.toLowerCase() === 'home'
+										nav.title.toLowerCase() === 'home'
 											? '/'
-											: item.navTitle.toLowerCase()
+											: nav.title.toLowerCase()
 									}
 									legacyBehavior
 									passHref>
 									<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-										{item.navTitle}
+										{nav.title}
 									</NavigationMenuLink>
 								</Link>
 							) : (
-								<NavigationMenuTrigger>{item.navTitle}</NavigationMenuTrigger>
+								<NavigationMenuTrigger>{nav.title}</NavigationMenuTrigger>
 							)}
 							<NavigationMenuContent>
-								{item.navbarDropdown?.items.map((nav) => (
+								{nav.items?.map((item) => (
 									<ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
 										<ListItem
-											href={`/${nav.title.toLowerCase()}`}
-											title={nav.title}>
-											{nav?.description}
+											href={`/${item.title.toLowerCase()}`}
+											title={item.title}>
+											{item?.description}
 										</ListItem>
 									</ul>
 								))}
@@ -106,83 +107,77 @@ ListItem.displayName = 'ListItem'
 
 const data = [
 	{
-		navTitle: 'Home',
+		title: 'Home',
 	},
 	{
-		navTitle: 'About',
-		navbarDropdown: {
-			items: [
-				{
-					title: 'Action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Another action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Something else here',
-					description: 'This is a description',
-				},
-			],
-		},
+		title: 'About',
+		items: [
+			{
+				title: 'Action',
+				description: 'This is a description',
+			},
+			{
+				title: 'Another action',
+				description: 'This is a description',
+			},
+			{
+				title: 'Something else here',
+				description: 'This is a description',
+			},
+		],
 	},
 	{
-		navTitle: 'Media',
-		navbarDropdown: {
-			items: [
-				{
-					title: 'Action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Another action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Something else here',
-					description: 'This is a description',
-				},
-			],
-		},
+		title: 'Media',
+		items: [
+			{
+				title: 'Action',
+				description: 'This is a description',
+			},
+			{
+				title: 'Another action',
+				description: 'This is a description',
+			},
+			{
+				title: 'Something else here',
+				description: 'This is a description',
+			},
+		],
 	},
 	{
-		navTitle: 'Services',
-		navbarDropdown: {
-			items: [
-				{
-					title: 'Action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Another action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Something else here',
-				},
-			],
-		},
+		title: 'Services',
+
+		items: [
+			{
+				title: 'Action',
+				description: 'This is a description',
+			},
+			{
+				title: 'Another action',
+				description: 'This is a description',
+			},
+			{
+				title: 'Something else here',
+			},
+		],
 	},
 	{
-		navTitle: 'Departments',
-		navbarDropdown: {
-			items: [
-				{
-					title: 'Action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Another action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Something else here',
-				},
-			],
-		},
+		title: 'Departments',
+
+		items: [
+			{
+				title: 'Action',
+				description: 'This is a description',
+			},
+			{
+				title: 'Another action',
+				description: 'This is a description',
+			},
+			{
+				title: 'Something else here',
+			},
+		],
 	},
 	{
-		navTitle: 'Contact',
+		title: 'Contact',
 	},
 ]
