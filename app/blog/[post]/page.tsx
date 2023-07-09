@@ -11,12 +11,12 @@ const BlogPost = () => {
 				<h1 className="text-4xl text-white font-medium">Blog Post</h1>
 			</div>
 			<div className="w-5/6 mx-auto mt-[10vh] h-full pb-10">
-				<div className="flex mt-10 gap-32">
+				<div className="flex flex-col lg:flex-row mt-10 gap-32">
 					<div className="basis-3/5 flex-col gap-[30px]">
 						<img
 							src="/assets/zicta-launches.jpg"
 							alt="blog image"
-							className="w-full h-[600px] bg-contain rounded-xl  drop-shadow-lg full"
+							className="w-full min-h-[300px] object-cover rounded-xl  drop-shadow-lg full"
 						/>
 						<div className="flex items-center gap-[10px] py-10 ">
 							<img

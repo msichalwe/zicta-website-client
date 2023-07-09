@@ -55,7 +55,7 @@ interface contactSideItemProps {
 const ContactSection = () => {
 	return (
 		<div className=" h-[90vh]  flex items-center flex-col-reverse lg:flex-row w-full bg-zicta-blue">
-			<div className="basis-2/6  h-full py-16  flex flex-col px-2 lg:pl-10 ">
+			<div className="basis-2/6  h-full py-16  flex flex-col px-4 lg:pl-10 ">
 				<motion.div
 					initial={{ x: -600, opacity: 0 }}
 					animate={{ x: 0, opacity: 1 }}

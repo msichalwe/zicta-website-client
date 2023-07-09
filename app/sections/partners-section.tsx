@@ -97,7 +97,7 @@ const PartnersSection = () => {
 					{logos.map((logo, index) => (
 						<motion.img
 							key={index}
-							className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+							className="col-span-2 animate-bounce max-h-12 w-full object-contain lg:col-span-1"
 							src={logo.src}
 							alt={logo.alt}
 							width={158}
