@@ -8,13 +8,14 @@ import { AlignJustify, X } from 'lucide-react'
 
 const Navbar = () => {
 	const flexBetween = 'flex items-center justify-between'
-	const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)')
+	const isAboveMediumScreens = useMediaQuery('(min-width: 786px)')
 	const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
+	const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
 
 	return (
 		<nav>
 			<div
-				className={`bg-white  text-zicta-blu ${flexBetween} fixed top-0 z-30 w-full py-4 `}>
+				className={`bg-white  text-zicta-blue ${flexBetween} shadow-lg fixed top-0 z-30 w-full py-4 `}>
 				<div className={`${flexBetween} mx-auto w-5/6`}>
 					<div className={`${flexBetween} w-full gap-16`}>
 						<Link href={'/'}>

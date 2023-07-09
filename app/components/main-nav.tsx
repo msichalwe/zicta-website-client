@@ -20,29 +20,12 @@ export const MainNav = ({
 	...props
 }: React.HTMLAttributes<HTMLElement>) => {
 	const pathname = usePathname()
-	const params = useParams()
-	const routes = [
-		{
-			href: `/dashboard`,
-			label: 'Dashboard',
-			active: pathname === '/dashboard',
-		},
-		{
-			href: `/dashboard/properties`,
-			label: 'Properties',
-			active: pathname === '/dashboard/properties',
-		},
-		{
-			href: `/dashboard/settings`,
-			label: 'Settings',
-			active: pathname === '/dashboard/settings',
-		},
-	]
+
 	return (
 		<nav>
 			<NavigationMenu
-				className={cn('flex items-center space-x-4 lg:space-x-6', className)}>
-				<NavigationMenuList className="gap-2">
+				className={cn('flex items-center space-x-4 lg:space-x-6 flex-col')}>
+				<NavigationMenuList className={cn('gap-2 ', className)}>
 					{data.map((nav) => (
 						<NavigationMenuItem>
 							{!nav.items ? (
@@ -54,21 +37,29 @@ export const MainNav = ({
 									}
 									legacyBehavior
 									passHref>
-									<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+									<NavigationMenuLink
+										className={cn(
+											'bg-transparent hover:bg-transparent focus:bg-transparent',
+											navigationMenuTriggerStyle(),
+										)}>
 										{nav.title}
 									</NavigationMenuLink>
 								</Link>
 							) : (
-								<NavigationMenuTrigger>{nav.title}</NavigationMenuTrigger>
+								<NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent">
+									{nav.title}
+								</NavigationMenuTrigger>
 							)}
 							<NavigationMenuContent>
 								{nav.items?.map((item) => (
-									<ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-										<ListItem
-											href={`/${item.title.toLowerCase()}`}
-											title={item.title}>
-											{item?.description}
-										</ListItem>
+									<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+										<li>
+											<ListItem
+												href={`/${item.title.toLowerCase()}`}
+												title={item.title}>
+												{item?.description}
+											</ListItem>
+										</li>
 									</ul>
 								))}
 							</NavigationMenuContent>
@@ -148,15 +139,31 @@ const data = [
 
 		items: [
 			{
-				title: 'Action',
-				description: 'This is a description',
+				title: 'Consumer Protection',
+				description: 'complaints, disputes, and other consumer issues',
 			},
 			{
-				title: 'Another action',
-				description: 'This is a description',
+				title: 'Cloud Security',
+				description: 'Cloud security is the protection of data stored online',
 			},
 			{
-				title: 'Something else here',
+				title: 'Economic Regulation',
+				description: 'Economic regulation is defined as a type of government',
+			},
+			{
+				title: 'Cloud Service',
+				description:
+					'Cloud services are any services that are made available to users',
+			},
+			{
+				title: 'Analytics',
+				description:
+					'Analytics is the systematic computational analysis of data or statistics',
+			},
+			{
+				title: 'Analytics',
+				description:
+					'Analytics is the systematic computational analysis of data or statistics',
 			},
 		],
 	},
@@ -165,15 +172,19 @@ const data = [
 
 		items: [
 			{
-				title: 'Action',
-				description: 'This is a description',
+				title: 'Cyber Security',
+				description:
+					'The cybersecurity department is responsible for the security of the internet',
 			},
 			{
-				title: 'Another action',
-				description: 'This is a description',
+				title: 'Universal Access',
+				description:
+					'Universal access is the deparment that enables all citizens to access the internet',
 			},
 			{
-				title: 'Something else here',
+				title: 'Technology and Engineering',
+				description:
+					'Technology and Engineering is the department that is responsible for the development of technology',
 			},
 		],
 	},
