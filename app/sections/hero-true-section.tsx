@@ -4,12 +4,22 @@ import { motion } from 'framer-motion'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
-import WhyUs from './WhyUs'
 
-const Hero = () => {
+import Slider from 'react-slick'
+
+const Hero2 = () => {
+	const settings = {
+		dots: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+	}
+
 	return (
 		<section id="home" className="w-full">
-			<div className="h-[80vh] bg-zicta-blue flex items-center  text-white">
+			<div className="h-screen bg-zicta-blue flex items-center  text-white">
 				{/* Left section */}
 				<motion.div
 					initial="hidden"
@@ -61,19 +71,35 @@ const Hero = () => {
 					</motion.div>
 				</motion.div>
 				{/*TODO: right section image slider */}
-				<div className="basis-1/2 relative h-full">
-					<img
+				<div className="basis-1/2 relative h-full w-full overflow-hidden">
+					<Slider {...settings} className="h-full relative ">
+						<img
+							src={'/assets/zicta-home.jpg'}
+							alt={'ZICTA Home'}
+							className="h-full w-auto "
+						/>
+
+						<img
+							src={'/assets/zicta-strength.jpg'}
+							alt={'ZICTA Home'}
+							className="h-full w-auto  object-cover"
+						/>
+
+						<img
+							src={'/assets/zicta-urge.jpg'}
+							alt={'ZICTA Home'}
+							className="h-full w-auto  object-cover"
+						/>
+					</Slider>
+					{/* <img
 						src={'/assets/zicta-home.jpg'}
-						className="object-cover absolute h-full w-full object-center"
 						alt={'ZICTA Home'}
-					/>
+						className="h-full w-auto object-cover object-center"
+					/> */}
 				</div>
-			</div>
-			<div className="h-[40vh] flex items-center justify-center">
-				<WhyUs />
 			</div>
 		</section>
 	)
 }
 
-export default Hero
+export default Hero2
