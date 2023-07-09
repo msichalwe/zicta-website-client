@@ -6,7 +6,6 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import { Inter } from 'next/font/google'
 import Wrapper from '@/context/wrapper'
-import Footer from './components/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,7 +25,6 @@ export default function RootLayout({
 				{/* <Navbar /> */}
 				<Navbar />
 				<Wrapper>{children}</Wrapper>
-				<Footer />
 			</body>
 		</html>
 	)

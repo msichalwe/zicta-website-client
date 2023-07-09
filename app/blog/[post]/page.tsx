@@ -1,4 +1,5 @@
 'use client'
+import Footer from '@/app/components/footer'
 import SideMenu from '@/app/components/side-menu'
 import Image from 'next/image'
 import React from 'react'
@@ -6,10 +7,10 @@ import React from 'react'
 const BlogPost = () => {
 	return (
 		<div>
+			<div className="bg-hero-pattern bg-no-repeat w-full bg-cover  h-full min-h-[600px] mb-20 flex items-center justify-center">
+				<h1 className="text-4xl text-white font-medium">Blog Post</h1>
+			</div>
 			<div className="w-5/6 mx-auto mt-[10vh] h-full pb-10">
-				<div className="bg-hero-pattern bg-no-repeat w-full bg-cover rounded-xl h-full min-h-[600px] mb-10 flex items-center justify-center">
-					<h1 className="text-7xl text-white font-medium">Blog Post</h1>
-				</div>
 				<div className="flex mt-10 gap-32">
 					<div className="basis-3/5 flex-col gap-[30px]">
 						<img
@@ -81,6 +82,7 @@ const BlogPost = () => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</div>
 	)
 }

@@ -46,7 +46,7 @@ const StatSection = () => {
 	}, [])
 	return (
 		<div
-			className="bg-hero-pattern bg-no-repeat bg-cover py-24 sm:py-32 z-[-1]"
+			className="bg-hero-pattern bg-no-repeat bg-cover py-32 z-[-1]"
 			ref={ref1}>
 			<div className="mx-auto max-w-3xl text-center mb-20">
 				<h2 className="text-base font-semibold leading-8 text-indigo-400">

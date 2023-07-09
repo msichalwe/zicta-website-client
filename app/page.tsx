@@ -13,6 +13,7 @@ import BlogSection from './sections/blog-section'
 import ContactSection from './sections/contact-section'
 import Hero2 from './sections/hero-true-section'
 import MapSection from './sections/map-section'
+import Footer from './components/footer'
 
 export default function Home() {
 	return (
@@ -30,6 +31,7 @@ export default function Home() {
 			<FaqSection />
 			<MapSection />
 			<ContactSection />
+			<Footer />
 		</main>
 	)
 }
