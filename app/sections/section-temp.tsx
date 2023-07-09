@@ -9,7 +9,7 @@ const SectionTemp = () => {
 	const [light, setLight] = useState(true)
 	return (
 		<div
-			className={` md:h-[70vh] h-full w-full mb-10    ${
+			className={` md:h-[70vh] h-full w-full     ${
 				light ? 'bg-white text-zicta-blue' : 'bg-zicta-blue text-white'
 			}  flex flex-col  items-center ${
 				reverse ? 'lg:flex-row-reverse ' : 'md:flex-row text-end'
