@@ -19,7 +19,7 @@ const LatestBanner = () => {
 	}
 
 	return (
-		<section className="px-6 py-8 lg:py-16 bg-white" id="about">
+		<section className="px-6 py-8 lg:py-16 h-full bg-white" id="about">
 			<div className="w-5/6 mx-auto">
 				<div className="lg:flex lg:items-center lg:-mx-4">
 					<motion.div

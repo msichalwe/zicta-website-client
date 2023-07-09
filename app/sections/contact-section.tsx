@@ -54,13 +54,14 @@ interface contactSideItemProps {
 
 const ContactSection = () => {
 	return (
-		<div className=" md:h-[90vh] h-full flex items-center flex-col-reverse md:flex-row w-full bg-zicta-blue">
-			<div className="basis-1/5 min-h-[500px] relative h-full py-16 md:py-0  flex flex-col px-10 md:px-20 justify-around">
+		<div className=" h-[90vh]  flex items-center flex-col-reverse lg:flex-row w-full bg-zicta-blue">
+			<div className="basis-2/6  h-full py-16  flex flex-col px-2 lg:pl-10 ">
 				<motion.div
 					initial={{ x: -600, opacity: 0 }}
 					animate={{ x: 0, opacity: 1 }}
-					transition={{ duration: 1.2 }}>
-					<div className="mb-10">
+					transition={{ duration: 1.2 }}
+					className="flex flex-col justify-center h-full">
+					<div className="">
 						<h2 className=" text-xl md:text-3xl font-bold text-center  md:text-left  text-white pb-5">
 							Get in touch
 						</h2>
@@ -80,7 +81,8 @@ const ContactSection = () => {
 					initial={{ x: -500, opacity: 0, scale: 0.5 }}
 					animate={{ x: 0, opacity: 1, scale: 1 }}
 					transition={{ duration: 1.5 }}
-					className="flex flex-row items-center left-[25%] absolute bottom-1 md:bottom-10">
+					className="flex items-center justify-center
+					">
 					{/* Social Icons  */}
 					{socialIcons.map((icon, index) => (
 						<SocialIcon
@@ -92,7 +94,7 @@ const ContactSection = () => {
 					))}
 				</motion.div>
 			</div>
-			<div className="basis-4/5 w-full h-full bg-white py-10 px-10 flex items-center justify-center flex-col ">
+			<div className="basis-4/6 w-full h-full bg-white py-10 px-10 flex items-center justify-center flex-col ">
 				<h2 className=" text-3xl md:text-4xl mb-1 text-center  md:mb-5 font-bold">
 					You’ve got this far, Reach out.
 				</h2>

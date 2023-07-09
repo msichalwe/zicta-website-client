@@ -39,7 +39,7 @@ const PartnersSection = () => {
 	}
 
 	return (
-		<div className="relative isolate -z-10 mt-32 sm:mt-48 space-y-4 min-h-[40vh]">
+		<div className="relative isolate -z-10 space-y-4 min-h-[40vh]">
 			<div className="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]">
 				<svg
 					className="h-[40rem] w-[80rem] flex-none stroke-gray-200"
