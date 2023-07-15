@@ -51,17 +51,15 @@ export const MainNav = ({
 								</NavigationMenuTrigger>
 							)}
 							<NavigationMenuContent>
-								{nav.items?.map((item) => (
-									<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-										<li>
-											<ListItem
-												href={`/${item.title.toLowerCase()}`}
-												title={item.title}>
-												{item?.description}
-											</ListItem>
-										</li>
-									</ul>
-								))}
+								<ul className="grid w-[300px] gap-3 p-4 h-full md:w-[500px] grid-cols-2 lg:w-[600px] ">
+									{nav.items?.map((item) => (
+										<ListItem
+											href={`/${nav.title.toLowerCase()}/${item.title.toLowerCase()}`}
+											title={item.title}>
+											{item?.description}
+										</ListItem>
+									))}
+								</ul>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 					))}
@@ -185,6 +183,27 @@ const data = [
 				title: 'Technology and Engineering',
 				description:
 					'Technology and Engineering is the department that is responsible for the development of technology',
+			},
+		],
+	},
+	{
+		title: 'Resources',
+
+		items: [
+			{
+				title: 'Legislation',
+				description: '',
+			},
+			{
+				title: 'Guidelines',
+				description: '',
+			},
+			{
+				title: 'Strategic Plans',
+				description: '',
+			},
+			{
+				title: 'Produrements',
 			},
 		],
 	},

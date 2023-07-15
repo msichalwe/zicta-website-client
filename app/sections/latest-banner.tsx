@@ -2,7 +2,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const LatestBanner = () => {
+interface BannerProps {
+	data: Banner
+}
+const LatestBanner: React.FC<BannerProps> = ({ data }) => {
 	const variants = {
 		hidden: {
 			opacity: 0,
@@ -29,13 +32,11 @@ const LatestBanner = () => {
 						variants={variants}
 						whileInView="visible">
 						<h2 className="text-3xl font-bold tracking-tight text-zicta-blue sm:text-4xl">
-							Latest at ZICTA
+							{data.title}
 						</h2>
 
 						<p className="mt-2 text-sm md:text-lg leading-8 text-gray-600">
-							Stay up to date with the latest news, announcements, initiatives,
-							and industry developments from the Zambia Information and
-							Communications Technology Authority (ZICTA).
+							{data.description}
 						</p>
 					</motion.div>
 
@@ -47,7 +48,7 @@ const LatestBanner = () => {
 						whileInView="visible">
 						<motion.img
 							className="object-cover w-full rounded-xl min-h-96 h-full shadow-xl"
-							src="/assets/zicta-banner.png"
+							src={data.imageUrl}
 							alt="Latest-banner"
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}

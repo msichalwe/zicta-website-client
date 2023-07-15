@@ -121,7 +121,7 @@ const posts = [
 	},
 ]
 
-const BlogSection = () => {
+const MediaSection = () => {
 	const ref2 = useRef(null)
 
 	gsap.registerPlugin(ScrollTrigger)
@@ -239,4 +239,4 @@ const BlogSection = () => {
 	)
 }
 
-export default BlogSection
+export default MediaSection

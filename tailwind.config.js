@@ -74,6 +74,9 @@ module.exports = {
 			},
 			backgroundImage: {
 				'hero-pattern': "url('/assets/waves.svg')",
+				peaks: "url('/assets/bg-peaks.svg')",
+				poly: "url('/assets/bg-poly.svg')",
+				circle: "url('/assets/bg-circle.svg')",
 			},
 		},
 	},

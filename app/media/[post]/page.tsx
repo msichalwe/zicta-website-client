@@ -1,16 +1,15 @@
 'use client'
 import Footer from '@/app/components/footer'
 import SideMenu from '@/app/components/side-menu'
-import Image from 'next/image'
 import React from 'react'
 
-const BlogPost = () => {
+const MediaPost = () => {
 	return (
-		<div>
-			<div className="bg-hero-pattern bg-no-repeat w-full bg-cover  h-full min-h-[600px] mb-20 flex items-center justify-center">
-				<h1 className="text-4xl text-white font-medium">Blog Post</h1>
+		<div className="w-5/6 mx-auto mt-[10vh]">
+			<div className="bg-peaks bg-no-repeat w-full bg-cover  h-full min-h-[400px] rounded-xl mb-20 flex items-center justify-center">
+				<h1 className="text-4xl text-white font-medium">Media Post</h1>
 			</div>
-			<div className="w-5/6 mx-auto mt-[10vh] h-full pb-10">
+			<div className=" mt-[20vh] h-full pb-10">
 				<div className="flex flex-col lg:flex-row mt-10 gap-32">
 					<div className="basis-3/5 flex-col gap-[30px]">
 						<img
@@ -87,4 +86,4 @@ const BlogPost = () => {
 	)
 }
 
-export default BlogPost
+export default MediaPost

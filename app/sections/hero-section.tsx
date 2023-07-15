@@ -27,7 +27,11 @@ const features = [
 		icon: CalendarCheck2,
 	},
 ]
-const Hero = () => {
+
+interface WhatWeDoProps {
+	data: WhatWeDo
+}
+const Hero: React.FC<WhatWeDoProps> = ({ data }) => {
 	return (
 		<div className="bg-white py-24 sm:py-32">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -46,8 +50,7 @@ const Hero = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.5 }}
 						transition={{ duration: 1, delay: 0.4 }}>
-						Regulating and Monitoring Electronic Communication Services in
-						Zambia
+						{data.title}
 					</motion.p>
 					<motion.p
 						className="mt-6 text-lg leading-8 text-gray-600"
@@ -55,8 +58,7 @@ const Hero = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.5 }}
 						transition={{ duration: 1, delay: 0.6 }}>
-						ZICTA plays a vital role in overseeing and controlling the provision
-						of electronic communication services and products in Zambia.
+						{data.description}
 					</motion.p>
 				</div>
 				<div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -66,7 +68,7 @@ const Hero = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.5 }}
 						transition={{ duration: 1, delay: 0.8 }}>
-						{features.map((feature) => (
+						{data.whatWeDoCard.map((feature: WhatWeDoCard) => (
 							<motion.div
 								key={feature.title}
 								className="flex flex-col"
@@ -78,10 +80,6 @@ const Hero = () => {
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true, amount: 0.5 }}
 									transition={{ duration: 1, delay: 1 }}>
-									<feature.icon
-										className="h-5 w-5 flex-none text-zicta-blue"
-										aria-hidden="true"
-									/>
 									{feature.title}
 								</motion.dt>
 								<motion.dd
@@ -90,12 +88,10 @@ const Hero = () => {
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true, amount: 0.5 }}
 									transition={{ duration: 1, delay: 1.2 }}>
-									<motion.p className="flex-auto">
-										{feature.description}
-									</motion.p>
+									<motion.p className="flex-auto">{feature.content}</motion.p>
 									<motion.p className="mt-6">
 										<AnchorLink
-											href={feature.href}
+											href={`/services/${feature.title.toLowerCase()}}`}
 											className="text-sm font-semibold leading-6 text-zicta-blue">
 											Learn more <span aria-hidden="true">→</span>
 										</AnchorLink>
