@@ -14,12 +14,115 @@ import {
 } from '@/components/ui/navigation-menu'
 import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import React from 'react'
+import { useQuery } from '@tanstack/react-query'
+import getAllServices from '@/actions/getAllServices'
 
 export const MainNav = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLElement>) => {
 	const pathname = usePathname()
+	const { data: services, isLoading } = useQuery({
+		queryKey: ['servicesData'],
+		queryFn: getAllServices,
+	})
+
+	const data = [
+		{
+			title: 'Home',
+		},
+		{
+			title: 'About',
+			items: [
+				{
+					title: 'Action',
+					description: 'This is a description',
+				},
+				{
+					title: 'Another action',
+					description: 'This is a description',
+				},
+				{
+					title: 'Something else here',
+					description: 'This is a description',
+				},
+			],
+		},
+		{
+			title: 'Media',
+			items: [
+				{
+					title: 'News',
+					description: 'Keep up to date with the latest news from ZICTA',
+				},
+				{
+					title: 'Events',
+					description: 'Real time updates on events happening at ZICTA',
+				},
+				{
+					title: 'Publications',
+					description: 'Publications from ZICTA',
+				},
+			],
+		},
+		{
+			title: 'Services',
+
+			items: services?.map((item) => ({
+				title: item.title,
+				description: item.description,
+			})),
+		},
+		// {
+		// 	title: 'Departments',
+
+		// 	items: [
+		// 		{
+		// 			title: 'Cyber Security',
+		// 			description:
+		// 				'The cybersecurity department is responsible for the security of the internet',
+		// 		},
+		// 		{
+		// 			title: 'Universal Access',
+		// 			description:
+		// 				'Universal access is the deparment that enables all citizens to access the internet',
+		// 		},
+		// 		{
+		// 			title: 'Technology and Engineering',
+		// 			description:
+		// 				'Technology and Engineering is the department that is responsible for the development of technology',
+		// 		},
+		// 	],
+		// },
+		{
+			title: 'Resources',
+
+			items: [
+				{
+					title: 'Legislation',
+					description: '',
+				},
+				{
+					title: 'Guidelines',
+					description: '',
+				},
+				{
+					title: 'Strategic Plans',
+					description: '',
+				},
+				{
+					title: 'Procurement',
+				},
+				,
+				{
+					title: 'Press Releases',
+				},
+			],
+		},
+		{
+			title: 'Complaints & Queries',
+		},
+	]
 
 	return (
 		<nav>
@@ -51,17 +154,19 @@ export const MainNav = ({
 								</NavigationMenuTrigger>
 							)}
 							<NavigationMenuContent>
-								{nav.items?.map((item) => (
-									<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-										<li>
-											<ListItem
-												href={`/${item.title.toLowerCase()}`}
-												title={item.title}>
+								<ul className="grid w-[300px] gap-3 p-4 h-full md:w-[500px] grid-cols-2 lg:w-[600px] ">
+									{nav.items?.map((item) => {
+										const href = `/${nav.title.toLowerCase()}/${item?.title
+											.toLowerCase()
+											.replace(/ /g, '-')}`
+
+										return (
+											<ListItem href={href} title={item?.title}>
 												{item?.description}
 											</ListItem>
-										</li>
-									</ul>
-								))}
+										)
+									})}
+								</ul>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 					))}
@@ -95,100 +200,3 @@ const ListItem = React.forwardRef<
 	)
 })
 ListItem.displayName = 'ListItem'
-
-const data = [
-	{
-		title: 'Home',
-	},
-	{
-		title: 'About',
-		items: [
-			{
-				title: 'Action',
-				description: 'This is a description',
-			},
-			{
-				title: 'Another action',
-				description: 'This is a description',
-			},
-			{
-				title: 'Something else here',
-				description: 'This is a description',
-			},
-		],
-	},
-	{
-		title: 'Media',
-		items: [
-			{
-				title: 'Action',
-				description: 'This is a description',
-			},
-			{
-				title: 'Another action',
-				description: 'This is a description',
-			},
-			{
-				title: 'Something else here',
-				description: 'This is a description',
-			},
-		],
-	},
-	{
-		title: 'Services',
-
-		items: [
-			{
-				title: 'Consumer Protection',
-				description: 'complaints, disputes, and other consumer issues',
-			},
-			{
-				title: 'Cloud Security',
-				description: 'Cloud security is the protection of data stored online',
-			},
-			{
-				title: 'Economic Regulation',
-				description: 'Economic regulation is defined as a type of government',
-			},
-			{
-				title: 'Cloud Service',
-				description:
-					'Cloud services are any services that are made available to users',
-			},
-			{
-				title: 'Analytics',
-				description:
-					'Analytics is the systematic computational analysis of data or statistics',
-			},
-			{
-				title: 'Analytics',
-				description:
-					'Analytics is the systematic computational analysis of data or statistics',
-			},
-		],
-	},
-	{
-		title: 'Departments',
-
-		items: [
-			{
-				title: 'Cyber Security',
-				description:
-					'The cybersecurity department is responsible for the security of the internet',
-			},
-			{
-				title: 'Universal Access',
-				description:
-					'Universal access is the deparment that enables all citizens to access the internet',
-			},
-			{
-				title: 'Technology and Engineering',
-				description:
-					'Technology and Engineering is the department that is responsible for the development of technology',
-			},
-		],
-	},
-	{
-		title: 'Contact',
-	},
-]

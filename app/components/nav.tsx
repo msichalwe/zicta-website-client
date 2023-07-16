@@ -13,9 +13,9 @@ const Navbar = () => {
 	const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
 
 	return (
-		<nav>
+		<nav className="sticky w-full z-[90]">
 			<div
-				className={`bg-white  text-zicta-blue ${flexBetween} shadow-lg fixed top-0 z-30  w-full py-4 `}>
+				className={`bg-white text-zicta-blue ${flexBetween} shadow-lg  top-0 z-30  w-full py-4 `}>
 				<div className={`${flexBetween} mx-auto w-5/6`}>
 					<div className={`${flexBetween} w-full gap-16`}>
 						<Link href={'/'}>
@@ -45,7 +45,7 @@ const Navbar = () => {
 				</div>
 			</div>
 			{!isAboveMediumScreens && isMenuToggled && (
-				<div className="fixed bottom-0 right-0 z-40 h-full w-[300px] text-gray-900 bg-gray-100 drop-shadow-xl ">
+				<div className="fixed bottom-0 right-0 z-40 h-full flex flex-col items-center w-full text-gray-900 bg-gray-100 drop-shadow-xl ">
 					{/* CLOSE ICON */}
 					<div className="flex justify-end p-12">
 						<button onClick={() => setIsMenuToggled(!isMenuToggled)}>
@@ -53,7 +53,7 @@ const Navbar = () => {
 						</button>
 					</div>
 					{/* MENU ITEMS */}
-					<div className={`ml-[33%] flex flex-col gap-10 text-2xl`}>
+					<div className={` flex flex-col h-full gap-10 text-2xl`}>
 						<MainNav className="mx-6 flex-col md:flex-row h-full " />
 					</div>
 				</div>

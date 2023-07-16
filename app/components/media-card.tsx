@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-const BlogCard = () => {
+const MediaCard = () => {
 	return (
 		<div className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4 mx-10">
 			{/* Images and actions */}
@@ -9,7 +9,7 @@ const BlogCard = () => {
 				<Image
 					src="/assets/zicta-launches.jpg"
 					fill
-					alt="blog image"
+					alt="media image"
 					className="aspect-square rounded-md object-cover"
 				/>
 			</div>
@@ -26,4 +26,4 @@ const BlogCard = () => {
 	)
 }
 
-export default BlogCard
+export default MediaCard

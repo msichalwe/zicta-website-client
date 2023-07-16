@@ -1,17 +1,22 @@
 'use client'
 import React, { useLayoutEffect, useRef } from 'react'
-import HeroSlider, { Overlay, Slide, MenuNav } from 'hero-slider'
+import HeroSlider, { Overlay, Slide } from 'hero-slider'
 import { ArrowUpRight } from 'lucide-react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import { Balancer } from 'react-wrap-balancer'
+import { Hero, HeroImage } from '@/types'
 
 const image1 = '/assets/zicta-home.jpg'
 const image2 = '/assets/zicta-strength.jpg'
 const image3 = '/assets/zicta-urge.jpg'
 
-const HeroSlide = () => {
+type HeroProps = {
+	data: Hero
+}
+const HeroSlide: React.FC<HeroProps> = ({ data }) => {
 	const ref = useRef(null)
 
 	gsap.registerPlugin(ScrollTrigger)
@@ -31,6 +36,7 @@ const HeroSlide = () => {
 			ScrollTrigger.killAll()
 		}
 	}, [])
+
 	return (
 		<div className="z-[-1]" ref={ref}>
 			<HeroSlider
@@ -67,65 +73,27 @@ const HeroSlide = () => {
 								x: 0,
 							},
 						}}
-						className=" max-w-4xl text-white space-y-5 md:space-y-10 z-10 px-10 flex justify-center items-start md:pl-32 flex-col w-full h-full">
-						<h1 className=" text-4xl md:text-6xl font-medium">
-							A Regulator at the Nexus of an Inclusive Digital Economy.
+						className=" max-w-4xl  text-white space-y-5  z-10 px-10 flex justify-center items-start md:pl-32 flex-col w-full h-full">
+						<h1 className=" text-4xl relative md:text-5xl font-bold">
+							{' '}
+							<Balancer>{data?.title} </Balancer>{' '}
+							<div className="absolute left-[-30px] top-0 h-full w-[20px] bg-[#F8B129]" />
 						</h1>
-						<p className="text-xs sm:text-xl">
-							The vision of the Authority is premised on positioning itself at
-							the center of the digital economy in order to respond to new
-							developments.
+						<p className="text-xs sm:text-lg">
+							<Balancer>{data?.content}</Balancer>
 						</p>
-						<motion.div
-							initial="hidden"
-							whileInView="visible"
-							viewport={{ once: true, amount: 0.5 }}
-							transition={{ delay: 0.2, duration: 0.5 }}
-							variants={{
-								hidden: {
-									opacity: 0,
-									x: -50,
-								},
-								visible: {
-									opacity: 1,
-									x: 0,
-								},
-							}}>
-							<AnchorLink href="#services">
-								<button className="md:px-8 md:py-4 text-sm md:text-md py-2 px-4 border border-1 border-white">
-									<div className="flex gap-2  ">
-										Learn More <ArrowUpRight className="h-5 w-5 text-white " />
-									</div>
-								</button>
-							</AnchorLink>
-						</motion.div>
 					</motion.div>
 					<div className="bg-black opacity-60 absolute z-[-1] top-0 left-0 right-0 bottom-0 " />
 				</Overlay>
 
-				<Slide
-					shouldRenderMask
-					label="Giau Pass - Italy"
-					background={{
-						backgroundImageSrc: image1,
-					}}
-				/>
-
-				<Slide
-					shouldRenderMask
-					label="Bogliasco - Italy"
-					background={{
-						backgroundImageSrc: image2,
-					}}
-				/>
-
-				<Slide
-					shouldRenderMask
-					label="County Clare - Ireland"
-					background={{
-						backgroundImageSrc: image3,
-					}}
-				/>
+				{data?.images.map((image: HeroImage) => (
+					<Slide
+						key={image.id}
+						background={{
+							backgroundImageSrc: image.url,
+						}}
+					/>
+				))}
 			</HeroSlider>
 		</div>
 	)

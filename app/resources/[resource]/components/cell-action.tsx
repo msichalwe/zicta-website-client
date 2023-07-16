@@ -13,6 +13,7 @@ import { Copy, Download, Edit, MoreHorizontal, Trash } from 'lucide-react'
 import { toast } from 'react-hot-toast'
 import { useParams, useRouter } from 'next/navigation'
 import { useState } from 'react'
+import axios from 'axios'
 
 interface CellActionProps {
 	data: ResourceColumn
@@ -22,6 +23,21 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 	const router = useRouter()
 	const [loading, setLoading] = useState(false)
 	const [open, setOpen] = useState(false)
+	const params = useParams()
+
+	const onDownload = async () => {
+		try {
+			setLoading(true)
+			await axios
+				.get(`/api/resources/${params.resource}/${data.id}`)
+				.then((res) => {
+					const downloadUrl = res.data // Assuming the response contains the download URL
+					window.open(downloadUrl, '_blank')
+				})
+		} catch (error) {
+			console.log('download error', error)
+		}
+	}
 
 	return (
 		<>
@@ -33,14 +49,11 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 					</Button>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent align="end">
-					<DropdownMenuLabel>Download</DropdownMenuLabel>
-					<DropdownMenuItem>
+					<DropdownMenuLabel>Actions</DropdownMenuLabel>
+
+					<DropdownMenuItem onClick={() => onDownload()}>
 						<Download className="mr-2 h-4 w-4" />
-						PDF
-					</DropdownMenuItem>
-					<DropdownMenuItem>
-						<Download className="mr-2 h-4 w-4" />
-						DOCX
+						Download
 					</DropdownMenuItem>
 				</DropdownMenuContent>
 			</DropdownMenu>

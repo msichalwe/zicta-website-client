@@ -47,9 +47,9 @@ const posts = [
 
 const SideMenu = () => {
 	return (
-		<div className="flex flex-col justify-around px-10">
-			<h1 className="text-3xl text-zicta-blue font-bold">Related posts</h1>
-			<div className=" space-y-10 lg:mt-20 ">
+		<div className="flex flex-col justify-around pl-20">
+			<h1 className="text-xl text-zicta-blue font-bold">Related posts</h1>
+			<div className=" space-y-10 lg:mt-10 ">
 				{posts.map((post) => (
 					<div key={post.id} className="gap-2">
 						<article className="relative isolate flex flex-col gap-4 lg:flex-row max-h-52 mb-4">
