@@ -7,14 +7,19 @@ import { CellAction } from './cell-action'
 // You can use a Zod schema here if you want.
 export type ResourceColumn = {
 	id: string
-	resourceName: string
+	title: string
+	format: string
 	createdAt: string
 }
 
 export const columns: ColumnDef<ResourceColumn>[] = [
 	{
-		accessorKey: 'resourceName',
-		header: ' Title',
+		accessorKey: 'title',
+		header: 'Title',
+	},
+	{
+		accessorKey: 'format',
+		header: 'Format',
 	},
 	{
 		accessorKey: 'createdAt',

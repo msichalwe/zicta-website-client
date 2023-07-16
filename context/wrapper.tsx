@@ -24,7 +24,6 @@ const Wrapper: React.FC<WrapperProps> = ({ children }) => {
 		<div>
 			<QueryClientProvider client={queryClient}>
 				<Toaster />
-
 				{children}
 			</QueryClientProvider>
 		</div>

@@ -67,3 +67,38 @@ interface Stat {
 	value: string
 	showPlus: boolean
 }
+
+interface Resource {
+	id: string
+	title: string
+	type: string
+	fileUrl: string
+	fileType: string
+	createdAt: string
+}
+interface Procurement {
+	id: string
+	title: string
+	type: string
+	fileUrl: string
+	fileType: string
+	createdAt: string
+}
+
+interface Service {
+	id: string
+	title: string
+	description: string
+	content: string
+	imageUrl: string
+	type: string
+	subServices: SubService[]
+}
+
+interface SubService {
+	id: string
+	title: string
+	description: string
+	content: string
+	imageUrl: string
+}

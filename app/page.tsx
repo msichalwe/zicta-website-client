@@ -9,14 +9,12 @@ import PartnersSection from './sections/partners-section'
 import MediaSection from './sections/media-section'
 import ContactSection from './sections/contact-section'
 import MapSection from './sections/map-section'
-import Footer from './components/footer'
 import HeroSlide from './sections/hero-slide'
 import getHero from '@/actions/getHero'
 import getBanner from '@/actions/getBanner'
 import getWhatWeDo from '@/actions/getWhatWeDo'
 import getStats from '@/actions/getStats'
 import getTestimonial from '@/actions/getTestimonial'
-import Navbar from './components/nav'
 
 export const revalidate = 0
 export default async function Home() {
@@ -27,10 +25,7 @@ export default async function Home() {
 	const testimonial = await getTestimonial()
 
 	return (
-		<main className="relative">
-			<div className="fixed w-full">
-				<Navbar />
-			</div>
+		<main>
 			<HeroSlide data={hero} />
 			<LatestBanner data={banner} />
 			<Hero data={whatWeDo} />
@@ -43,7 +38,6 @@ export default async function Home() {
 			<FaqSection />
 			<MapSection />
 			<ContactSection />
-			<Footer />
 		</main>
 	)
 }
