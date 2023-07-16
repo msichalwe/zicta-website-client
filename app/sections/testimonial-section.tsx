@@ -1,3 +1,4 @@
+import { Testimonial } from '@/types'
 import React from 'react'
 
 interface TestimonialProps {

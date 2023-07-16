@@ -1,4 +1,5 @@
 'use client'
+import { Stat, Stats } from '@/types'
 import React, { useLayoutEffect, useRef } from 'react'
 import CountUp from 'react-countup'
 

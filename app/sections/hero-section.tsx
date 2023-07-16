@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Lock, CalendarCheck2, LineChart } from 'lucide-react'
+import { WhatWeDo, WhatWeDoCard } from '@/types'
 
 interface WhatWeDoProps {
 	data: WhatWeDo

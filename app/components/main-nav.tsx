@@ -73,27 +73,27 @@ export const MainNav = ({
 				description: item.description,
 			})),
 		},
-		{
-			title: 'Departments',
+		// {
+		// 	title: 'Departments',
 
-			items: [
-				{
-					title: 'Cyber Security',
-					description:
-						'The cybersecurity department is responsible for the security of the internet',
-				},
-				{
-					title: 'Universal Access',
-					description:
-						'Universal access is the deparment that enables all citizens to access the internet',
-				},
-				{
-					title: 'Technology and Engineering',
-					description:
-						'Technology and Engineering is the department that is responsible for the development of technology',
-				},
-			],
-		},
+		// 	items: [
+		// 		{
+		// 			title: 'Cyber Security',
+		// 			description:
+		// 				'The cybersecurity department is responsible for the security of the internet',
+		// 		},
+		// 		{
+		// 			title: 'Universal Access',
+		// 			description:
+		// 				'Universal access is the deparment that enables all citizens to access the internet',
+		// 		},
+		// 		{
+		// 			title: 'Technology and Engineering',
+		// 			description:
+		// 				'Technology and Engineering is the department that is responsible for the development of technology',
+		// 		},
+		// 	],
+		// },
 		{
 			title: 'Resources',
 
