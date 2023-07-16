@@ -1,3 +1,5 @@
+import { WhatWeDo } from '@/types'
+
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/what-we-do`
 
 const getWhatWeDo = async (): Promise<WhatWeDo> => {

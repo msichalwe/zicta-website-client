@@ -4,36 +4,12 @@ import { motion } from 'framer-motion'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Lock, CalendarCheck2, LineChart } from 'lucide-react'
 
-const features = [
-	{
-		title: 'Consumer Protection',
-		description:
-			'ZICTA is a regulatory body in Zambia empowered to regulate and monitor electronic communication services and products, and handle complaints from consumers regarding ICT services.',
-		href: '/consumer-protection',
-		icon: Lock,
-	},
-	{
-		title: 'Economic Regulation',
-		description:
-			'The Department of Economic Regulation at ZICTA comprises three units: Markets & Competition, Policy & Research, and Postal. These units are responsible for regulating access.',
-		href: '/economic-regulation',
-		icon: LineChart,
-	},
-	{
-		title: 'Consumer Education',
-		description:
-			'ZICTA Consumer Protection Department develops and implements consumer education programs to raise awareness about consumer rights and responsibilities, promote responsible use of ICT products and services.',
-		href: '/consumer-education',
-		icon: CalendarCheck2,
-	},
-]
-
 interface WhatWeDoProps {
 	data: WhatWeDo
 }
 const Hero: React.FC<WhatWeDoProps> = ({ data }) => {
 	return (
-		<div className="bg-white py-24 sm:py-32">
+		<div className="bg-white py-24 sm:py-32" id="what-we-do">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:text-center">
 					<motion.h2

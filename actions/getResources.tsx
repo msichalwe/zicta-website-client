@@ -1,3 +1,4 @@
+import { Resource } from '@/types'
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/resources`
 
 const getResource = async (resource: string): Promise<Resource[]> => {

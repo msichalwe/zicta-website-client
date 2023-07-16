@@ -1,3 +1,5 @@
+import { Stats } from '@/types'
+
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/stats`
 
 const getStats = async (): Promise<Stats> => {

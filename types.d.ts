@@ -1,3 +1,5 @@
+import { string } from 'zod'
+
 interface WhatWeDo {
 	title: string
 	description: string
@@ -101,4 +103,21 @@ interface SubService {
 	description: string
 	content: string
 	imageUrl: string
+}
+
+interface Media {
+	id: string
+	title: string
+	description: string
+	content: string
+	imageUrl: string
+	type: string
+	createdAt: string
+	category: Category
+}
+
+interface Category {
+	id: string
+	title: string
+	description: string
 }

@@ -6,17 +6,12 @@ import { Separator } from '@radix-ui/react-separator'
 import Heading from '@/app/components/Heading'
 import { ResourceColumn, columns } from '../[resource]/components/columns'
 import Footer from '@/app/components/footer'
-import { Tabs } from 'antd'
 import getProcurementType from '@/actions/getProcurementType'
 import { useQuery } from '@tanstack/react-query'
 import { format } from 'date-fns'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
-const { TabPane } = Tabs
 const Procurement = () => {
-	function callback(key: string) {
-		console.log(key)
-	}
-
 	const { data: tenders, isLoading } = useQuery({
 		queryKey: ['tendersData'],
 		queryFn: async () => await getProcurementType('tenders'),
@@ -164,53 +159,73 @@ const Procurement = () => {
 						/>
 						<Separator />
 
-						<Tabs defaultActiveKey="tenders" onChange={callback}>
-							<TabPane tab="Tenders" key="tenders">
+						<Tabs defaultValue="tenders" className="w-full">
+							<TabsList className="w-full h-full text-xs grid grid-cols-2 lg:grid-cols-3">
+								<TabsTrigger className="text-xs" value="tenders">
+									Tenders
+								</TabsTrigger>
+								<TabsTrigger className="text-xs" value="best_evaluated_bidder">
+									Best Evaluated Bidder
+								</TabsTrigger>
+								<TabsTrigger className="text-xs" value="invitation_for_bids">
+									Invitation For Bids
+								</TabsTrigger>
+								<TabsTrigger
+									className="text-xs"
+									value="request_for_clarifications">
+									Request For Clarifications
+								</TabsTrigger>
+								<TabsTrigger className="text-xs" value="general_information">
+									General Information
+								</TabsTrigger>
+								<TabsTrigger
+									className="text-xs"
+									value="annual_procurement_plan">
+									Annual Procurement Plan
+								</TabsTrigger>
+							</TabsList>
+							<TabsContent value="tenders">
 								<DataTable
 									columns={columns}
 									data={formattedResource}
 									searchKey="title"
 								/>
-							</TabPane>
-							<TabPane tab="Best Evaluated Bidder" key="best_evaluated_bidder">
+							</TabsContent>
+							<TabsContent value="best_evaluated_bidder">
 								<DataTable
 									columns={columns}
 									data={formattedResource2}
-									searchKey="resourceName"
+									searchKey="title"
 								/>
-							</TabPane>
-							<TabPane tab="Invitation For Bids" key="invitation_for_bids">
+							</TabsContent>
+							<TabsContent value="invitation_for_bids">
 								<DataTable
 									columns={columns}
 									data={formattedResource6}
-									searchKey="resourceName"
+									searchKey="title"
 								/>
-							</TabPane>
-							<TabPane
-								tab="Request For Clarifications"
-								key="request_for_clarifications">
+							</TabsContent>
+							<TabsContent value="request_for_clarifications">
 								<DataTable
 									columns={columns}
 									data={formattedResource5}
-									searchKey="resourceName"
+									searchKey="title"
 								/>
-							</TabPane>
-							<TabPane tab="General Information" key="general_information">
+							</TabsContent>
+							<TabsContent value="general_information">
 								<DataTable
 									columns={columns}
 									data={formattedResource4}
-									searchKey="resourceName"
+									searchKey="title"
 								/>
-							</TabPane>
-							<TabPane
-								tab="Annual Procurement Plan"
-								key="annual_procurement_plan">
+							</TabsContent>
+							<TabsContent value="annual_procurement_plan">
 								<DataTable
 									columns={columns}
 									data={formattedResource3}
-									searchKey="resourceName"
+									searchKey="title"
 								/>
-							</TabPane>
+							</TabsContent>
 						</Tabs>
 					</div>
 					<div className="col-span-1 hidden lg:block">
@@ -218,7 +233,6 @@ const Procurement = () => {
 					</div>
 				</div>
 			</div>
-			<Footer />
 		</>
 	)
 }

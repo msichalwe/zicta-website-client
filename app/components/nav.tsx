@@ -13,9 +13,9 @@ const Navbar = () => {
 	const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
 
 	return (
-		<nav>
+		<nav className="sticky w-full z-[90]">
 			<div
-				className={`bg-white  text-zicta-blue ${flexBetween} shadow-lg  top-0 z-30  w-full py-4 `}>
+				className={`bg-white text-zicta-blue ${flexBetween} shadow-lg  top-0 z-30  w-full py-4 `}>
 				<div className={`${flexBetween} mx-auto w-5/6`}>
 					<div className={`${flexBetween} w-full gap-16`}>
 						<Link href={'/'}>

@@ -52,16 +52,16 @@ export const MainNav = ({
 			title: 'Media',
 			items: [
 				{
-					title: 'Action',
-					description: 'This is a description',
+					title: 'News',
+					description: 'Keep up to date with the latest news from ZICTA',
 				},
 				{
-					title: 'Another action',
-					description: 'This is a description',
+					title: 'Events',
+					description: 'Real time updates on events happening at ZICTA',
 				},
 				{
-					title: 'Something else here',
-					description: 'This is a description',
+					title: 'Publications',
+					description: 'Publications from ZICTA',
 				},
 			],
 		},
