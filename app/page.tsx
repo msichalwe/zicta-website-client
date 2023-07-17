@@ -15,6 +15,8 @@ import getBanner from '@/actions/getBanner'
 import getWhatWeDo from '@/actions/getWhatWeDo'
 import getStats from '@/actions/getStats'
 import getTestimonial from '@/actions/getTestimonial'
+import getFaqs from '@/actions/getFaq'
+import getMediaType from '@/actions/getMediaType'
 
 export const revalidate = 0
 export default async function Home() {
@@ -23,19 +25,21 @@ export default async function Home() {
 	const whatWeDo = await getWhatWeDo()
 	const stats = await getStats()
 	const testimonial = await getTestimonial()
+	const faqs = await getFaqs()
+	const media = await getMediaType('news')
 
 	return (
-		<main>
+		<main className="min-h-screen">
 			<HeroSlide data={hero} />
 			<LatestBanner data={banner} />
 			<Hero data={whatWeDo} />
 			<SectionTemp />
 			<StatSection data={stats} />
-			<ProjectSection />
+			<ProjectSection data={media} />
 			<Testimonial data={testimonial} />
 			<PartnersSection />
-			<MediaSection />
-			<FaqSection />
+			<MediaSection data={media} />
+			<FaqSection data={faqs} />
 			<MapSection />
 			<ContactSection />
 		</main>

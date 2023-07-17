@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Lock, CalendarCheck2, LineChart } from 'lucide-react'
 import { WhatWeDo, WhatWeDoCard } from '@/types'
+import Link from 'next/link'
 
 interface WhatWeDoProps {
 	data: WhatWeDo
@@ -67,11 +68,13 @@ const Hero: React.FC<WhatWeDoProps> = ({ data }) => {
 									transition={{ duration: 1, delay: 1.2 }}>
 									<motion.p className="flex-auto">{feature.content}</motion.p>
 									<motion.p className="mt-6">
-										<AnchorLink
-											href={`/services/${feature.title.toLowerCase()}}`}
+										<Link
+											href={`/services/${feature.title
+												.toLowerCase()
+												.replace(/ /g, '-')}`}
 											className="text-sm font-semibold leading-6 text-zicta-blue">
 											Learn more <span aria-hidden="true">→</span>
-										</AnchorLink>
+										</Link>
 									</motion.p>
 								</motion.dd>
 							</motion.div>

@@ -4,13 +4,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { MainNav } from './main-nav'
-import { AlignJustify, X } from 'lucide-react'
+import { AlignJustify, Search, X } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 const Navbar = () => {
 	const flexBetween = 'flex items-center justify-between'
 	const isAboveMediumScreens = useMediaQuery('(min-width: 786px)')
 	const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
 	const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
+
+	const router = useRouter()
 
 	return (
 		<nav className="sticky w-full z-[90]">
@@ -41,6 +45,11 @@ const Navbar = () => {
 								</button>
 							</div>
 						)}
+						{/* <div>
+							<Button variant="ghost" onClick={() => router.push('/search')}>
+								Search <Search className="ml-2 h-5 w-5" />
+							</Button>
+						</div> */}
 					</div>
 				</div>
 			</div>
