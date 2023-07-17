@@ -1,36 +1,20 @@
 'use client'
+
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from '@/components/ui/accordion'
+import { Faq } from '@/types'
+import HTMLReactParser from 'html-react-parser'
 import React from 'react'
 
-const faqs = [
-	{
-		id: 1,
-		question: "What's the best thing about Switzerland?",
+interface FaqSectionPorps {
+	data: Faq[]
+}
 
-		answer:
-			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-	},
-
-	{
-		id: 2,
-		question: 'How do you make holy water?',
-
-		answer:
-			'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
-	},
-	{
-		id: 3,
-		question: 'What do you call someone with no body and no nose?',
-		answer:
-			'Nobody knows. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
-	},
-]
-const FaqSection = () => {
+const FaqSection: React.FC<FaqSectionPorps> = ({ data: faqs }) => {
 	return (
 		<div className="bg-white shadow-sm">
 			<div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
@@ -40,10 +24,12 @@ const FaqSection = () => {
 					</h2>
 					<dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
 						<Accordion type="single" collapsible className="w-full">
-							{faqs.map((faq) => (
+							{faqs?.map((faq) => (
 								<AccordionItem value={faq.question}>
 									<AccordionTrigger>{faq.question}</AccordionTrigger>
-									<AccordionContent>{faq.answer}</AccordionContent>
+									<AccordionContent>
+										{faq && faq.answer ? HTMLReactParser(faq.answer) : null}
+									</AccordionContent>
 								</AccordionItem>
 							))}
 						</Accordion>

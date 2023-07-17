@@ -19,7 +19,12 @@ const MediaPost: React.FC<MediaPostProps> = ({ params }) => {
 		queryFn: async () => await getMedia(params.mediaType, params.mediaId),
 	})
 
-	if (isLoading) return <div>Loading...</div>
+	if (isLoading)
+		return (
+			<div className="h-screen flex items-center justify-center">
+				Loading...
+			</div>
+		)
 
 	return (
 		<div className="w-full">
@@ -36,7 +41,7 @@ const MediaPost: React.FC<MediaPostProps> = ({ params }) => {
 							alt="blog image"
 							className="w-full min-h-[300px] object-cover rounded-xl  drop-shadow-lg full"
 						/>
-						<div className="flex items-center gap-[10px] py-10 "></div>
+						<div className="flex items-center gap-[10px] py-10 " />
 						<h1 className="text-lg font-bold text-zicta-blue pb-10">
 							<Balancer>{data?.description}</Balancer>
 						</h1>
@@ -46,8 +51,7 @@ const MediaPost: React.FC<MediaPostProps> = ({ params }) => {
 					</div>
 				</div>
 				<p className="text-justify leading-8 content ">
-					{/* @ts-ignore */}
-					{Parser(data?.content)}
+					{data && data.content ? Parser(data.content) : null}
 				</p>
 			</div>
 		</div>

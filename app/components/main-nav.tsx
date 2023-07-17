@@ -136,7 +136,7 @@ export const MainNav = ({
 									href={
 										nav.title.toLowerCase() === 'home'
 											? '/'
-											: nav.title.toLowerCase()
+											: nav.title.toLowerCase().replace(/[\s&]+/g, '-')
 									}
 									legacyBehavior
 									passHref>

@@ -19,7 +19,7 @@ const MediaType = () => {
 	})
 
 	return (
-		<div className=" w-5/6 mx-auto">
+		<div className=" w-5/6 mx-auto mt-10 min-h-screen ">
 			<div className="bg-peaks bg-no-repeat w-full bg-cover  h-full min-h-[400px] rounded-xl mb-20 flex items-center justify-center">
 				<h1 className="text-4xl text-white font-medium">
 					{params.mediaType.toUpperCase()}
