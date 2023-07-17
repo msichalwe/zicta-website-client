@@ -14,6 +14,9 @@ import {
 import { FieldValues, useForm, SubmitHandler } from 'react-hook-form'
 import { useEffect, useState } from 'react'
 import { Textarea } from '@/components/ui/textarea'
+import axios from 'axios'
+import { toast } from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
 
 const formSchema = z.object({
 	name: z
@@ -22,9 +25,10 @@ const formSchema = z.object({
 	email: z.string().email({
 		message: 'Invalid email address',
 	}),
-	phoneNumber: z
+	subject: z
 		.string()
-		.min(10, { message: 'Must be 5 or more characters long' }),
+		.min(1, { message: 'Subject must be 2 or more characters long' }),
+	phone: z.string().min(10, { message: 'Must be 5 or more characters long' }),
 	message: z
 		.string()
 		.min(1, { message: 'Message must be 2 or more characters long' }),
@@ -34,6 +38,8 @@ type FormValues = z.infer<typeof formSchema>
 
 const ContactForm = () => {
 	const [isLoading, setIsLoading] = useState(false)
+
+	const router = useRouter()
 
 	// const [isMounted, setIsMounted] = useState(false)
 
@@ -51,14 +57,26 @@ const ContactForm = () => {
 			name: '',
 			email: '',
 			message: '',
-			phoneNumber: '',
+			phone: '',
+			subject: '',
 		},
 	})
 
 	const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-		setIsLoading(true)
-		console.log(data)
-		setIsLoading(false)
+		try {
+			setIsLoading(true)
+			await axios.post(
+				`${process.env.NEXT_PUBLIC_API_URL}/complaints-queries`,
+				data,
+			)
+			router.refresh()
+			toast.success('Your Message has been submitted successfully')
+			form.reset()
+		} catch (error) {
+			toast.error('Something went wrong, please try again')
+		} finally {
+			setIsLoading(false)
+		}
 	}
 
 	return (
@@ -100,7 +118,24 @@ const ContactForm = () => {
 						)}
 					/>
 					<FormField
-						name="email"
+						name="subject"
+						control={form.control}
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>Subject</FormLabel>
+								<FormControl>
+									<Input
+										disabled={isLoading}
+										placeholder="Subject "
+										{...field}
+									/>
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+					<FormField
+						name="phone"
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
