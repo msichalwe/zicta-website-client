@@ -14,62 +14,159 @@ import {
 } from '@/components/ui/navigation-menu'
 import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import React from 'react'
+import { useQuery } from '@tanstack/react-query'
+import getAllServices from '@/actions/getAllServices'
 
 export const MainNav = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLElement>) => {
 	const pathname = usePathname()
-	const params = useParams()
-	const routes = [
+	const { data: services, isLoading } = useQuery({
+		queryKey: ['servicesData'],
+		queryFn: getAllServices,
+	})
+
+	const data = [
 		{
-			href: `/dashboard`,
-			label: 'Dashboard',
-			active: pathname === '/dashboard',
+			title: 'Home',
 		},
 		{
-			href: `/dashboard/properties`,
-			label: 'Properties',
-			active: pathname === '/dashboard/properties',
+			title: 'About',
+			items: [
+				{
+					title: 'Action',
+					description: 'This is a description',
+				},
+				{
+					title: 'Another action',
+					description: 'This is a description',
+				},
+				{
+					title: 'Something else here',
+					description: 'This is a description',
+				},
+			],
 		},
 		{
-			href: `/dashboard/settings`,
-			label: 'Settings',
-			active: pathname === '/dashboard/settings',
+			title: 'Media',
+			items: [
+				{
+					title: 'News',
+					description: 'Keep up to date with the latest news from ZICTA',
+				},
+				{
+					title: 'Events',
+					description: 'Real time updates on events happening at ZICTA',
+				},
+				{
+					title: 'Publications',
+					description: 'Publications from ZICTA',
+				},
+			],
+		},
+		{
+			title: 'Services',
+
+			items: services?.map((item) => ({
+				title: item.title,
+				description: item.description,
+			})),
+		},
+		// {
+		// 	title: 'Departments',
+
+		// 	items: [
+		// 		{
+		// 			title: 'Cyber Security',
+		// 			description:
+		// 				'The cybersecurity department is responsible for the security of the internet',
+		// 		},
+		// 		{
+		// 			title: 'Universal Access',
+		// 			description:
+		// 				'Universal access is the deparment that enables all citizens to access the internet',
+		// 		},
+		// 		{
+		// 			title: 'Technology and Engineering',
+		// 			description:
+		// 				'Technology and Engineering is the department that is responsible for the development of technology',
+		// 		},
+		// 	],
+		// },
+		{
+			title: 'Resources',
+
+			items: [
+				{
+					title: 'Legislation',
+					description: '',
+				},
+				{
+					title: 'Guidelines',
+					description: '',
+				},
+				{
+					title: 'Strategic Plans',
+					description: '',
+				},
+				{
+					title: 'Procurement',
+				},
+				,
+				{
+					title: 'Press Releases',
+				},
+			],
+		},
+		{
+			title: 'Complaints & Queries',
 		},
 	]
+
 	return (
-		<nav className={cn('flex items-center space-x-4 lg:space-x-6', className)}>
-			<NavigationMenu>
-				<NavigationMenuList className="gap-2">
-					{data.map((item) => (
+		<nav>
+			<NavigationMenu
+				className={cn('flex items-center space-x-4 lg:space-x-6 flex-col')}>
+				<NavigationMenuList className={cn('gap-2 ', className)}>
+					{data.map((nav) => (
 						<NavigationMenuItem>
-							{!item.navbarDropdown ? (
+							{!nav.items ? (
 								<Link
 									href={
-										item.navTitle.toLowerCase() === 'home'
+										nav.title.toLowerCase() === 'home'
 											? '/'
-											: item.navTitle.toLowerCase()
+											: nav.title.toLowerCase()
 									}
 									legacyBehavior
 									passHref>
-									<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-										{item.navTitle}
+									<NavigationMenuLink
+										className={cn(
+											'bg-transparent hover:bg-transparent focus:bg-transparent',
+											navigationMenuTriggerStyle(),
+										)}>
+										{nav.title}
 									</NavigationMenuLink>
 								</Link>
 							) : (
-								<NavigationMenuTrigger>{item.navTitle}</NavigationMenuTrigger>
+								<NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent">
+									{nav.title}
+								</NavigationMenuTrigger>
 							)}
 							<NavigationMenuContent>
-								{item.navbarDropdown?.items.map((nav) => (
-									<ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-										<ListItem
-											href={`/${nav.title.toLowerCase()}`}
-											title={nav.title}>
-											{nav?.description}
-										</ListItem>
-									</ul>
-								))}
+								<ul className="grid w-[300px] gap-3 p-4 h-full md:w-[500px] grid-cols-2 lg:w-[600px] ">
+									{nav.items?.map((item) => {
+										const href = `/${nav.title.toLowerCase()}/${item?.title
+											.toLowerCase()
+											.replace(/ /g, '-')}`
+
+										return (
+											<ListItem href={href} title={item?.title}>
+												{item?.description}
+											</ListItem>
+										)
+									})}
+								</ul>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 					))}
@@ -103,86 +200,3 @@ const ListItem = React.forwardRef<
 	)
 })
 ListItem.displayName = 'ListItem'
-
-const data = [
-	{
-		navTitle: 'Home',
-	},
-	{
-		navTitle: 'About',
-		navbarDropdown: {
-			items: [
-				{
-					title: 'Action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Another action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Something else here',
-					description: 'This is a description',
-				},
-			],
-		},
-	},
-	{
-		navTitle: 'Media',
-		navbarDropdown: {
-			items: [
-				{
-					title: 'Action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Another action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Something else here',
-					description: 'This is a description',
-				},
-			],
-		},
-	},
-	{
-		navTitle: 'Services',
-		navbarDropdown: {
-			items: [
-				{
-					title: 'Action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Another action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Something else here',
-				},
-			],
-		},
-	},
-	{
-		navTitle: 'Departments',
-		navbarDropdown: {
-			items: [
-				{
-					title: 'Action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Another action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Something else here',
-				},
-			],
-		},
-	},
-	{
-		navTitle: 'Contact',
-	},
-]
