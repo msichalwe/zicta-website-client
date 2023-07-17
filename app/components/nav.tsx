@@ -17,7 +17,10 @@ const Navbar = () => {
 	const router = useRouter()
 
 	return (
-		<nav className="sticky w-full z-[90]">
+		<nav
+			className={`sticky ${
+				isTopOfPage ? 'top-0' : 'transform -translate-y-full'
+			} w-full z-[90] transition-transform duration-200 ease-in-out`}>
 			<div
 				className={`bg-white text-zicta-blue ${flexBetween} shadow-lg  top-0 z-30  w-full py-4 `}>
 				<div className={`${flexBetween} mx-auto w-5/6`}>

@@ -33,20 +33,6 @@ export const MainNav = ({
 		},
 		{
 			title: 'About',
-			items: [
-				{
-					title: 'Action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Another action',
-					description: 'This is a description',
-				},
-				{
-					title: 'Something else here',
-					description: 'This is a description',
-				},
-			],
 		},
 		{
 			title: 'Media',
@@ -136,6 +122,10 @@ export const MainNav = ({
 									href={
 										nav.title.toLowerCase() === 'home'
 											? '/'
+											: nav.title.toLowerCase() === 'about'
+											? '/about'
+											: nav.title.toLowerCase() === 'complaints & queries'
+											? '/complaints-queries'
 											: nav.title.toLowerCase().replace(/[\s&]+/g, '-')
 									}
 									legacyBehavior

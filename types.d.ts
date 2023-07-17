@@ -52,6 +52,14 @@ interface Testimonial {
 	title: string
 }
 
+interface About {
+	id: string
+	title: string
+	description: string
+	content: string
+	imageUrl: string
+}
+
 interface Faq {
 	id: string
 	question: string

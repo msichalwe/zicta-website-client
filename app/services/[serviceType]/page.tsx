@@ -24,16 +24,16 @@ const Service: React.FC<ServicePageProps> = async ({ params }) => {
 					<div className="bg-black absolute opacity-60 top-0 left-0 right-0 bottom-0" />
 				</div>
 				<div className=" mt-[20vh] h-full pb-10">
-					<div className="flex flex-col lg:flex-row mt-10 gap-32">
-						<div className="basis-4/5 flex-col gap-[30px]">
-							<h1 className="text-lg font-medium text-zicta-blue pb-10">
+					<div className="grid grid-cols-1 gap-5 md:grid-cols-3 h-full w-full mb-10 mx-2">
+						<div className=" col-span-2 flex-col ">
+							<h1 className="text-2xl font-medium text-zicta-blue pb-10">
 								{service.description}
 							</h1>
 							<div className=" content text-justify leading-8">
 								{Parser(service?.content)}
 							</div>
 						</div>
-						<div className="basis-1/5">
+						<div className="col-span-1 hidden md:block">
 							<SideMenu />
 						</div>
 					</div>
