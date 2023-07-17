@@ -3,20 +3,17 @@ import React, { useLayoutEffect, useRef } from 'react'
 import Slider from 'react-slick'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import { useQuery } from '@tanstack/react-query'
-import getMediaType from '@/actions/getMediaType'
 import Link from 'next/link'
 import { format } from 'date-fns'
 import { Balancer } from 'react-wrap-balancer'
+import { Media } from '@/types'
 
-const MediaSection = () => {
+interface MediaSectionProps {
+	data: Media[]
+}
+
+const MediaSection: React.FC<MediaSectionProps> = ({ data }) => {
 	const ref2 = useRef(null)
-
-	const { data, isLoading } = useQuery({
-		queryKey: ['mediaData'],
-		queryFn: async () => await getMediaType('news'),
-	})
-	console.log('🚀 ~ file: media-section.tsx:134 ~ MediaSection ~ data:', data)
 
 	gsap.registerPlugin(ScrollTrigger)
 	useLayoutEffect(() => {
@@ -36,7 +33,6 @@ const MediaSection = () => {
 		}
 	}, [])
 
-	if (isLoading) return <div>Loading...</div>
 	return (
 		<div className="bg-zicta-blue-light  py-24 sm:py-32 z-[-10]" ref={ref2}>
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
