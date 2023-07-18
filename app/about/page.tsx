@@ -5,9 +5,12 @@ import SideMenu from '../components/side-menu'
 import Parser from 'html-react-parser'
 import getAbout from '@/actions/getAbout'
 import { Balancer } from 'react-wrap-balancer'
+import getTestimonial from '@/actions/getTestimonial'
+import Testimonial from '../sections/testimonial-section'
 
 const About = async () => {
 	const data = await getAbout()
+	const testimonial = await getTestimonial()
 	return (
 		<div className=" w-5/6 mx-auto my-10 min-h-screen ">
 			<div
@@ -32,6 +35,7 @@ const About = async () => {
 					<SideMenu />
 				</div>
 			</div>
+			<Testimonial data={testimonial} />
 		</div>
 	)
 }

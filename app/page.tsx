@@ -25,7 +25,7 @@ export default async function Home() {
 	const banner = await getBanner()
 	const whatWeDo = await getWhatWeDo()
 	const stats = await getStats()
-	const testimonial = await getTestimonial()
+
 	const faqs = await getFaqs()
 	const media = await getMediaType('news')
 
@@ -37,9 +37,7 @@ export default async function Home() {
 			<Hero data={whatWeDo} />
 			<SectionTemp />
 			<StatSection data={stats} />
-			<ProjectSection data={media} />
-			<Testimonial data={testimonial} />
-			<PartnersSection />
+
 			<MediaSection data={media} />
 			<FaqSection data={faqs} />
 			<MapSection />
