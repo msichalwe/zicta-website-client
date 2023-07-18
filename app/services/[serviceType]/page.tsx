@@ -16,7 +16,7 @@ const Service: React.FC<ServicePageProps> = async ({ params }) => {
 		<>
 			<div className="w-5/6 mx-auto mt-[10vh]">
 				<div
-					className="rounded-xl flex items-center justify-center relative aspect-square md:aspect-[2.4/1] bg-cover overflow-hidden "
+					className="rounded-xl flex items-center justify-center relative  w-full  h-full min-h-[400px] bg-cover overflow-hidden "
 					style={{ backgroundImage: `url(${service.imageUrl})` }}>
 					<h1 className="text-7xl text-white font-medium z-[1] ">
 						{service.title}

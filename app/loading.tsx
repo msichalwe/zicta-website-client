@@ -1,9 +1,10 @@
+import Spinner from './components/Spinner'
+
 export default function Loading() {
 	// You can add any UI inside Loading, including a Skeleton.
 	return (
 		<div className="z-50 bg-white h-screen flex items-center flex-col gap-2 justify-center">
-			<div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-zicta-blue"></div>
-			<p className="text-zicta-blue animate-pulse">Loading...</p>
+			<Spinner />
 		</div>
 	)
 }

@@ -1,17 +1,11 @@
 'use client'
 import React, { useLayoutEffect, useRef } from 'react'
-import HeroSlider, { Overlay, Slide } from 'hero-slider'
-import { ArrowUpRight } from 'lucide-react'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import HeroSlider, { Nav, Overlay, Slide } from 'hero-slider'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { Balancer } from 'react-wrap-balancer'
 import { Hero, HeroImage } from '@/types'
-
-const image1 = '/assets/zicta-home.jpg'
-const image2 = '/assets/zicta-strength.jpg'
-const image3 = '/assets/zicta-urge.jpg'
 
 type HeroProps = {
 	data: Hero
@@ -40,22 +34,16 @@ const HeroSlide: React.FC<HeroProps> = ({ data }) => {
 	return (
 		<div className="z-[-1]" ref={ref}>
 			<HeroSlider
-				height={'100vh'}
+				height={'92vh'}
 				autoplay
+				animations={{}}
+				accessibility={{
+					shouldDisplayButtons: false,
+				}}
 				controller={{
 					initialSlide: 1,
 					slidingDuration: 500,
 					slidingDelay: 100,
-					onSliding: (nextSlide) =>
-						console.debug('onSliding(nextSlide): ', nextSlide),
-					onBeforeSliding: (previousSlide, nextSlide) =>
-						console.debug(
-							'onBeforeSliding(previousSlide, nextSlide): ',
-							previousSlide,
-							nextSlide,
-						),
-					onAfterSliding: (nextSlide) =>
-						console.debug('onAfterSliding(nextSlide): ', nextSlide),
 				}}>
 				<Overlay className="relative">
 					<motion.div
@@ -73,15 +61,12 @@ const HeroSlide: React.FC<HeroProps> = ({ data }) => {
 								x: 0,
 							},
 						}}
-						className=" max-w-4xl  text-white space-y-5  z-10 px-10 flex justify-center items-start md:pl-32 flex-col w-full h-full">
-						<h1 className=" text-4xl relative md:text-5xl font-bold">
+						className=" max-w-4xl  text-white space-y-5  z-10  flex justify-center items-start  flex-col w-full h-full">
+						<h1 className=" text-4xl relative md:text-6xl pl-[100px] font-bold">
 							{' '}
 							<Balancer>{data?.title} </Balancer>{' '}
-							<div className="absolute left-[-30px] top-0 h-full w-[20px] bg-[#F8B129]" />
+							<div className="absolute left-[-20px] top-0 h-full w-[75px] bg-[#F8B129]" />
 						</h1>
-						<p className="text-xs sm:text-lg">
-							<Balancer>{data?.content}</Balancer>
-						</p>
 					</motion.div>
 					<div className="bg-black opacity-60 absolute z-[-1] top-0 left-0 right-0 bottom-0 " />
 				</Overlay>
@@ -94,6 +79,13 @@ const HeroSlide: React.FC<HeroProps> = ({ data }) => {
 						}}
 					/>
 				))}
+				<Nav
+					position={{
+						bottom: '1.5rem',
+						left: '50%',
+						transform: 'translateX(-50%)',
+					}}
+				/>
 			</HeroSlider>
 		</div>
 	)

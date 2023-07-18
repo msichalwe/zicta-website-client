@@ -53,7 +53,7 @@ const ProjectSection: React.FC<MediaSectionProps> = ({ data }) => {
 								<img
 									className="object-cover object-center w-full h-64 rounded-lg lg:h-80"
 									src={post.imageUrl}
-									alt=""
+									alt={post.title}
 								/>
 
 								<div className="mt-8">
@@ -61,11 +61,11 @@ const ProjectSection: React.FC<MediaSectionProps> = ({ data }) => {
 										{post.category.title}
 									</span>
 
-									<h1 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white">
+									<h1 className="mt-4 text-xl font-semibold text-gray-800 line-clamp-2">
 										{post.title}
 									</h1>
 
-									<p className="mt-2 text-gray-500 dark:text-gray-400">
+									<p className="mt-2 text-gray-500 line-clamp-2">
 										{post.description}
 									</p>
 

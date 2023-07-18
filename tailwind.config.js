@@ -51,7 +51,7 @@ module.exports = {
 					foreground: 'hsl(var(--card-foreground))',
 				},
 				'zicta-blue': '#313180',
-				'zicta-blue-light': '#E6EDEF',
+				'zicta-yellow': '#F8B129',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

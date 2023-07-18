@@ -38,6 +38,11 @@ const Navbar = () => {
 						{isAboveMediumScreens ? (
 							<div className={`flex w-full items-center justify-end `}>
 								<MainNav className="mx-6 " />
+								<Link href="/search" className="text-lg pl-5 font-bold ">
+									<Button variant={'ghost'} className="">
+										<Search className="h-5 w-5 pr-1" /> Search
+									</Button>
+								</Link>
 							</div>
 						) : (
 							<div>
@@ -48,10 +53,10 @@ const Navbar = () => {
 								</button>
 							</div>
 						)}
-						{/* <div>
-							<Button variant="ghost" onClick={() => router.push('/search')}>
-								Search <Search className="ml-2 h-5 w-5" />
-							</Button>
+						{/* <div> 
+							<Button variant="ghost" onClick={() => router.push('/search')}> 
+								Search <Search className="ml-2 h-5 w-5" /> 
+							</Button> 
 						</div> */}
 					</div>
 				</div>
@@ -70,6 +75,18 @@ const Navbar = () => {
 					</div>
 				</div>
 			)}
+			<div className="w-full p-2 bg-zicta-blue flex items-center justify-end ">
+				<div className="w-5/6 mx-auto flex justify-end ">
+					<Link href="/complaints-queries" className="text-white text-xs   ">
+						Report Child Abuse
+					</Link>
+					<Link
+						href="/complaints-queries"
+						className="text-zicta-yellow text-xs pl-5 ">
+						Complaints & Queries
+					</Link>
+				</div>
+			</div>
 		</nav>
 	)
 }

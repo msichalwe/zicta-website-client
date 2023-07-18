@@ -17,6 +17,7 @@ import getStats from '@/actions/getStats'
 import getTestimonial from '@/actions/getTestimonial'
 import getFaqs from '@/actions/getFaq'
 import getMediaType from '@/actions/getMediaType'
+import ServicesSection from './sections/services-section'
 
 export const revalidate = 0
 export default async function Home() {
@@ -31,6 +32,7 @@ export default async function Home() {
 	return (
 		<main className="min-h-screen">
 			<HeroSlide data={hero} />
+			<ServicesSection />
 			<LatestBanner data={banner} />
 			<Hero data={whatWeDo} />
 			<SectionTemp />

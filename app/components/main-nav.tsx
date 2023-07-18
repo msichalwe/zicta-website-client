@@ -105,9 +105,6 @@ export const MainNav = ({
 				},
 			],
 		},
-		{
-			title: 'Complaints & Queries',
-		},
 	]
 
 	return (
