@@ -37,11 +37,8 @@ export default async function Home() {
 			<Hero data={whatWeDo} />
 			<SectionTemp />
 			<StatSection data={stats} />
-
 			<MediaSection data={media} />
 			<FaqSection data={faqs} />
-			<MapSection />
-			<ContactSection />
 		</main>
 	)
 }

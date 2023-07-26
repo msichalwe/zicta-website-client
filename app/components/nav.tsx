@@ -77,7 +77,9 @@ const Navbar = () => {
 			)}
 			<div className="w-full p-2 bg-zicta-blue flex items-center justify-end ">
 				<div className="w-5/6 mx-auto flex justify-end ">
-					<Link href="/complaints-queries" className="text-white text-xs   ">
+					<Link
+						href="https://report.iwf.org.uk/zm"
+						className="text-white text-xs   ">
 						Report Child Abuse
 					</Link>
 					<Link

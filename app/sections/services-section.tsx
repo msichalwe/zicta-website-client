@@ -52,13 +52,16 @@ const ServicesSection = () => {
 							{/* Black overlay */}
 							<div className="absolute inset-0 bg-black opacity-50"></div>
 
-							<div className="absolute  flex flex-col justify-between h-full">
+							<div className="absolute text-white flex flex-col justify-between h-full">
 								<CardHeader>
-									<CardTitle className="text-white">{service.title}</CardTitle>
+									<CardTitle className="text-white text-lg text-center md:text-2xl ">
+										{service.title}
+									</CardTitle>
 								</CardHeader>
 
 								<CardFooter className=" text-white">
 									<Button
+										size={'sm'}
 										className="bg-transparent border border-white hover:bg-white hover:text-black "
 										onClick={() =>
 											router.push(
@@ -67,7 +70,7 @@ const ServicesSection = () => {
 													.replace(/[\s&]+/g, '-')}`,
 											)
 										}>
-										Tell Me More
+										Learn More
 									</Button>
 								</CardFooter>
 							</div>

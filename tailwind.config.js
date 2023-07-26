@@ -77,6 +77,7 @@ module.exports = {
 				peaks: "url('/assets/bg-peaks.svg')",
 				poly: "url('/assets/bg-poly.svg')",
 				circle: "url('/assets/bg-circle.svg')",
+				apply: "url('/assets/apply-bg.svg')",
 			},
 		},
 	},

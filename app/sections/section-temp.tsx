@@ -60,7 +60,7 @@ const SectionTemp = () => {
 								x: 0,
 							},
 						}}>
-						<AnchorLink href={'#services'}>
+						{/* <AnchorLink href={'#services'}>
 							<button
 								className={`md:px-8 md:py-4 py-2 px-4 border border-1 ${
 									light
@@ -71,7 +71,7 @@ const SectionTemp = () => {
 									Learn More <ArrowUpRight className="h-5 w-5  " />
 								</div>
 							</button>
-						</AnchorLink>
+						</AnchorLink> */}
 					</motion.div>
 				</div>
 			</motion.div>

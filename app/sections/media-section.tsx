@@ -1,8 +1,5 @@
 'use client'
-import React, { useLayoutEffect, useRef } from 'react'
 import Slider from 'react-slick'
-import { gsap } from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import { format } from 'date-fns'
 import { Balancer } from 'react-wrap-balancer'
@@ -13,28 +10,8 @@ interface MediaSectionProps {
 }
 
 const MediaSection: React.FC<MediaSectionProps> = ({ data }) => {
-	const ref2 = useRef(null)
-
-	gsap.registerPlugin(ScrollTrigger)
-	useLayoutEffect(() => {
-		const element = ref2.current
-
-		ScrollTrigger.create({
-			trigger: element,
-			start: 'top top',
-			end: 'bottom',
-			pin: true,
-			pinSpacing: false,
-			scrub: true,
-		})
-
-		return () => {
-			ScrollTrigger.killAll()
-		}
-	}, [])
-
 	return (
-		<div className="bg-zicta-blue-light  py-24 sm:py-32 z-[-10]" ref={ref2}>
+		<div className="bg-zicta-blue-light  py-24 sm:py-32 z-[-10]">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl text-center">
 					<h2 className="text-3xl font-bold tracking-tight text-zicta-blue sm:text-4xl">
@@ -66,8 +43,6 @@ const MediaSection: React.FC<MediaSectionProps> = ({ data }) => {
 								breakpoint: 768,
 								settings: {
 									slidesToShow: 1,
-									verticalSwiping: true,
-									vertical: true,
 								},
 							},
 						]}>

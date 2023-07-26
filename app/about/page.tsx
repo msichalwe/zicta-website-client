@@ -16,7 +16,7 @@ const About = async () => {
 			<div
 				className="rounded-xl flex items-center justify-center relative aspect-square md:aspect-[2.4/1] mb-10 bg-cover overflow-hidden "
 				style={{ backgroundImage: `url(${data.imageUrl})` }}>
-				<h1 className="text-4xl text-white font-bold z-[1] ">
+				<h1 className=" text-lg text-center md:text-4xl text-white font-bold z-[1] ">
 					<Balancer>{data.title}</Balancer>
 				</h1>
 				<div className="bg-black absolute opacity-60 top-0 left-0 right-0 bottom-0" />

@@ -61,11 +61,11 @@ const HeroSlide: React.FC<HeroProps> = ({ data }) => {
 								x: 0,
 							},
 						}}
-						className=" max-w-4xl  text-white space-y-5  z-10  flex justify-center items-start  flex-col w-full h-full">
-						<h1 className=" text-4xl relative md:text-6xl pl-[100px] font-bold">
+						className=" max-w-5xl  text-white space-y-5  z-10  flex justify-center items-start  flex-col w-full h-full">
+						<h1 className=" text-4xl relative md:text-6xl pl-[50px] md:pl-[100px] font-bold">
 							{' '}
 							<Balancer>{data?.title} </Balancer>{' '}
-							<div className="absolute left-[-20px] top-0 h-full w-[75px] bg-[#F8B129]" />
+							<div className="absolute left-[-20px] top-0 h-full w-[45px] md:w-[75px] bg-[#F8B129]" />
 						</h1>
 					</motion.div>
 					<div className="bg-black opacity-60 absolute z-[-1] top-0 left-0 right-0 bottom-0 " />

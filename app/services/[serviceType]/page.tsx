@@ -18,7 +18,7 @@ const Service: React.FC<ServicePageProps> = async ({ params }) => {
 				<div
 					className="rounded-xl flex items-center justify-center relative  w-full  h-full min-h-[400px] bg-cover overflow-hidden "
 					style={{ backgroundImage: `url(${service.imageUrl})` }}>
-					<h1 className="text-7xl text-white font-medium z-[1] ">
+					<h1 className="md:text-7xl text-4xl text-white font-medium z-[1] ">
 						{service.title}
 					</h1>
 					<div className="bg-black absolute opacity-60 top-0 left-0 right-0 bottom-0" />
@@ -39,7 +39,6 @@ const Service: React.FC<ServicePageProps> = async ({ params }) => {
 					</div>
 				</div>
 			</div>
-			<Footer />
 		</>
 	)
 }

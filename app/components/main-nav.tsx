@@ -105,6 +105,9 @@ export const MainNav = ({
 				},
 			],
 		},
+		{
+			title: 'Apply',
+		},
 	]
 
 	return (
@@ -157,6 +160,10 @@ export const MainNav = ({
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 					))}
+					{/* <NavigationMenuItem>
+						<NavigationMenuTrigger></NavigationMenuTrigger>
+						<NavigationMenuContent></NavigationMenuContent>
+					</NavigationMenuItem> */}
 				</NavigationMenuList>
 			</NavigationMenu>
 		</nav>

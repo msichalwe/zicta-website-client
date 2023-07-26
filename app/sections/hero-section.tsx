@@ -51,13 +51,13 @@ const Hero: React.FC<WhatWeDoProps> = ({ data }) => {
 								key={feature.title}
 								className="flex flex-col"
 								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}>
+								whileTap={{ scale: 0.5 }}>
 								<motion.dt
 									className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900"
 									initial={{ opacity: 0, y: 10 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true, amount: 0.5 }}
-									transition={{ duration: 1, delay: 1 }}>
+									transition={{ duration: 0.2, delay: 0.5 }}>
 									{feature.title}
 								</motion.dt>
 								<motion.dd
@@ -65,7 +65,7 @@ const Hero: React.FC<WhatWeDoProps> = ({ data }) => {
 									initial={{ opacity: 0, y: 10 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true, amount: 0.5 }}
-									transition={{ duration: 1, delay: 1.2 }}>
+									transition={{ duration: 0.2, delay: 0.5 }}>
 									<motion.p className="flex-auto">{feature.content}</motion.p>
 									<motion.p className="mt-6">
 										<Link
