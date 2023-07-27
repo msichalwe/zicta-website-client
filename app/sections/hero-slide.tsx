@@ -34,7 +34,7 @@ const HeroSlide: React.FC<HeroProps> = ({ data }) => {
 	return (
 		<div className="z-[-1]" ref={ref}>
 			<HeroSlider
-				height={'92vh'}
+				height={'60vh'}
 				autoplay
 				animations={{}}
 				accessibility={{
@@ -87,6 +87,7 @@ const HeroSlide: React.FC<HeroProps> = ({ data }) => {
 					}}
 				/>
 			</HeroSlider>
+			<div className="w-full h-[30px] bg-zicta-blue"></div>
 		</div>
 	)
 }

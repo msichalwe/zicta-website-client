@@ -3,15 +3,17 @@ import NavLinks from './NavLinks'
 import Button from './Button'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { Menu, Search, X } from 'lucide-react'
+import { Menu, Phone, Search, X } from 'lucide-react'
 import { useAppDispatch, useAppSelector } from '@/hooks/hooks'
 import { selectOpenMenu, setOpenMenu } from '@/state'
+import { useRouter } from 'next/navigation'
 
 const Navbar = () => {
 	const open = useAppSelector(selectOpenMenu)
 	const dispatch = useAppDispatch()
 	const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
 	const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
+	const router = useRouter()
 
 	return (
 		<>
@@ -50,16 +52,32 @@ const Navbar = () => {
 						<NavLinks />
 						<li>
 							<Link
-								href={'/apply'}
-								className="lg:py-7 py-4  hover:text-zicta-yellow px-3 inline-block">
-								Apply
+								href={
+									'https://zicta.mcidirecthire.com/External/Job?Ref=TEkBhDYErs0qhHgueWeCgt%2fyRI%2bcnPLR1MRk1RR6Cpou3ktpvROhSqni%2fBGkK6j0oVFE%2fv%2b%2bs7ZikC%2fr8Jno6%2bKXdOtrvvTBseO48pRs8yB57ycdvdLzgmNZo5S%2bjJVn0KOcSAYT10kLM0k%2b76eugg%3d%3d'
+								}
+								className="lg:py-7 py-4 lg:px-3 px-1 hover:text-zicta-yellow inline-block">
+								Careers
 							</Link>
 						</li>
 						<li>
 							<Link
-								href={'/search'}
-								className="lg:py-7 py-4  hover:text-zicta-yellow px-3 flex ">
-								Search <Search className="ml-2" />
+								href={'/downloads/procurement'}
+								className="lg:py-7 py-4 lg:px-3 px-1 hover:text-zicta-yellow inline-block">
+								Procurement
+							</Link>
+						</li>
+						<li>
+							<Link
+								href={'/#'}
+								className="lg:py-7 py-4 lg:px-3 px-1 hover:text-zicta-yellow inline-block">
+								Postal & Courier
+							</Link>
+						</li>
+						<li>
+							<Link
+								href={'/apply'}
+								className="lg:py-7 py-4  hover:text-zicta-yellow px-3 inline-block">
+								Online Services
 							</Link>
 						</li>
 					</ul>
@@ -87,29 +105,57 @@ const Navbar = () => {
 						<NavLinks />
 						<li>
 							<Link
+								href={
+									'https://zicta.mcidirecthire.com/External/Job?Ref=TEkBhDYErs0qhHgueWeCgt%2fyRI%2bcnPLR1MRk1RR6Cpou3ktpvROhSqni%2fBGkK6j0oVFE%2fv%2b%2bs7ZikC%2fr8Jno6%2bKXdOtrvvTBseO48pRs8yB57ycdvdLzgmNZo5S%2bjJVn0KOcSAYT10kLM0k%2b76eugg%3d%3d'
+								}
+								className="lg:py-7 py-4 lg:px-3 px-1 hover:text-zicta-yellow inline-block">
+								Careers
+							</Link>
+						</li>
+						<li>
+							<Link
+								href={'/downloads/procurement'}
+								className="lg:py-7 py-4 lg:px-3 px-1 hover:text-zicta-yellow inline-block">
+								Procurement
+							</Link>
+						</li>
+						<li>
+							<Link
+								href={'/#'}
+								className="lg:py-7 py-4 lg:px-3 px-1 hover:text-zicta-yellow inline-block">
+								Postal & Courier
+							</Link>
+						</li>
+						<li>
+							<Link
 								href={'/apply'}
 								className="lg:py-7 py-4 lg:px-3 px-1  inline-block">
-								Apply
+								Online Services
 							</Link>
 						</li>
 						<Link
 							href={'/search'}
 							className="py-7 text-zicta-yellow px-3 flex ">
-							Search <Search className="ml-2" />
+							Search <Search className="ml-2 h-5 w-5" />
 						</Link>
 					</ul>
 				</div>
-				<div className="w-full p-2 bg-zicta-blue flex items-center justify-end ">
-					<div className="w-5/6 mx-auto flex justify-end ">
+				<div className="w-full p-3 bg-zicta-blue flex items-center justify-end ">
+					<div className="w-5/6 mx-auto flex justify-between">
+						<div className="flex">
+							<p className="text-white md:text-sm text-xs  ">
+								<Phone className="inline-block mr-2 h-4 w-4" /> Toll-free 7070
+							</p>
+							<p
+								onClick={() => router.push('/complaints-queries')}
+								className="text-zicta-yellow  md:text-sm text-xs pl-5 cursor-pointer ">
+								Complaints & Queries
+							</p>
+						</div>
 						<Link
-							href="https://report.iwf.org.uk/zm"
-							className="text-white text-xs   ">
-							Report Child Abuse
-						</Link>
-						<Link
-							href="/complaints-queries"
-							className="text-zicta-yellow text-xs pl-5 ">
-							Complaints & Queries
+							href={'/search'}
+							className=" text-white hover:text-zicta-yellow px-3 flex ">
+							<Search className="ml-2 h-5 w-5" />
 						</Link>
 					</div>
 				</div>

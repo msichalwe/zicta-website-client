@@ -43,11 +43,11 @@ const ServicesSection = () => {
 					</motion.p>
 				</div>
 
-				<div className="grid grid-cols-2 gap-5">
+				<div className="grid grid-cols-3 gap-5">
 					{services?.map((service) => (
 						<Card
 							key={service.id}
-							className="rounded-xl cursor-pointer relative aspect-square md:aspect-[2.4/1] bg-cover overflow-hidden"
+							className="rounded cursor-pointer relative aspect-square md:aspect-[2.4/1] bg-cover overflow-hidden"
 							style={{ backgroundImage: `url(${service.imageUrl})` }}>
 							{/* Black overlay */}
 							<div className="absolute inset-0 bg-black opacity-50"></div>
@@ -62,7 +62,7 @@ const ServicesSection = () => {
 								<CardFooter className=" text-white">
 									<Button
 										size={'sm'}
-										className="bg-transparent border border-white hover:bg-white hover:text-black "
+										className="bg-transparent border border-white py-2 px-4 text-sm rounded-none hover:bg-white hover:text-black "
 										onClick={() =>
 											router.push(
 												`/services/${service.title

@@ -4,11 +4,11 @@ import './globals.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-import { Inter } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
 import Wrapper from '@/context/wrapper'
 import Footer from './components/footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Open_Sans({ subsets: ['latin'] })
 
 export const metadata = {
 	title: 'Zambia Information and Communications Technology Authority',

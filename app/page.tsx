@@ -35,10 +35,11 @@ export default async function Home() {
 			<ServicesSection />
 			<LatestBanner data={banner} />
 			<Hero data={whatWeDo} />
+			<MediaSection data={media} />
 			<SectionTemp />
 			<StatSection data={stats} />
-			<MediaSection data={media} />
 			<FaqSection data={faqs} />
+			<ContactSection />
 		</main>
 	)
 }

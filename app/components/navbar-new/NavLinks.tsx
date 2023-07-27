@@ -13,18 +13,18 @@ const NavLinks = () => {
 		queryFn: getAllServices,
 	})
 	const links = [
-		{
-			name: 'Services',
-			submenu: true,
-			sublinks: [
-				{
-					Head: 'All Services',
-					sublink: services?.map((item) => ({
-						name: item.title,
-					})),
-				},
-			],
-		},
+		// {
+		// 	name: 'Services',
+		// 	submenu: true,
+		// 	sublinks: [
+		// 		{
+		// 			Head: 'All Services',
+		// 			sublink: services?.map((item) => ({
+		// 				name: item.title,
+		// 			})),
+		// 		},
+		// 	],
+		// },
 		{
 			name: 'Media',
 			submenu: true,
@@ -46,7 +46,7 @@ const NavLinks = () => {
 			],
 		},
 		{
-			name: 'Resources',
+			name: 'Downloads',
 			submenu: true,
 			sublinks: [
 				{
@@ -81,19 +81,23 @@ const NavLinks = () => {
 		<>
 			{links.map((link) => (
 				<div>
-					<div className="px-3 text-left md:cursor-pointer group">
+					<div className="md:px-3 px-1 text-left md:cursor-pointer group">
 						<h1
-							className="py-7 md:hover:text-zicta-yellow flex justify-between items-center md:pr-0 pr-5 group"
+							className="md:py-7 py-5 md:hover:text-zicta-yellow flex justify-between items-center md:pr-0 pr-5 group"
 							onClick={() => {
 								heading !== link.name ? setHeading(link.name) : setHeading('')
 								setSubHeading('')
 							}}>
 							{link.name}
 							<span className="text-xl md:hidden inline">
-								{heading === link.name ? <ChevronUp /> : <ChevronDown />}
+								{heading === link.name ? (
+									<ChevronUp className="h-4 w-4" />
+								) : (
+									<ChevronDown className="h-4 w-4" />
+								)}
 							</span>
 							<span className="text-xl md:mt-1 md:ml-2  md:block hidden group-hover:rotate-180 group-hover:-mt-2">
-								{link.submenu ? <ChevronDown /> : ''}
+								{link.submenu ? <ChevronDown className="h-4 w-4" /> : ''}
 							</span>
 						</h1>
 						{link.submenu && (
@@ -149,9 +153,9 @@ const NavLinks = () => {
 
 										<span className="text-xl md:mt-1 md:ml-2 inline">
 											{subHeading === slinks.Head ? (
-												<ChevronUp />
+												<ChevronUp className="h-4 w-4" />
 											) : (
-												<ChevronDown />
+												<ChevronDown className="h-4 w-4" />
 											)}
 										</span>
 									</h1>
