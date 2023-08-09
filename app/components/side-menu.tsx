@@ -8,31 +8,25 @@ const SideMenu = async () => {
 	const media = await getAllMedia()
 
 	return (
-		<div className="flex flex-col justify-around pl-20">
-			<h1 className="text-xl text-zicta-blue font-bold">Latest at ZICTA</h1>
-			<div className=" space-y-5 lg:mt-10 ">
+		<div className="flex flex-col justify-around p-5">
+			<div className=" space-y-2  ">
 				{media.map((post) => (
 					<div key={post.id} className="gap-2">
-						<article className="relative isolate flex flex-col gap-4 lg:flex-row max-h-52 mb-4">
+						<article className="relative isolate flex flex-col lg:flex-row max-h-24 mb-2  ">
 							<div>
-								<div className="flex items-center gap-x-4 text-xs">
+								<div className="flex items-center gap-x-4 text-[10px] mb-2">
 									<p className="text-gray-500">
 										{format(new Date(post.createdAt), 'MMMM do, yyyy')}
 									</p>
-									<Link
-										href={`/media/${post.type}`}
-										className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-										{post.type.toUpperCase()}
-									</Link>
 								</div>
-								<div className="group relative max-w-xl">
-									<h3 className="mt-3 text-md font-semibold  line-clamp-2 leading-6 text-gray-900 group-hover:text-gray-600">
+								<div className="group relative max-w-xl space-y-2">
+									<h3 className="text-md font-semibold  line-clamp-1  text-gray-900 group-hover:text-gray-600">
 										<a href={`/media/${post.type}/${post.id}`}>
 											<span className="absolute inset-0" />
 											{post.title}
 										</a>
 									</h3>
-									<p className="mt-5 text-xs leading-6 line-clamp-2 text-gray-600">
+									<p className=" text-xs leading-2 line-clamp-2 text-gray-600">
 										{post.description}
 									</p>
 								</div>
