@@ -11,7 +11,7 @@ interface MediaSectionProps {
 
 const MediaSection: React.FC<MediaSectionProps> = ({ data }) => {
 	return (
-		<div className="bg-zicta-blue-light  py-24 sm:py-32 z-[-10]">
+		<div className="bg-gray-100  py-24 sm:py-32 z-[-10]">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl text-center">
 					<h2 className="text-3xl font-bold tracking-tight text-zicta-blue sm:text-4xl">
