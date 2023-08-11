@@ -1,19 +1,29 @@
+'use client'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const Services = () => {
+	const router = useRouter()
 	return (
 		<div>
 			<div className="w-5/6 mx-auto py-10 ">
 				<div className="grid grid-cols-4 gap-5">
 					{servicesData.map((item, index) => (
 						<div
+							onClick={() =>
+								router.push(
+									`/services/${item.title
+										.toLowerCase()
+										.replace(/[\s&]+/g, '-')}`,
+								)
+							}
 							key={index}
 							style={{
 								backgroundColor: item.color,
 							}}
 							className={` ${
 								item.bgColor ? 'text-white' : 'text-gray-900'
-							}  min-h-[20vh] flex justify-center items-start p-5  flex-col`}>
+							}  min-h-[20vh] flex justify-center items-start ease-in-out p-5 hover:scale-105 transition cursor-pointer  flex-col`}>
 							<h1 className="font-medium uppercase">{item.title}</h1>
 							<p className="text-sm">{item.description}</p>
 						</div>

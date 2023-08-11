@@ -2,6 +2,7 @@ import React from 'react'
 import ContactForm from '../components/contact-form'
 import Heading from '../components/Heading'
 import { Balancer } from 'react-wrap-balancer'
+import Navbar from '../components/navbar-new/Navbar'
 
 type ContactItem = {
 	region: string
@@ -15,19 +16,31 @@ type ContactItem = {
 }
 const Complaints = () => {
 	return (
-		<div className=" flex w-full flex-col py-[10vh]">
-			<div className="w-5/6 mx-auto">
-				<div className="bg-peaks bg-no-repeat w-full bg-cover  h-full sm:min-h-[400px] min-h-[200px] rounded-xl mb-20 flex items-center justify-center">
-					<h1 className="sm:text-4xl text-2xl  text-white font-bold">
+		<>
+			<Navbar />
+			<div className=" flex w-full flex-col">
+				<div className="bg-peaks bg-no-repeat w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
+					<h1 className="sm:text-4xl text-2xl  text-white font-medium">
 						<Balancer>Complaints & Queries</Balancer>
 					</h1>
+					<p className="max-w-4xl mt-5 text-lg text-white">
+						<Balancer>
+							We value your opinions and are here to listen. Whether you have
+							concerns to address or questions to ask, this is the place to
+							express yourself. Your feedback helps us improve and provide you
+							with better service.
+						</Balancer>
+					</p>
 				</div>
-				<Heading
-					title="Submit Complaints & Queries."
-					description=" Submit your complaints or queries in the form below "
-				/>
-				<div className="flex gap-5  md:gap-10 flex-col md:flex-row">
-					<ContactForm />
+				<div className="w-5/6 mx-auto">
+					<Heading
+						title="Submit Complaints & Queries."
+						description=" Submit your complaints or queries in the form below "
+					/>
+					<div className="grid grid-cols-2 gap-10">
+						<ContactForm />
+						<div className="bg-hero-bg bg-cover bg-no-repeat h-full w-full rounded-lg"></div>
+					</div>
 					<div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5 mt-10 ">
 						{contacts.map((contact, index) => (
 							<div
@@ -62,7 +75,7 @@ const Complaints = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	)
 }
 

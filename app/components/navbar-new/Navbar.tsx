@@ -20,7 +20,7 @@ const Navbar = () => {
 			<nav
 				className={` ${
 					isTopOfPage ? 'top-0' : 'transform -translate-y-full'
-				} w-full z-[90] bg-white transition-transform  duration-200 ease-in-out`}>
+				} w-full z-[90] bg-white shadow-sm transition-transform  duration-200 ease-in-out`}>
 				<div className="flex items-center   justify-between w-5/6 mx-auto">
 					<div className="z-[101]  lg:w-auto w-full py-2 flex justify-between">
 						<img

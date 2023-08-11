@@ -10,6 +10,7 @@ import getProcurementType from '@/actions/getProcurementType'
 import { useQuery } from '@tanstack/react-query'
 import { format } from 'date-fns'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Navbar from '@/app/components/navbar-new/Navbar'
 
 const Procurement = () => {
 	const { data: tenders, isLoading } = useQuery({
@@ -147,6 +148,7 @@ const Procurement = () => {
 
 	return (
 		<>
+			<Navbar />
 			<div className="sm:w-5/6 w-full mx-auto mt-[10vh] px-2">
 				<div className="bg-circle bg-no-repeat px-2 w-full bg-cover flex-col space-y-4  h-full min-h-[400px] sm:rounded-xl mb-20 flex items-center justify-center">
 					<h1 className="text-4xl text-white font-medium">Procurements</h1>

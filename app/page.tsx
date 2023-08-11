@@ -3,6 +3,7 @@ import Footer from './components/footer'
 import Header from './components/new-comps/header'
 import Services from './components/new-comps/services'
 import LatestNews from './components/new-comps/latest-news'
+import ContactSection from './sections/contact-section'
 
 export const revalidate = 0
 export default async function Home() {
@@ -13,6 +14,7 @@ export default async function Home() {
 				<Header />
 				<Services />
 				<LatestNews />
+				<ContactSection />
 			</main>
 			<Footer />
 		</>

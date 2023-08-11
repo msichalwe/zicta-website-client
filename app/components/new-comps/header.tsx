@@ -3,12 +3,19 @@ import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import { Balancer } from 'react-wrap-balancer'
+import { motion } from 'framer-motion'
 
 const Header = () => {
 	const router = useRouter()
+
+	const backgroundVariants = {
+		initial: { scale: 1 },
+		zoomedOut: { scale: 1.1 },
+	}
+
 	return (
 		<div className="h-full w-full ">
-			<div className="bg-hero-bg bg-no-repeat, bg-cover h-[70vh] w-full">
+			<div className="bg-hero-bg bg-no-repeat, bg-cover h-[70vh] w-full ">
 				<div className="w-5/6 mx-auto flex items-center h-full  ">
 					<div className="max-w-4xl space-y-6 text-white">
 						<h1 className="font-medium text-4xl ">
@@ -43,7 +50,11 @@ const Header = () => {
 					{buttonData.map((item, index) => (
 						<button
 							key={index}
-							onClick={() => router.push(item.link)}
+							onClick={() =>
+								router.push(
+									`/${item.title.toLowerCase().replace(/[\s&]+/g, '-')}`,
+								)
+							}
 							className="py-1.5 px-4 text-sm text-gray-500 hover:bg-gray-500 hover:text-white font-medium rounded-full border border-gray-500 ">
 							{item.title}
 						</button>

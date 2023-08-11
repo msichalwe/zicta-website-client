@@ -8,6 +8,7 @@ import SideMenu from '@/app/components/side-menu'
 import getResource from '@/actions/getResources'
 import ResourcesClient from './components/client'
 import { format } from 'date-fns'
+import Navbar from '@/app/components/navbar-new/Navbar'
 
 interface ReourcePageProps {
 	params: {
@@ -35,6 +36,7 @@ const Resource: React.FC<ReourcePageProps> = async ({ params }) => {
 
 	return (
 		<>
+			<Navbar />
 			<div className="sm:w-5/6 w-full mx-auto  my-[10vh] ">
 				<div className="bg-circle bg-no-repeat px-2 w-full bg-cover flex-col space-y-4  h-full min-h-[400px] sm:rounded-xl mb-20 flex items-center justify-center">
 					<h1 className="text-4xl text-white font-medium">{title}</h1>
