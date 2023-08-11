@@ -18,9 +18,9 @@ const Navbar = () => {
 	return (
 		<>
 			<nav
-				className={`sticky ${
+				className={` ${
 					isTopOfPage ? 'top-0' : 'transform -translate-y-full'
-				} w-full z-[90] bg-white transition-transform  duration-200 ease-in-out`}>
+				} w-full z-[90] bg-white shadow-sm transition-transform  duration-200 ease-in-out`}>
 				<div className="flex items-center   justify-between w-5/6 mx-auto">
 					<div className="z-[101]  lg:w-auto w-full py-2 flex justify-between">
 						<img
@@ -130,7 +130,7 @@ const Navbar = () => {
 						</Link>
 					</ul>
 				</div>
-				<div className="w-full p-3 h-10 text-sm bg-zicta-blue flex items-center justify-end ">
+				{/* <div className="w-full p-3 h-10 text-sm bg-zicta-blue flex items-center justify-end ">
 					<div className="w-5/6 mx-auto flex justify-between">
 						<div className="flex">
 							<p className="text-white text-sm  ">
@@ -148,7 +148,7 @@ const Navbar = () => {
 							<Search className="ml-2 h-5 w-5" />
 						</Link>
 					</div>
-				</div>
+				</div> */}
 			</nav>
 		</>
 	)

@@ -19,6 +19,8 @@ const ServicesSection = () => {
 		queryFn: getAllServices,
 	})
 
+	console.log(services)
+
 	const router = useRouter()
 
 	return (
