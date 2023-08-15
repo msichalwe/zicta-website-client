@@ -13,8 +13,8 @@ export default async function Home() {
 			<Navbar />
 			<main className="min-h-screen">
 				<Header />
-				<Services />
 				<LatestNews />
+				<Services />
 				<FaqSection data={faqData} />
 				<ContactSection />
 			</main>
