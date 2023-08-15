@@ -19,10 +19,12 @@ const ServicesSection = () => {
 		queryFn: getAllServices,
 	})
 
+	console.log(services)
+
 	const router = useRouter()
 
 	return (
-		<div className="bg-white py-24 sm:py-32" id="what-we-do">
+		<div className="bg-white py-14 pb-24" id="what-we-do">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:text-center mb-10">
 					<motion.h2
@@ -43,7 +45,7 @@ const ServicesSection = () => {
 					</motion.p>
 				</div>
 
-				<div className="grid grid-cols-3 gap-5">
+				<div className="grid grid-cols-2 md:grid-cols-3 gap-5">
 					{services?.map((service) => (
 						<Card
 							key={service.id}

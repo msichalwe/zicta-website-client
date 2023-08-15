@@ -3,6 +3,7 @@ import Footer from '@/app/components/footer'
 import SideMenu from '@/app/components/side-menu'
 import React from 'react'
 import Parser from 'html-react-parser'
+import Navbar from '@/app/components/navbar-new/Navbar'
 
 interface ServicePageProps {
 	params: {
@@ -14,8 +15,9 @@ const Service: React.FC<ServicePageProps> = async ({ params }) => {
 
 	return (
 		<>
-			<div className="w-5/6 mx-auto mt-[10vh]">
-				<div
+			<Navbar />
+			<div className="">
+				{/* <div
 					className="rounded-xl flex items-center justify-center relative  w-full  h-full min-h-[400px] bg-cover overflow-hidden "
 					style={{ backgroundImage: `url(${service.imageUrl})` }}>
 					<h1 className="md:text-7xl text-4xl text-white font-medium z-[1] ">
@@ -37,6 +39,16 @@ const Service: React.FC<ServicePageProps> = async ({ params }) => {
 							<SideMenu />
 						</div>
 					</div>
+				</div> */}
+				<div className=" grid grid-cols-2 gap-0 w-full h-[80vh]">
+					<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8]  space-y-6 flex justify-center text-white px-20 flex-col">
+						<h1 className="font-bold text-5xl ">{service.title}</h1>
+						<p className=" ">{service.description}</p>
+					</div>
+					<div
+						className="bg-cover bg-no-repeat"
+						style={{ backgroundImage: `url(${service.imageUrl})` }}
+					/>
 				</div>
 			</div>
 		</>

@@ -16,6 +16,10 @@ module.exports = {
 			},
 		},
 		extend: {
+			scale: {
+				110: '1.1',
+			},
+
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -78,6 +82,9 @@ module.exports = {
 				poly: "url('/assets/bg-poly.svg')",
 				circle: "url('/assets/bg-circle.svg')",
 				apply: "url('/assets/apply-bg.svg')",
+				'zicta-home': "url('/assets/zicta-home.jpg')",
+				'hero-bg': "url('/assets/bg.png')",
+				'zicta-banner': "url('/assets/zicta-banner.png')",
 			},
 		},
 	},

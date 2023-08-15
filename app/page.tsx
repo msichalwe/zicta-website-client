@@ -1,45 +1,45 @@
-import Hero from './sections/hero-section'
-import FaqSection from './sections/faq-section'
-import LatestBanner from './sections/latest-banner'
-import SectionTemp from './sections/section-temp'
-import ProjectSection from './sections/projects-section'
-import StatSection from './sections/stat-section'
-import Testimonial from './sections/testimonial-section'
-import PartnersSection from './sections/partners-section'
-import MediaSection from './sections/media-section'
+import Navbar from './components/navbar-new/Navbar'
+import Footer from './components/footer'
+import Header from './components/new-comps/header'
+import Services from './components/new-comps/services'
+import LatestNews from './components/new-comps/latest-news'
 import ContactSection from './sections/contact-section'
-import MapSection from './sections/map-section'
-import HeroSlide from './sections/hero-slide'
-import getHero from '@/actions/getHero'
-import getBanner from '@/actions/getBanner'
-import getWhatWeDo from '@/actions/getWhatWeDo'
-import getStats from '@/actions/getStats'
-import getTestimonial from '@/actions/getTestimonial'
-import getFaqs from '@/actions/getFaq'
-import getMediaType from '@/actions/getMediaType'
-import ServicesSection from './sections/services-section'
+import FaqSection from './sections/faq-section'
+import { Faq } from '@/types'
 
-export const revalidate = 0
 export default async function Home() {
-	const hero = await getHero()
-	const banner = await getBanner()
-	const whatWeDo = await getWhatWeDo()
-	const stats = await getStats()
-
-	const faqs = await getFaqs()
-	const media = await getMediaType('news')
-
 	return (
-		<main className="min-h-screen">
-			<HeroSlide data={hero} />
-			<ServicesSection />
-			<LatestBanner data={banner} />
-			<Hero data={whatWeDo} />
-			<MediaSection data={media} />
-			<SectionTemp />
-			<StatSection data={stats} />
-			<FaqSection data={faqs} />
-			<ContactSection />
-		</main>
+		<>
+			<Navbar />
+			<main className="min-h-screen">
+				<Header />
+				<Services />
+				<LatestNews />
+				<FaqSection data={faqData} />
+				<ContactSection />
+			</main>
+			<Footer />
+		</>
 	)
 }
+
+const faqData: Array<Faq> = [
+	{
+		id: '1',
+		question: 'How do I register my sim card?',
+		answer:
+			'You can register your sim card by visiting any of our offices or agents with your NRC and sim card',
+	},
+	{
+		id: '2',
+		question: 'How do I report a sim card fraud?',
+		answer:
+			'You can report a sim card fraud by visiting any of our offices or agents with your NRC and sim card',
+	},
+	{
+		id: '3',
+		question: 'How do I access online services',
+		answer:
+			'You can access online services by visiting our online services section, or by visiting any of our offices',
+	},
+]
