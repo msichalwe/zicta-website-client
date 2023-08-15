@@ -11,6 +11,8 @@ import { useQuery } from '@tanstack/react-query'
 import { format } from 'date-fns'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Navbar from '@/app/components/navbar-new/Navbar'
+import { Balancer } from 'react-wrap-balancer'
+import Loader from '@/components/ui/loader'
 
 const Procurement = () => {
 	const { data: tenders, isLoading } = useQuery({
@@ -141,7 +143,7 @@ const Procurement = () => {
 	) {
 		return (
 			<div className="h-screen w-full flex items-center justify-center">
-				<p>Loading...</p>
+				<Loader />
 			</div>
 		)
 	}
@@ -149,89 +151,105 @@ const Procurement = () => {
 	return (
 		<>
 			<Navbar />
-			<div className="sm:w-5/6 w-full mx-auto mt-[10vh] px-2">
-				<div className="bg-circle bg-no-repeat px-2 w-full bg-cover flex-col space-y-4  h-full min-h-[400px] sm:rounded-xl mb-20 flex items-center justify-center">
-					<h1 className="text-4xl text-white font-medium">Procurements</h1>
+			<div>
+				<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
+					<h1 className="sm:text-4xl text-2xl  text-white font-medium">
+						<Balancer>Procurement</Balancer>
+					</h1>
+					<p className="max-w-4xl mt-5 text-lg text-white">
+						<Balancer>
+							Efficient Procurements Made Simple: Discover Seamless Acquisitions
+							on Our Procurements Page, Whether you're a vendor interested in
+							bidding for lucrative contracts or a stakeholder aiming to stay
+							informed about the latest acquisitions, our Procurements Page
+							offers a wealth of information at your fingertips.
+						</Balancer>
+					</p>
 				</div>
-				<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
-					<div className=" col-span-1 lg:col-span-2  space-y-4  h-screen">
-						<Heading
-							title="Procurement"
-							description="Find all documents in relation to procurement below."
-						/>
-						<Separator />
 
-						<Tabs defaultValue="tenders" className="w-full">
-							<TabsList className="w-full h-full text-xs grid grid-cols-2 lg:grid-cols-3">
-								<TabsTrigger className="text-xs" value="tenders">
-									Tenders
-								</TabsTrigger>
-								<TabsTrigger className="text-xs" value="best_evaluated_bidder">
-									Best Evaluated Bidder
-								</TabsTrigger>
-								<TabsTrigger className="text-xs" value="invitation_for_bids">
-									Invitation For Bids
-								</TabsTrigger>
-								<TabsTrigger
-									className="text-xs"
-									value="request_for_clarifications">
-									Request For Clarifications
-								</TabsTrigger>
-								<TabsTrigger className="text-xs" value="general_information">
-									General Information
-								</TabsTrigger>
-								<TabsTrigger
-									className="text-xs"
-									value="annual_procurement_plan">
-									Annual Procurement Plan
-								</TabsTrigger>
-							</TabsList>
-							<TabsContent value="tenders">
-								<DataTable
-									columns={columns}
-									data={formattedResource}
-									searchKey="title"
-								/>
-							</TabsContent>
-							<TabsContent value="best_evaluated_bidder">
-								<DataTable
-									columns={columns}
-									data={formattedResource2}
-									searchKey="title"
-								/>
-							</TabsContent>
-							<TabsContent value="invitation_for_bids">
-								<DataTable
-									columns={columns}
-									data={formattedResource6}
-									searchKey="title"
-								/>
-							</TabsContent>
-							<TabsContent value="request_for_clarifications">
-								<DataTable
-									columns={columns}
-									data={formattedResource5}
-									searchKey="title"
-								/>
-							</TabsContent>
-							<TabsContent value="general_information">
-								<DataTable
-									columns={columns}
-									data={formattedResource4}
-									searchKey="title"
-								/>
-							</TabsContent>
-							<TabsContent value="annual_procurement_plan">
-								<DataTable
-									columns={columns}
-									data={formattedResource3}
-									searchKey="title"
-								/>
-							</TabsContent>
-						</Tabs>
-					</div>
-					<div className="col-span-1 hidden lg:block">
-						<SideMenu />
+				<div className="sm:w-5/6 w-full mx-auto mt-[10vh] px-2">
+					<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+						<div className=" col-span-1 lg:col-span-2  space-y-4  h-screen">
+							<Heading
+								title="Procurement"
+								description="Find all documents in relation to procurement below."
+							/>
+							<Separator />
+
+							<Tabs defaultValue="tenders" className="w-full">
+								<TabsList className="w-full h-full text-xs grid grid-cols-2 lg:grid-cols-3">
+									<TabsTrigger className="text-xs" value="tenders">
+										Tenders
+									</TabsTrigger>
+									<TabsTrigger
+										className="text-xs"
+										value="best_evaluated_bidder">
+										Best Evaluated Bidder
+									</TabsTrigger>
+									<TabsTrigger className="text-xs" value="invitation_for_bids">
+										Invitation For Bids
+									</TabsTrigger>
+									<TabsTrigger
+										className="text-xs"
+										value="request_for_clarifications">
+										Request For Clarifications
+									</TabsTrigger>
+									<TabsTrigger className="text-xs" value="general_information">
+										General Information
+									</TabsTrigger>
+									<TabsTrigger
+										className="text-xs"
+										value="annual_procurement_plan">
+										Annual Procurement Plan
+									</TabsTrigger>
+								</TabsList>
+								<TabsContent value="tenders">
+									<DataTable
+										columns={columns}
+										data={formattedResource}
+										searchKey="title"
+									/>
+								</TabsContent>
+								<TabsContent value="best_evaluated_bidder">
+									<DataTable
+										columns={columns}
+										data={formattedResource2}
+										searchKey="title"
+									/>
+								</TabsContent>
+								<TabsContent value="invitation_for_bids">
+									<DataTable
+										columns={columns}
+										data={formattedResource6}
+										searchKey="title"
+									/>
+								</TabsContent>
+								<TabsContent value="request_for_clarifications">
+									<DataTable
+										columns={columns}
+										data={formattedResource5}
+										searchKey="title"
+									/>
+								</TabsContent>
+								<TabsContent value="general_information">
+									<DataTable
+										columns={columns}
+										data={formattedResource4}
+										searchKey="title"
+									/>
+								</TabsContent>
+								<TabsContent value="annual_procurement_plan">
+									<DataTable
+										columns={columns}
+										data={formattedResource3}
+										searchKey="title"
+									/>
+								</TabsContent>
+							</Tabs>
+						</div>
+						<div className="col-span-1 hidden lg:block">
+							<SideMenu />
+						</div>
 					</div>
 				</div>
 			</div>

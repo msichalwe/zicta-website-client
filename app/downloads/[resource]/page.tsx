@@ -9,6 +9,7 @@ import getResource from '@/actions/getResources'
 import ResourcesClient from './components/client'
 import { format } from 'date-fns'
 import Navbar from '@/app/components/navbar-new/Navbar'
+import { Balancer } from 'react-wrap-balancer'
 
 interface ReourcePageProps {
 	params: {
@@ -37,21 +38,25 @@ const Resource: React.FC<ReourcePageProps> = async ({ params }) => {
 	return (
 		<>
 			<Navbar />
-			<div className="sm:w-5/6 w-full mx-auto  my-[10vh] ">
-				<div className="bg-circle bg-no-repeat px-2 w-full bg-cover flex-col space-y-4  h-full min-h-[400px] sm:rounded-xl mb-20 flex items-center justify-center">
-					<h1 className="text-4xl text-white font-medium">{title}</h1>
+			<div>
+				<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
+					<h1 className="sm:text-4xl text-2xl  text-white font-medium">
+						<Balancer>{title}</Balancer>
+					</h1>
 				</div>
-				<div className="grid grid-cols-1 gap-5 lg:grid-cols-3 h-full mb-10 mx-2">
-					<div className=" col-span-1 lg:col-span-2  space-y-4">
-						<Heading
-							title={`${title}`}
-							description={`Get all your ${title.toLowerCase()} in the table below.`}
-						/>
+				<div className="sm:w-5/6 w-full mx-auto  my-[10vh] ">
+					<div className="grid grid-cols-1 gap-5 lg:grid-cols-3 h-full mb-10 mx-2">
+						<div className=" col-span-1 lg:col-span-2  space-y-4">
+							<Heading
+								title={`${title}`}
+								description={`Get all your ${title.toLowerCase()} in the table below.`}
+							/>
 
-						<ResourcesClient data={formattedResource} />
-					</div>
-					<div className="col-span-1 hidden lg:block">
-						<SideMenu />
+							<ResourcesClient data={formattedResource} />
+						</div>
+						<div className="col-span-1 hidden lg:block">
+							<SideMenu />
+						</div>
 					</div>
 				</div>
 			</div>

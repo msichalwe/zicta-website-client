@@ -50,11 +50,7 @@ const Header = () => {
 					{buttonData.map((item, index) => (
 						<button
 							key={index}
-							onClick={() =>
-								router.push(
-									`/${item.title.toLowerCase().replace(/[\s&]+/g, '-')}`,
-								)
-							}
+							onClick={() => router.push(`${item.link}`)}
 							className="py-1.5 px-4 text-sm text-gray-500 hover:bg-gray-500 hover:text-white font-medium rounded-full border border-gray-500 ">
 							{item.title}
 						</button>
@@ -74,15 +70,15 @@ const buttonData = [
 	},
 	{
 		title: 'Complaints & Queries',
-		link: '#',
+		link: '/complaints-queries',
 	},
 	{
 		title: 'Procurement',
-		link: '#',
+		link: '/downloads/procurement',
 	},
 	{
 		title: 'ICT Statistics',
-		link: '#',
+		link: '/ict-statistics',
 	},
 	{
 		title: 'FAQs',
