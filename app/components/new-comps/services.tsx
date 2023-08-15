@@ -7,7 +7,7 @@ const Services = () => {
 	return (
 		<div>
 			<div className="w-5/6 mx-auto py-10 ">
-				<div className="grid grid-cols-4 gap-5">
+				<div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-5">
 					{servicesData.map((item, index) => (
 						<div
 							onClick={() =>
@@ -40,7 +40,7 @@ const servicesData = [
 	{
 		title: 'Licensing',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+			'Obtain official licenses seamlessly. Unlock new opportunities with authorized permissions and regulatory compliance.',
 		color: '#313180',
 		bgColor: true,
 		image: '',
@@ -48,47 +48,47 @@ const servicesData = [
 	{
 		title: 'Consumer Protection',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+			"Your rights matter. Benefit from ZICTA's dedicated efforts to ensure fair practices, data privacy, and consumer satisfaction.",
 		color: '#C6EBBE',
 		image: '',
 	},
 	{
 		title: 'Spectrum Management',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+			'Navigate the digital landscape efficiently. ZICTA manages the spectrum for optimal connectivity and communication services',
 		color: '#A9DBB8',
 		image: '',
 	},
 	{
 		title: 'Universal Access',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+			'Connect everyone, everywhere. ZICTA facilitates inclusive access to digital resources and services.',
 		color: '#7CA5B8',
 		bgColor: true,
 	},
 	{
 		title: 'Cyber Security',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+			"Safeguard your digital presence. ZICTA's cybersecurity initiatives protect against online threats and vulnerabilities.",
 		color: '#F7A072',
 	},
 	{
 		title: 'Economic Regulation',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+			'Foster a balanced industry. ZICTA oversees economic regulations for a competitive and sustainable ICT sector.',
 		color: '#7CA5B8',
 		bgColor: true,
 	},
 	{
 		title: 'Technical Regulation',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+			'Streamline technology standards. ZICTA ensures adherence to technical norms for seamless interoperability.',
 		color: '#C6EBBE',
 	},
 	{
 		title: 'Postal & Courier',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+			'Beyond the digital realm. ZICTA manages postal and courier services, bridging the gap between physical and digital communication..',
 		color: '#313180',
 		bgColor: true,
 	},
