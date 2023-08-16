@@ -4,7 +4,9 @@ const Sexting = () => {
 	return (
 		<div>
 			<div className="grid grid-cols-1 mb-10 lg:grid-cols-2 gap-10  ">
-				<div className="flex items-start justify-center space-y-2 px-10 md:px-0 flex-col">
+
+				<div className="flex items-start justify-center space-y-2  flex-col">
+
 					<h1 className="text-4xl font-medium">Sexting</h1>
 					<p>
 						What is it? Sexting is the sending of provocative or sexual photos,
@@ -35,7 +37,9 @@ const Sexting = () => {
 					/>
 				</div>
 			</div>
-			<div className="space-y-2 px-10 md:px-0">
+
+			<div className="space-y-2 ">
+
 				<h2 className="text-2xl font-medium">How do I deal with it?</h2>
 				<p>
 					Think before you post the image. It could be online forever Adjust

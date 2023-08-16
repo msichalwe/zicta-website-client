@@ -11,7 +11,9 @@ const SimRegistration = () => {
 	return (
 		<div>
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 ">
-				<div className="flex px-10 md:px-0 items-start justify-center space-y-2 flex-col">
+
+				<div className="flex items-start justify-center space-y-2 flex-col">
+
 					<h1 className="text-4xl font-medium">Sim Registration</h1>
 					<p className="">
 						Following the commencement of Subscriber Identity module (Sim) card

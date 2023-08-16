@@ -11,7 +11,9 @@ const IdentityTheft = () => {
 						className="w-full h-full object-cover rounded"
 					/>
 				</div>
-				<div className="flex items-start justify-center space-y-2 flex-col px-10 md:px-0">
+
+				<div className="flex items-start justify-center space-y-2 flex-col ">
+
 					<h1 className="text-4xl font-medium">Identity Theft</h1>
 					<p>
 						Identity theft is a crime in which personal information is used
@@ -39,7 +41,9 @@ const IdentityTheft = () => {
 					</p>
 				</div>
 			</div>
-			<div className="space-y-2 px-10 md:px-0">
+
+			<div className="space-y-2 ">
+
 				<h2 className="text-2xl font-medium">How do I deal with it?</h2>
 				<p>
 					Watch your bank account and respond immediately to any unexpected

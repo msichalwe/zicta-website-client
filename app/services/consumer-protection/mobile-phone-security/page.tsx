@@ -11,7 +11,9 @@ const PhoneSecurity = () => {
 						className="w-full h-full object-cover rounded"
 					/>
 				</div>
-				<div className="flex items-start justify-center space-y-2 flex-col px-10 md:px-0">
+
+				<div className="flex items-start justify-center space-y-2 flex-col ">
+
 					<h1 className="text-4xl font-medium">Mobile Phone Security</h1>
 					<p>
 						The loss or theft of a mobile is a major concern to most users or
@@ -29,7 +31,9 @@ const PhoneSecurity = () => {
 					</p>
 				</div>
 			</div>
-			<div className="space-y-2 px-10 md:px-0">
+
+			<div className="space-y-2 ">
+
 				<h2 className="text-2xl font-medium">
 					Personal Identification number (PIN)
 				</h2>
@@ -67,7 +71,9 @@ const PhoneSecurity = () => {
 					stolen or lost the data cannot be accessed.
 				</p>
 			</div>
-			<div className="space-y-2 px-10 md:px-0 mt-10">
+
+			<div className="space-y-2  mt-10">
+
 				<h2 className="text-2xl font-medium">More Useful Tips</h2>
 				<p>
 					Tips on Safeguarding your Mobile phone please ensure the following to
