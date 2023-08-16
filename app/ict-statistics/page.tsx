@@ -2,12 +2,21 @@
 import React from 'react'
 import Navbar from '../components/navbar-new/Navbar'
 import { Balancer } from 'react-wrap-balancer'
-import MyResponsiveBar from './components/mno-chart'
+import MNOChart from './components/mno-chart'
+import Heading from '../components/Heading'
 
 const Statistics = () => {
 	return (
-		<div className="h-screen w-full">
-			<MyResponsiveBar />
+		<div className="space-y-2">
+			<Heading
+				title="Overiew of ICT Statistics"
+				description="General overiew of some of the ICT Statistics."
+			/>
+			<div className="h-[50vh] w-full">
+				<MNOChart keyValue={'Number of Subscribers'} />
+				<MNOChart keyValue={'Fixed Internet Penetration per 100'} />
+				<MNOChart keyValue={'Number of Active ISPs'} />
+			</div>
 		</div>
 	)
 }

@@ -2,7 +2,6 @@ import Heading from '@/app/components/Heading'
 import { DataTable } from '@/components/ui/data-table'
 import { Separator } from '@/components/ui/separator'
 import React from 'react'
-import MyResponsiveBar from '../components/mno-chart'
 import { format } from 'date-fns'
 import { StatsColumn, columns } from '../components/columns'
 
