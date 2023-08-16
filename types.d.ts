@@ -82,9 +82,9 @@ interface Stat {
 interface Resource {
 	id: string
 	title: string
-	type: string
+	type?: string
 	fileUrl: string
-	fileType: string
+	fileType?: string
 	createdAt: string
 }
 interface Procurement {

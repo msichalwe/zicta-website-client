@@ -28,6 +28,7 @@ const Resource: React.FC<ReourcePageProps> = async ({ params }) => {
 		return {
 			id: data.id,
 			title: data.title,
+			// @ts-ignore
 			format: data.fileType.toUpperCase(),
 			createdAt: formattedCreatedAt,
 		}

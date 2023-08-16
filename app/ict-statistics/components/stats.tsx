@@ -54,7 +54,7 @@ const StatisticsWrapper: React.FC<StatisticsProps> = ({ children }) => {
 						</Balancer>
 					</p>
 				</div>
-				<div className="grid grid-cols-3 gap-5 w-5/6 mx-auto">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full md:w-5/6 md:mx-auto">
 					<div>
 						<nav className="w-4/5 mx-auto flex flex-col border-t-2 border-zicta-blue ">
 							{routes.map((route) => (

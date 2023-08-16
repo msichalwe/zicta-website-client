@@ -1,22 +1,21 @@
 const navigation = {
-	solutions: [
-		{ name: 'Marketing', href: '#' },
-		{ name: 'Analytics', href: '#' },
-		{ name: 'Commerce', href: '#' },
-		{ name: 'Insights', href: '#' },
+	contact: [
+		{ name: 'E-mail: info@zicta.zm', href: '#' },
+		{ name: 'Phone: +260 21 1378200 / 244424-27', href: '#' },
+		{ name: 'Toll Free: 7070', href: 'tel:7070' },
 	],
-	support: [
-		{ name: 'Pricing', href: '#' },
-		{ name: 'Documentation', href: '#' },
-		{ name: 'Guides', href: '#' },
-		{ name: 'API Status', href: '#' },
+	working: [
+		{ name: 'Monday-Friday: 08:00 to 17:00', href: '#' },
+		{ name: 'Saturday: Closed', href: '#' },
+		{ name: 'Sunday: Closed', href: '#' },
 	],
-	company: [
-		{ name: 'About', href: '#' },
-		{ name: 'Blog', href: '#' },
-		{ name: 'Jobs', href: '#' },
-		{ name: 'Press', href: '#' },
-		{ name: 'Partners', href: '#' },
+	address: [
+		{
+			name: 'Plot 4909 Corner of Independence Avenue & United Nations Road',
+			href: '#',
+		},
+		{ name: 'P.O. Box 36871', href: '#' },
+		{ name: 'Lusaka, Zambia', href: '#' },
 	],
 	legal: [
 		{ name: 'Claim', href: '#' },
@@ -55,10 +54,10 @@ const Footer = () => {
 						<div className="md:grid md:grid-cols-2 md:gap-8">
 							<div>
 								<h3 className="text-sm font-semibold leading-6 text-yellow-500">
-									Solutions
+									Contact Information
 								</h3>
 								<ul role="list" className="mt-6 space-y-4">
-									{navigation.solutions.map((item) => (
+									{navigation.contact.map((item) => (
 										<li key={item.name}>
 											<a
 												href={item.href}
@@ -71,10 +70,10 @@ const Footer = () => {
 							</div>
 							<div className="mt-10 md:mt-0">
 								<h3 className="text-sm font-semibold leading-6 text-yellow-500">
-									Support
+									Working Hours
 								</h3>
 								<ul role="list" className="mt-6 space-y-4">
-									{navigation.support.map((item) => (
+									{navigation.working.map((item) => (
 										<li key={item.name}>
 											<a
 												href={item.href}
@@ -89,10 +88,10 @@ const Footer = () => {
 						<div className="md:grid md:grid-cols-2 md:gap-8">
 							<div>
 								<h3 className="text-sm font-semibold leading-6 text-yellow-500">
-									Company
+									Physical Addresses
 								</h3>
 								<ul role="list" className="mt-6 space-y-4">
-									{navigation.company.map((item) => (
+									{navigation.address.map((item) => (
 										<li key={item.name}>
 											<a
 												href={item.href}
