@@ -11,7 +11,9 @@ const DigitalReputation = () => {
 						className="w-full h-full object-cover rounded"
 					/>
 				</div>
+
 				<div className="flex  items-start justify-center space-y-2 flex-col">
+
 					<h1 className="text-4xl font-medium">Digital Reputation</h1>
 					<p>
 						What is digital reputation? Digital reputation is defined as
@@ -26,7 +28,9 @@ const DigitalReputation = () => {
 					</p>
 				</div>
 			</div>
+
 			<div className="space-y-2 ">
+
 				<h2 className="text-2xl font-medium">
 					How do I protect my digital reputation?
 				</h2>
@@ -39,7 +43,9 @@ const DigitalReputation = () => {
 					including potential employers.
 				</p>
 			</div>
+
 			<div className=" space-y-2 mt-5">
+
 				<h2 className="font-medium ">What is offensive or illegal content?</h2>
 				<ul className="list-disc list-inside">
 					<li>Extremely violent</li>

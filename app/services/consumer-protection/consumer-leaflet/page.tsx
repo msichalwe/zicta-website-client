@@ -6,7 +6,10 @@ import { Balancer } from 'react-wrap-balancer'
 const ConsumerLeaflet = () => {
 	const router = useRouter()
 	return (
+
 		<div className="space-y-8 ">
+
+	
 			<div>
 				<h2 className="text-xl font-medium">
 					The Act mandates the Authority to:

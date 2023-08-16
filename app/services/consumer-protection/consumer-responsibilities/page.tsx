@@ -2,7 +2,9 @@ import React from 'react'
 
 const page = () => {
 	return (
+
 		<div className="space-y-4 ">
+
 			<div className="grid grid-cols-1 mb-10 lg:grid-cols-2 gap-10 ">
 				<div className="flex items-start justify-center space-y-2 flex-col ">
 					<h1 className="text-4xl font-medium">Consumer Responsibilities</h1>
