@@ -60,6 +60,15 @@ interface About {
 	imageUrl: string
 }
 
+interface LicenseRegister {
+	id: string
+	title: string
+	type: string
+	file: string
+	fileType: string
+	createdAt: string
+}
+
 interface Faq {
 	id: string
 	question: string
