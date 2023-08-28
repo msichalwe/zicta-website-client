@@ -1,6 +1,6 @@
 import getLicenseRegister from '@/actions/getLicenseRegister'
 import Heading from '@/app/components/Heading'
-import { ResourceColumn, columns } from './components/columns'
+import { ResourceColumn, columns } from '../updates/components/columns'
 import { DataTable } from '@/components/ui/data-table'
 import { Separator } from '@/components/ui/separator'
 import { format } from 'date-fns'

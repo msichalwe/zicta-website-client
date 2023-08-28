@@ -11,6 +11,7 @@ import {
 import { useRouter } from 'next/navigation'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar-new/Navbar'
+import Loader from '@/components/ui/loader'
 
 interface CardProps {
 	title: string
@@ -20,6 +21,7 @@ interface CardProps {
 }
 const Apply = () => {
 	const router = useRouter()
+
 	return (
 		<>
 			<Navbar />

@@ -39,7 +39,7 @@ const Complaints = () => {
 					/>
 					<div className="grid grid-cols-2 gap-10">
 						<ContactForm />
-						<div className="bg-hero-bg bg-cover bg-no-repeat h-full w-full rounded-lg"></div>
+						<div className="bg-customer-care bg-cover bg-no-repeat h-full w-full rounded-lg"></div>
 					</div>
 					<div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5 mt-10 ">
 						{contacts.map((contact, index) => (

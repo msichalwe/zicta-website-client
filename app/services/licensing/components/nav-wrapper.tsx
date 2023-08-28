@@ -18,6 +18,11 @@ const NavWrapper: React.FC<NavProps> = ({ children }) => {
 
 	const routes = [
 		{
+			href: `/services/licensing`,
+			label: 'Licensing',
+			active: pathname === '/services/licensing',
+		},
+		{
 			href: `/services/licensing/network-service`,
 			label: 'Network & Service Licensing',
 			active: pathname === '/services/licensing/network-service',
