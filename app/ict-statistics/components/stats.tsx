@@ -1,6 +1,6 @@
 'use client'
 
-import Navbar from '@/app/components/navbar-new/Navbar'
+import Navbar from '@/app/components/navbar'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

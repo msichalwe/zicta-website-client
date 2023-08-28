@@ -2,7 +2,7 @@ import React from 'react'
 import ContactForm from '../components/contact-form'
 import Heading from '../components/Heading'
 import { Balancer } from 'react-wrap-balancer'
-import Navbar from '../components/navbar-new/Navbar'
+import Navbar from '@/app/components/navbar'
 
 type ContactItem = {
 	region: string

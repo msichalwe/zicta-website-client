@@ -8,7 +8,7 @@ import SideMenu from '@/app/components/side-menu'
 import getResource from '@/actions/getResources'
 import ResourcesClient from './components/client'
 import { format } from 'date-fns'
-import Navbar from '@/app/components/navbar-new/Navbar'
+import Navbar from '@/app/components/navbar'
 import { Balancer } from 'react-wrap-balancer'
 
 interface ReourcePageProps {
