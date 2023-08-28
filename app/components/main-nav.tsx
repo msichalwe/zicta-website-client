@@ -35,7 +35,7 @@ export const MainNav = ({
 			title: 'About',
 		},
 		{
-			title: 'Media',
+			title: 'Press Room',
 			items: [
 				{
 					title: 'News',
@@ -48,6 +48,13 @@ export const MainNav = ({
 				{
 					title: 'Publications',
 					description: 'Publications from ZICTA',
+				},
+				{
+					title: 'Annual Reports',
+					description: 'ZICTA Annual Reports',
+				},
+				{
+					title: 'Press Releases',
 				},
 			],
 		},
@@ -146,7 +153,9 @@ export const MainNav = ({
 							<NavigationMenuContent>
 								<ul className="grid w-[300px] gap-3 p-4 h-full md:w-[500px] grid-cols-2 lg:w-[600px] ">
 									{nav.items?.map((item) => {
-										const href = `/${nav.title.toLowerCase()}/${item?.title
+										const href = `/${nav.title
+											.toLowerCase()
+											.replace(/ /g, '-')}/${item?.title
 											.toLowerCase()
 											.replace(/ /g, '-')}`
 
