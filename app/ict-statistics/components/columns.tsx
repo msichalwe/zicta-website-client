@@ -24,6 +24,7 @@ export const columns: ColumnDef<StatsColumn>[] = [
 
 	{
 		id: 'actions',
+		header: 'Actions',
 		cell: ({ row }) => <CellAction data={row.original} />,
 	},
 ]

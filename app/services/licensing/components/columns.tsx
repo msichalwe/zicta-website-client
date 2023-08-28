@@ -19,6 +19,7 @@ export const columns: ColumnDef<LicensesColumn>[] = [
 
 	{
 		id: 'actions',
+		header: 'Actions',
 		cell: ({ row }) => <CellAction data={row.original} />,
 	},
 ]
