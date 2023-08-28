@@ -85,6 +85,7 @@ module.exports = {
 				'zicta-home': "url('/assets/zicta-home.jpg')",
 				'hero-bg': "url('/assets/bg.png')",
 				'zicta-banner': "url('/assets/zicta-banner.png')",
+				'customer-care': "url('/assets/customer_care.png')",
 			},
 		},
 	},
