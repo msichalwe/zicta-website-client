@@ -28,6 +28,7 @@ export const columns: ColumnDef<ResourceColumn>[] = [
 
 	{
 		id: 'actions',
+		header: 'Actions',
 		cell: ({ row }) => <CellAction data={row.original} />,
 	},
 ]
