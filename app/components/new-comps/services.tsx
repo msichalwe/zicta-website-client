@@ -8,7 +8,7 @@ const Services = () => {
 		<div className="">
 			<div className="w-5/6 mx-auto py-10 space-y-4 ">
 				<h2 className="font-medium text-3xl uppercase">Services</h2>
-				<div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-5">
+				<div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-5 gap-5">
 					{servicesData.map((item, index) => (
 						<div
 							onClick={() =>
@@ -53,26 +53,26 @@ const servicesData = [
 		color: '#C6EBBE',
 		image: '',
 	},
-	{
-		title: 'Spectrum Management',
-		description:
-			'Navigate the digital landscape efficiently. ZICTA manages the spectrum for optimal connectivity and communication services',
-		color: '#A9DBB8',
-		image: '',
-	},
-	{
-		title: 'Universal Access',
-		description:
-			'Connect everyone, everywhere. ZICTA facilitates inclusive access to digital resources and services.',
-		color: '#7CA5B8',
-		bgColor: true,
-	},
-	{
-		title: 'Cyber Security',
-		description:
-			"Safeguard your digital presence. ZICTA's cybersecurity initiatives protect against online threats and vulnerabilities.",
-		color: '#F7A072',
-	},
+	// {
+	// 	title: 'Spectrum Management',
+	// 	description:
+	// 		'Navigate the digital landscape efficiently. ZICTA manages the spectrum for optimal connectivity and communication services',
+	// 	color: '#A9DBB8',
+	// 	image: '',
+	// },
+	// {
+	// 	title: 'Universal Access',
+	// 	description:
+	// 		'Connect everyone, everywhere. ZICTA facilitates inclusive access to digital resources and services.',
+	// 	color: '#7CA5B8',
+	// 	bgColor: true,
+	// },
+	// {
+	// 	title: 'Cyber Security',
+	// 	description:
+	// 		"Safeguard your digital presence. ZICTA's cybersecurity initiatives protect against online threats and vulnerabilities.",
+	// 	color: '#F7A072',
+	// },
 	{
 		title: 'Economic Regulation',
 		description:
@@ -90,7 +90,7 @@ const servicesData = [
 		title: 'Postal & Courier',
 		description:
 			'Beyond the digital realm. ZICTA manages postal and courier services, bridging the gap between physical and digital communication..',
-		color: '#313180',
+		color: '#F7A072',
 		bgColor: true,
 	},
 ]
