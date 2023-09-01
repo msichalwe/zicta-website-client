@@ -8,29 +8,53 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 
 const NavLinks = () => {
-	const { data: services, isLoading } = useQuery({
-		queryKey: ['servicesData'],
-		queryFn: getAllServices,
-	})
 	const links = [
-		// {
-		// 	name: 'Services',
-		// 	submenu: true,
-		// 	sublinks: [
-		// 		{
-		// 			Head: 'All Services',
-		// 			sublink: services?.map((item) => ({
-		// 				name: item.title,
-		// 			})),
-		// 		},
-		// 	],
-		// },
 		{
-			name: 'Media',
+			name: 'About',
 			submenu: true,
 			sublinks: [
 				{
-					Head: 'All Available Media',
+					sublink: [
+						{
+							name: 'About ZICTA',
+						},
+						{
+							name: 'Management',
+						},
+					],
+				},
+			],
+		},
+		{
+			name: 'Services',
+			submenu: true,
+			sublinks: [
+				{
+					sublink: [
+						{
+							name: 'Licensing',
+						},
+						{
+							name: 'Consumer Protection',
+						},
+						{
+							name: 'Technical Regulation',
+						},
+						{
+							name: 'Economic Regulation',
+						},
+						{
+							name: 'Service Charter',
+						},
+					],
+				},
+			],
+		},
+		{
+			name: 'Press Room',
+			submenu: true,
+			sublinks: [
+				{
 					sublink: [
 						{
 							name: 'News',
@@ -50,7 +74,6 @@ const NavLinks = () => {
 			submenu: true,
 			sublinks: [
 				{
-					Head: 'All Resources',
 					sublink: [
 						{
 							name: 'Legislation',
@@ -81,7 +104,7 @@ const NavLinks = () => {
 		<>
 			{links.map((link) => (
 				<div>
-					<div className="md:px-3 px-1 text-left md:cursor-pointer group">
+					<div className=" text-left md:cursor-pointer group">
 						<h1
 							className="md:py-7 py-5 md:hover:text-zicta-yellow flex justify-between items-center md:pr-0 pr-5 group"
 							onClick={() => {
@@ -100,76 +123,25 @@ const NavLinks = () => {
 								{link.submenu ? <ChevronDown className="h-4 w-4" /> : ''}
 							</span>
 						</h1>
-						{link.submenu && (
-							<div>
-								<div className="absolute top-20 hidden group-hover:md:block hover:md:block">
-									<div className="py-3">
-										<div
-											className="w-4 h-4 left-3 absolute 
-					  mt-1 bg-white rotate-45"></div>
-									</div>
-									<div className="bg-white p-5  w-[250px] flex items-center ">
-										{link?.sublinks?.map((mysublinks) => (
-											<div>
-												<h1 className="text-lg font-semibold">
-													{mysublinks.Head}
-												</h1>
-												{mysublinks?.sublink?.map((slink) => {
-													const href = `/${link.name.toLowerCase()}/${slink?.name
-														.toLowerCase()
-														.replace(/ /g, '-')}`
-													return (
-														<li className="text-sm hover:text-zicta-yellow text-gray-600 my-2.5">
-															<Link href={href} className="hover:text-primary">
-																{slink?.name}
-															</Link>
-														</li>
-													)
-												})}
-											</div>
-										))}
-									</div>
-								</div>
-							</div>
-						)}
 					</div>
 					{/* Mobile menus */}
 					<div
 						className={`
-			  ${heading === link.name ? 'md:hidden' : 'hidden'}
+			  ${heading === link.name ? 'lg:hidden' : 'hidden'}
 			`}>
-						{/* sublinks */}
 						{link?.sublinks?.map((slinks) => (
-							<div>
+							<div className="transition ease-in-out duration-100  p-2 ">
 								<div>
-									<h1
-										onClick={() =>
-											subHeading !== slinks.Head
-												? setSubHeading(slinks.Head)
-												: setSubHeading('')
-										}
-										className="py-4 pl-7 font-semibold md:pr-0 pr-5 flex justify-between items-center text-sm">
-										{slinks.Head}
-
-										<span className="text-xl md:mt-1 md:ml-2 inline">
-											{subHeading === slinks.Head ? (
-												<ChevronUp className="h-4 w-4" />
-											) : (
-												<ChevronDown className="h-4 w-4" />
-											)}
-										</span>
-									</h1>
-									<div
-										className={`${
-											subHeading === slinks.Head ? 'md:hidden' : 'hidden'
-										}`}>
+									<div className={`${' space-y-6'}`}>
 										{slinks?.sublink?.map((slink) => {
-											const href = `/${link.name.toLowerCase()}/${slink?.name
+											const href = `/${link.name
+												.toLowerCase()
+												.replace(/ /g, '-')}/${slink?.name
 												.toLowerCase()
 												.replace(/ /g, '-')}`
 											return (
 												<li
-													className="text-sm text-gray-600 ml-8 my-2.5"
+													className="text-sm text-gray-600 ml-8 my-4 "
 													onClick={() => dispatch(setOpenMenu(false))}>
 													<Link href={href} className="hover:text-primary">
 														{slink?.name}

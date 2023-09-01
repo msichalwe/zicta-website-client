@@ -69,10 +69,6 @@ export const MainNav = ({
 					description: ' Licensing for telecom services.',
 				},
 				{
-					title: 'Postal and Courier',
-					description: 'Oversight of mail and courier services.',
-				},
-				{
 					title: 'Consumer Protection',
 					description: 'Ensuring fair treatment for consumers.',
 				},
@@ -117,14 +113,19 @@ export const MainNav = ({
 			],
 		},
 		{
+			title: 'Careers',
+		},
+		{
+			title: 'Procurement',
+		},
+		{
 			title: 'Online Services',
 		},
 	]
 
 	return (
-		<nav className="md:text-base text-sm">
-			<NavigationMenu
-				className={cn('flex items-center  space-x-4 lg:space-x-6 flex-col')}>
+		<nav className="text-xs">
+			<NavigationMenu className={cn('flex items-center   space-x-2  flex-col')}>
 				<NavigationMenuList className={cn('gap-2 ', className)}>
 					{data.map((nav) => (
 						<NavigationMenuItem>
@@ -133,6 +134,12 @@ export const MainNav = ({
 									href={
 										nav.title.toLowerCase() === 'home'
 											? '/'
+											: nav.title.toLowerCase() === 'procurement'
+											? '/downloads/procurement'
+											: nav.title.toLowerCase() === 'online services'
+											? '/apply'
+											: nav.title.toLowerCase() === 'careers'
+											? 'https://zicta.mcidirecthire.com/External/Job?Ref=TEkBhDYErs0qhHgueWeCgt%2fyRI%2bcnPLR1MRk1RR6Cpou3ktpvROhSqni%2fBGkK6j0oVFE%2fv%2b%2bs7ZikC%2fr8Jno6%2bKXdOtrvvTBseO48pRs8yB57ycdvdLzgmNZo5S%2bjJVn0KOcSAYT10kLM0k%2b76eugg%3d%3d'
 											: nav.title.toLowerCase().replace(/[\s&]+/g, '-')
 									}
 									legacyBehavior
