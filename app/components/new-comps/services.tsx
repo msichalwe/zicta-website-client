@@ -5,7 +5,7 @@ import React from 'react'
 const Services = () => {
 	const router = useRouter()
 	return (
-		<div className="">
+		<div className="h-full">
 			<div className="w-5/6 mx-auto py-10 space-y-4 ">
 				<h2 className="font-medium text-3xl uppercase">Services</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-5 gap-5">
@@ -24,7 +24,7 @@ const Services = () => {
 							}}
 							className={` ${
 								item.bgColor ? 'text-white' : 'text-gray-900'
-							}  min-h-[20vh] flex justify-center items-start ease-in-out p-5 hover:scale-105 transition cursor-pointer  flex-col`}>
+							}  min-h-[20vh] h-full flex justify-center items-start ease-in-out p-5 hover:scale-105 transition cursor-pointer  flex-col`}>
 							<h1 className="font-medium uppercase">{item.title}</h1>
 							<p className="text-sm">{item.description}</p>
 						</div>
