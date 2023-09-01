@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Balancer } from 'react-wrap-balancer'
 import getTestimonial from '@/actions/getTestimonial'
-import Testimonial from '../sections/testimonial-section'
-import Navbar from '../components/navbar'
-import Footer from '../components/footer'
+import Testimonial from '@/app/sections/testimonial-section'
+import Navbar from '../../components/navbar'
+import Footer from '../../components/footer'
 
 const About = async () => {
 	const testimonial = await getTestimonial()

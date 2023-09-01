@@ -24,8 +24,8 @@ const Management = () => {
 		<>
 			<Navbar />
 			<div className="flex gap-10 w-full flex-col ">
-				<div className="bg-gradient-to-l mt-20 to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
-					<h1 className="sm:text-4xl text-2xl  text-white font-medium">
+				<div className="bg-gradient-to-l p-10 mt-20 to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
+					<h1 className="sm:text-4xl text-2xl text-center text-white font-medium">
 						<Balancer>Management Team of the Authority</Balancer>
 					</h1>
 					<p className="max-w-4xl mt-5 text-xs md:text-lg text-white">

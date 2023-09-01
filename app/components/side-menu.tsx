@@ -8,7 +8,8 @@ const SideMenu = async () => {
 	const media = await getAllMedia()
 
 	return (
-		<div className="flex flex-col justify-around p-5">
+		<div className="flex flex-col space-y-5 justify-around p-5">
+			<h2 className="text-2xl font-black">Latest News</h2>
 			<div className=" space-y-2  ">
 				{media.map((post) => (
 					<div key={post.id} className="gap-2">
@@ -21,7 +22,7 @@ const SideMenu = async () => {
 								</div>
 								<div className="group relative max-w-xl space-y-2">
 									<h3 className="text-md font-semibold  line-clamp-1  text-gray-900 group-hover:text-gray-600">
-										<a href={`/media/${post.type}/${post.id}`}>
+										<a href={`/press-room/${post.type}/${post.id}`}>
 											<span className="absolute inset-0" />
 											{post.title}
 										</a>

@@ -44,7 +44,7 @@ const Navbar = () => {
 				</div>
 			</div>
 			{!isAboveMediumScreens && isMenuToggled && (
-				<div className="fixed bottom-0 right-0 z-40 h-full w-[300px] text-gray-900 bg-gray-100 drop-shadow-xl ">
+				<div className="fixed bottom-0 right-0 z-40 h-full w-full text-gray-900 bg-gray-100 drop-shadow-xl ">
 					{/* CLOSE ICON */}
 					<div className="flex justify-end p-12">
 						<button onClick={() => setIsMenuToggled(!isMenuToggled)}>
@@ -52,7 +52,7 @@ const Navbar = () => {
 						</button>
 					</div>
 					{/* MENU ITEMS */}
-					<div className={`ml-[33%] flex flex-col gap-10 text-2xl`}>
+					<div className={`ml-10 flex flex-col gap-10 text-2xl`}>
 						<MainNav className="mx-6 flex-col md:flex-row h-full " />
 					</div>
 				</div>
