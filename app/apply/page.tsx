@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/card'
 import { useRouter } from 'next/navigation'
 import Footer from '../components/footer'
-import Navbar from '../components/navbar-new/Navbar'
+import Navbar from '../components/navbar'
 import Loader from '@/components/ui/loader'
 
 interface CardProps {
