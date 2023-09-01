@@ -5,12 +5,10 @@ import { useParams, usePathname } from 'next/navigation'
 import {
 	NavigationMenu,
 	NavigationMenuContent,
-	NavigationMenuIndicator,
 	NavigationMenuItem,
 	NavigationMenuLink,
 	NavigationMenuList,
 	NavigationMenuTrigger,
-	NavigationMenuViewport,
 } from '@/components/ui/navigation-menu'
 import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import React from 'react'
@@ -21,18 +19,22 @@ export const MainNav = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLElement>) => {
-	const pathname = usePathname()
-	const { data: services, isLoading } = useQuery({
-		queryKey: ['servicesData'],
-		queryFn: getAllServices,
-	})
-
 	const data = [
 		{
 			title: 'Home',
 		},
 		{
 			title: 'About',
+			items: [
+				{
+					title: 'About ZICTA',
+					description: 'Learn more about ZICTA',
+				},
+				{
+					title: 'Management',
+					description: 'Meet the ZICTA Management Team',
+				},
+			],
 		},
 		{
 			title: 'Press Room',
@@ -61,34 +63,36 @@ export const MainNav = ({
 		{
 			title: 'Services',
 
-			items: services?.map((item) => ({
-				title: item.title,
-				description: item.description,
-			})),
+			items: [
+				{
+					title: 'Licensing',
+					description: ' Licensing for telecom services.',
+				},
+				{
+					title: 'Postal and Courier',
+					description: 'Oversight of mail and courier services.',
+				},
+				{
+					title: 'Consumer Protection',
+					description: 'Ensuring fair treatment for consumers.',
+				},
+				{
+					title: 'Technical Regulation',
+					description: 'Standards and compliance for technology.',
+				},
+				{
+					title: 'Economic Regulation',
+					description: 'Oversight of telecom industry economics.',
+				},
+				{
+					title: 'Service Charter',
+					description: 'Guidelines for service quality and standards.',
+				},
+			],
 		},
-		// {
-		// 	title: 'Departments',
 
-		// 	items: [
-		// 		{
-		// 			title: 'Cyber Security',
-		// 			description:
-		// 				'The cybersecurity department is responsible for the security of the internet',
-		// 		},
-		// 		{
-		// 			title: 'Universal Access',
-		// 			description:
-		// 				'Universal access is the deparment that enables all citizens to access the internet',
-		// 		},
-		// 		{
-		// 			title: 'Technology and Engineering',
-		// 			description:
-		// 				'Technology and Engineering is the department that is responsible for the development of technology',
-		// 		},
-		// 	],
-		// },
 		{
-			title: 'Resources',
+			title: 'Downloads',
 
 			items: [
 				{
@@ -113,14 +117,14 @@ export const MainNav = ({
 			],
 		},
 		{
-			title: 'Apply',
+			title: 'Online Services',
 		},
 	]
 
 	return (
-		<nav>
+		<nav className="md:text-base text-sm">
 			<NavigationMenu
-				className={cn('flex items-center space-x-4 lg:space-x-6 flex-col')}>
+				className={cn('flex items-center  space-x-4 lg:space-x-6 flex-col')}>
 				<NavigationMenuList className={cn('gap-2 ', className)}>
 					{data.map((nav) => (
 						<NavigationMenuItem>
@@ -129,29 +133,25 @@ export const MainNav = ({
 									href={
 										nav.title.toLowerCase() === 'home'
 											? '/'
-											: nav.title.toLowerCase() === 'about'
-											? '/about'
-											: nav.title.toLowerCase() === 'complaints & queries'
-											? '/complaints-queries'
 											: nav.title.toLowerCase().replace(/[\s&]+/g, '-')
 									}
 									legacyBehavior
 									passHref>
 									<NavigationMenuLink
 										className={cn(
-											'bg-transparent hover:bg-transparent focus:bg-transparent',
+											'bg-transparent md:text-base text-sm hover:bg-transparent focus:bg-transparent',
 											navigationMenuTriggerStyle(),
 										)}>
 										{nav.title}
 									</NavigationMenuLink>
 								</Link>
 							) : (
-								<NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent">
+								<NavigationMenuTrigger className="bg-transparent hover:bg-transparent md:text-base text-sm focus:bg-transparent">
 									{nav.title}
 								</NavigationMenuTrigger>
 							)}
 							<NavigationMenuContent>
-								<ul className="grid w-[300px] gap-3 p-4 h-full md:w-[500px] grid-cols-2 lg:w-[600px] ">
+								<ul className="grid w-[300px] text-xs gap-3 p-4 h-full md:w-[500px] grid-cols-2 lg:w-[600px] ">
 									{nav.items?.map((item) => {
 										const href = `/${nav.title
 											.toLowerCase()
@@ -169,10 +169,6 @@ export const MainNav = ({
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 					))}
-					{/* <NavigationMenuItem>
-						<NavigationMenuTrigger></NavigationMenuTrigger>
-						<NavigationMenuContent></NavigationMenuContent>
-					</NavigationMenuItem> */}
 				</NavigationMenuList>
 			</NavigationMenu>
 		</nav>

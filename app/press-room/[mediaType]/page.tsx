@@ -1,6 +1,7 @@
 'use client'
 import getMediaType from '@/actions/getMediaType'
 import Heading from '@/app/components/Heading'
+import Footer from '@/app/components/footer'
 import Navbar from '@/app/components/navbar'
 import Loader from '@/components/ui/loader'
 import { useQuery } from '@tanstack/react-query'
@@ -33,7 +34,7 @@ const MediaType = () => {
 		<>
 			<Navbar />
 			<div>
-				<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
+				<div className="bg-gradient-to-l mt-10 to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
 					<h1 className="sm:text-4xl text-2xl uppercase text-white font-medium">
 						<Balancer> {params.mediaType}</Balancer>
 					</h1>
@@ -66,7 +67,7 @@ const MediaType = () => {
 											</p>
 										</div>
 										<h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-											<a href={`/media/${params.mediaType}/${post.id}`}>
+											<a href={`/press-room/${params.mediaType}/${post.id}`}>
 												<span className="absolute inset-0" />
 												{post.title}
 											</a>
@@ -78,6 +79,7 @@ const MediaType = () => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	)
 }
