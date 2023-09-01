@@ -13,12 +13,14 @@ export default async function Home() {
 	return (
 		<>
 			<Navbar />
-			<main className="min-h-screen">
+			<main className="min-h-screen h-full">
 				<Header />
 				<LatestNews />
 				<Services />
 				<FaqSection data={faqData} />
-				<ContactSection />
+				<div className="mt-[36rem] md:mt-0">
+					<ContactSection />
+				</div>
 			</main>
 			<Footer />
 		</>

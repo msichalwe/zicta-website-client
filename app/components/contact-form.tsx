@@ -80,7 +80,7 @@ const ContactForm = () => {
 	}
 
 	return (
-		<div className="mt-8 sm-mx-auto w-full sm:max-w-4xl ">
+		<div className="h-full sm-mx-auto w-full sm:max-w-4xl ">
 			<Form {...form}>
 				<form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
 					<FormField

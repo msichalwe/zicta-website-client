@@ -1,5 +1,6 @@
 'use client'
 
+import Footer from '@/app/components/footer'
 import Navbar from '@/app/components/navbar'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
@@ -40,12 +41,12 @@ const StatisticsWrapper: React.FC<StatisticsProps> = ({ children }) => {
 	return (
 		<>
 			<Navbar />
-			<div className="flex gap-10 w-full flex-col">
-				<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
-					<h1 className="sm:text-4xl text-2xl  text-white font-medium">
+			<div className="flex gap-10 w-full mt-16 flex-col">
+				<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8] p-10  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
+					<h1 className="sm:text-4xl text-center w-full text-2xl  text-white font-medium">
 						<Balancer>Exploring ICT in Numbers: ICT Statistics</Balancer>
 					</h1>
-					<p className="max-w-4xl mt-5 text-lg text-white">
+					<p className="md:max-w-4xl  mt-5 text-lg text-white">
 						<Balancer>
 							Delve into the world of Information and Communication Technology
 							(ICT) through our comprehensive ICT Statistics page. Here, you'll
@@ -72,9 +73,10 @@ const StatisticsWrapper: React.FC<StatisticsProps> = ({ children }) => {
 							))}
 						</nav>
 					</div>
-					<div className="col-span-2">{children}</div>
+					<div className="col-span-2 md:p-2 p-10 min-h-screen">{children}</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	)
 }
