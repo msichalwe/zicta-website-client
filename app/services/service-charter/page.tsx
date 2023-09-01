@@ -8,7 +8,7 @@ const ServiceCharter = () => {
 	return (
 		<div className="flex gap-10 w-full flex-col ">
 			<Navbar />
-			<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px] flex items-center justify-center">
+			<div className="bg-gradient-to-l mt-10 to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px] flex items-center justify-center">
 				<h1 className="sm:text-4xl text-2xl  text-white font-medium">
 					<Balancer>Service Charter</Balancer>
 				</h1>

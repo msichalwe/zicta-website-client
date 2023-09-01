@@ -40,13 +40,13 @@ const Service: React.FC<ServicePageProps> = async ({ params }) => {
 						</div>
 					</div>
 				</div> */}
-				<div className=" grid grid-cols-2 gap-0 w-full h-[80vh]">
-					<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8]  space-y-6 flex justify-center text-white px-20 flex-col">
-						<h1 className="font-bold text-5xl ">{service.title}</h1>
+				<div className=" grid grid-cols-1 md:grid-cols-2 gap-0 w-full h-screen md:h-[80vh]">
+					<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8]  space-y-6 flex justify-center text-white px-5 md:px-20 flex-col">
+						<h1 className="font-bold text-2xl md:text-5xl ">{service.title}</h1>
 						<p className=" ">{service.description}</p>
 					</div>
 					<div
-						className="bg-cover bg-no-repeat"
+						className="bg-cover bg-no-repeat h-full"
 						style={{ backgroundImage: `url(${service.imageUrl})` }}
 					/>
 				</div>

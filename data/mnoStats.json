@@ -9,6 +9,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 10267,
 		"Fixed Internet Penetration per 100": 0.08,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 0,
 		"Female Employees": 0,
 		"Total Employees": 0
@@ -23,6 +24,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 19795,
 		"Fixed Internet Penetration per 100": 0.14,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 16,
 		"Female Employees": 122,
 		"Total Employees": 752
@@ -37,6 +39,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 15839,
 		"Fixed Internet Penetration per 100": 0.11,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 10,
 		"Female Employees": 118,
 		"Total Employees": 720
@@ -50,6 +53,7 @@
 		"District (PoPs)": 99,
 		"Number of Subscribers": 17231,
 		"Fixed Internet Penetration per 100": 0.12,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 13,
 		"Female Employees": 97,
 		"Total Employees": 561
@@ -63,6 +67,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 29349,
 		"Fixed Internet Penetration per 100": 0.19,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 12,
 		"Female Employees": 70,
 		"Total Employees": 461
@@ -77,6 +82,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 38316,
 		"Fixed Internet Penetration per 100": 0.25,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 18,
 		"Female Employees": 149,
 		"Total Employees": 499
@@ -92,6 +98,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 35919,
 		"Fixed Internet Penetration per 100": 0.22,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 17,
 		"Female Employees": 149,
 		"Total Employees": 572
@@ -107,6 +114,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 36108,
 		"Fixed Internet Penetration per 100": 0.22,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 19,
 		"Female Employees": 164,
 		"Total Employees": 558
@@ -122,6 +130,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 73532,
 		"Fixed Internet Penetration per 100": 0.44,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 10,
 		"Female Employees": 139,
 		"Total Employees": 640
@@ -137,6 +146,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 89533,
 		"Fixed Internet Penetration per 100": 0.52,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 10,
 		"Female Employees": 94,
 		"Total Employees": 356
@@ -152,6 +162,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 82317,
 		"Fixed Internet Penetration per 100": 0.46,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 7,
 		"Female Employees": 65,
 		"Total Employees": 236
@@ -167,6 +178,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 80611,
 		"Fixed Internet Penetration per 100": 0.44,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 8,
 		"Female Employees": 62,
 		"Total Employees": 215
@@ -182,6 +194,7 @@
 		"District (PoPs)": 0,
 		"Number of Subscribers": 86446,
 		"Fixed Internet Penetration per 100": 0.44,
+		"Fixed Internet Penetration per 100Color": "hsl(20, 70%, 50%)",
 		"Expartriates": 14,
 		"Female Employees": 61,
 		"Total Employees": 220

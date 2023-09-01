@@ -24,7 +24,7 @@ const Services = () => {
 							}}
 							className={` ${
 								item.bgColor ? 'text-white' : 'text-gray-900'
-							}  min-h-[20vh] flex justify-center items-start ease-in-out p-5 hover:scale-105 transition cursor-pointer  flex-col`}>
+							}  min-h-[20vh] h-full flex justify-center items-start ease-in-out p-5 hover:scale-105 transition cursor-pointer  flex-col`}>
 							<h1 className="font-medium uppercase">{item.title}</h1>
 							<p className="text-sm">{item.description}</p>
 						</div>

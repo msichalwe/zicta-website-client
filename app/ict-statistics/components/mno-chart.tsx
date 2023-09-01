@@ -11,11 +11,11 @@ const MNOChart: React.FC<MNOChartProps> = ({ keyValue }) => (
 		data={data}
 		keys={[keyValue]}
 		indexBy="Year"
-		margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+		margin={{ top: 50, right: 10, bottom: 50, left: 60 }}
 		padding={0.5}
 		valueScale={{ type: 'linear' }}
 		indexScale={{ type: 'band', round: true }}
-		colors={{ scheme: 'nivo' }}
+		colors={{ scheme: 'paired' }}
 		defs={[
 			{
 				id: 'dots',
@@ -70,7 +70,7 @@ const MNOChart: React.FC<MNOChartProps> = ({ keyValue }) => (
 			tickRotation: 0,
 			legend: 'MNO Statistics',
 			legendPosition: 'middle',
-			legendOffset: -45,
+			legendOffset: -50,
 		}}
 		labelSkipWidth={12}
 		labelSkipHeight={12}
@@ -81,25 +81,16 @@ const MNOChart: React.FC<MNOChartProps> = ({ keyValue }) => (
 		legends={[
 			{
 				dataFrom: 'keys',
-				anchor: 'bottom-right',
-				direction: 'column',
+				anchor: 'top',
+				direction: 'row',
 				justify: false,
-				translateX: 120,
-				translateY: 0,
-				itemsSpacing: 2,
+				translateX: -50,
+				translateY: -36,
 				itemWidth: 100,
 				itemHeight: 20,
-				itemDirection: 'left-to-right',
-				itemOpacity: 0.85,
+				itemsSpacing: 2,
 				symbolSize: 20,
-				effects: [
-					{
-						on: 'hover',
-						style: {
-							itemOpacity: 1,
-						},
-					},
-				],
+				itemDirection: 'left-to-right',
 			},
 		]}
 		role="application"
