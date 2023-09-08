@@ -22,17 +22,12 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 
 	const onDownload = () => {
 		if (data.file) {
-			const fileUrl = `${baseUrl}${data.file}`
-			console.log(`File URL: ${fileUrl}`) // Log file URL
+			const fileUrl = `${baseUrl}${data.file}`.toLowerCase() // Convert to lowercase
 
 			const link = document.createElement('a')
 			link.href = fileUrl
-			link.download = data.file.split('/').pop() || ''
-
-			// Error handling
-			link.onerror = (error) => {
-				console.error('Error downloading file:', error)
-			}
+			// @ts-ignore
+			link.download = data.file?.split('/').pop().toLowerCase() || '' // Convert to lowercase
 
 			document.body.appendChild(link)
 			link.click()
