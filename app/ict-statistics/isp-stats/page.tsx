@@ -42,7 +42,7 @@ const stats: Array<StatsColumn> = [
 	{
 		id: '1',
 		title: 'ISP Statistics',
-		file: '/isp-stats/ISP-Website-Statistics-Updates.xlsx',
+		file: '/isp-website-statistics-updates.xlsx',
 		createdAt: '2021-09-01T00:00:00.000Z',
 	},
 ]

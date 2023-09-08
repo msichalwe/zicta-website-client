@@ -41,19 +41,19 @@ const stats: Array<StatsColumn> = [
 	{
 		id: '1',
 		title: '2022 National ICT Survey Report',
-		file: '/2022_Report.pdf',
+		file: '/2022_report.pdf',
 		createdAt: '2022-12-01T00:00:00.000Z',
 	},
 	{
 		id: '2',
 		title: '2018 National ICT Survey Report',
-		file: '/2018_Report.pdf',
+		file: '/2018_report.pdf',
 		createdAt: '2018-12-01T00:00:00.000Z',
 	},
 	{
 		id: '3',
 		title: '2015 National ICT Survey Report',
-		file: '/2015_Report.pdf',
+		file: '/2015_report.pdf',
 		createdAt: '2015-12-01T00:00:00.000Z',
 	},
 ]

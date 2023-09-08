@@ -12,7 +12,6 @@ import { selectOpenMenu, setOpenMenu } from '@/state'
 const Navbar = () => {
 	const flexBetween = 'flex items-center justify-between'
 	const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)')
-	const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
 	const open = useAppSelector(selectOpenMenu)
 	const dispatch = useAppDispatch()
 
@@ -68,7 +67,7 @@ const Navbar = () => {
 							</Link>
 						</li>
 						<NavLinks />
-						<li>
+						{/* <li>
 							<Link
 								onClick={() => dispatch(setOpenMenu(false))}
 								href={
@@ -85,7 +84,7 @@ const Navbar = () => {
 								className="py-7  lg:px-2 px-1 hover:text-zicta-yellow inline-block">
 								Procurement
 							</Link>
-						</li>
+						</li> */}
 
 						<li>
 							<Link

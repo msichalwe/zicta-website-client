@@ -80,4 +80,8 @@ const buttonData = [
 		title: 'ICT Statistics',
 		link: '/ict-statistics',
 	},
+	{
+		title: 'FAQs',
+		link: '/faqs',
+	},
 ]

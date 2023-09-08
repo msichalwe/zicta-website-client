@@ -18,20 +18,24 @@ interface CellActionProps {
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
+	const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL}`
+
 	const onDownload = () => {
 		if (data.file) {
-			const fileUrl = data.file
+			const fileUrl = `${baseUrl}${data.file}`.toLowerCase() // Convert to lowercase
+
 			const link = document.createElement('a')
 			link.href = fileUrl
-			link.download = fileUrl.split('/').pop() || '' // Use file name from URL
-			document.body.appendChild(link) // Append to body
-			link.click() // Simulate click
-			document.body.removeChild(link) // Remove from body
+			// @ts-ignore
+			link.download = data.file?.split('/').pop().toLowerCase() || '' // Convert to lowercase
+
+			document.body.appendChild(link)
+			link.click()
+			document.body.removeChild(link)
 		} else {
 			console.error('File URL is undefined')
 		}
 	}
-
 	return (
 		<>
 			<DropdownMenu>

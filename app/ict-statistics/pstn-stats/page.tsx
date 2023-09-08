@@ -41,7 +41,7 @@ const stats: Array<StatsColumn> = [
 	{
 		id: '1',
 		title: 'PSTN Statistics',
-		file: '/isp-stats/ISP-Website-Statistics-Updates.xlsx',
+		file: '/pstn-website-statistics-updates.xlsx',
 		createdAt: '2021-09-01T00:00:00.000Z',
 	},
 ]

@@ -50,7 +50,7 @@ const Navbar = () => {
 							</Link>
 						</li>
 						<NavLinks />
-						<li>
+						{/* <li>
 							<Link
 								href={
 									'https://zicta.mcidirecthire.com/External/Job?Ref=TEkBhDYErs0qhHgueWeCgt%2fyRI%2bcnPLR1MRk1RR6Cpou3ktpvROhSqni%2fBGkK6j0oVFE%2fv%2b%2bs7ZikC%2fr8Jno6%2bKXdOtrvvTBseO48pRs8yB57ycdvdLzgmNZo5S%2bjJVn0KOcSAYT10kLM0k%2b76eugg%3d%3d'
@@ -65,7 +65,7 @@ const Navbar = () => {
 								className="py-7  lg:px-2 px-1 hover:text-zicta-yellow inline-block">
 								Procurement
 							</Link>
-						</li>
+						</li> */}
 
 						<li>
 							<Link

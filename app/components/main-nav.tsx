@@ -113,12 +113,6 @@ export const MainNav = ({
 			],
 		},
 		{
-			title: 'Careers',
-		},
-		{
-			title: 'Procurement',
-		},
-		{
 			title: 'Online Services',
 		},
 	]
