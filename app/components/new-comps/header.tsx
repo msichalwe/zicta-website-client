@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 import { Balancer } from 'react-wrap-balancer'
 import { motion } from 'framer-motion'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Header = () => {
 	const router = useRouter()
@@ -26,14 +27,16 @@ const Header = () => {
 							</Balancer>
 						</p>
 						<div className="flex gap-5">
-							<Button className="rounded-full text-xs md:text-sm bg-zicta-blue">
+							<AnchorLink
+								href="#services"
+								className="rounded-full px-4 py-2 text-xs md:text-sm bg-zicta-blue">
 								Explore ZICTA
-							</Button>
-							<Button
-								className="rounded-full text-xs md:text-sm"
-								variant="ghost">
+							</AnchorLink>
+							<AnchorLink
+								href="#contact"
+								className="text-white flex items-center justify-center ">
 								Contact Us
-							</Button>
+							</AnchorLink>
 						</div>
 					</div>
 					<div></div>

@@ -23,17 +23,25 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 	const onDownload = () => {
 		if (data.file) {
 			const fileUrl = `${baseUrl}${data.file}`
-			// Construct the complete URL using baseUrl
+			console.log(`File URL: ${fileUrl}`) // Log file URL
+
 			const link = document.createElement('a')
 			link.href = fileUrl
-			link.download = data.file.split('/').pop() || '' // Use file name from URL
-			document.body.appendChild(link) // Append to body
-			link.click() // Simulate click
-			document.body.removeChild(link) // Remove from body
+			link.download = data.file.split('/').pop() || ''
+
+			// Error handling
+			link.onerror = (error) => {
+				console.error('Error downloading file:', error)
+			}
+
+			document.body.appendChild(link)
+			link.click()
+			document.body.removeChild(link)
 		} else {
 			console.error('File URL is undefined')
 		}
 	}
+
 	return (
 		<>
 			<DropdownMenu>

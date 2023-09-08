@@ -43,11 +43,6 @@ const NavWrapper: React.FC<NavProps> = ({ children }) => {
 			active: pathname === '/services/consumer-protection/digital-reputation',
 		},
 		{
-			href: `/services/consumer-protection/consumer-education`,
-			label: 'Consumer Education',
-			active: pathname === '/services/consumer-protection/consumer-education',
-		},
-		{
 			href: `/services/consumer-protection/mobile-phone-security`,
 			label: 'Mobile Phone Security',
 			active:
@@ -57,18 +52,6 @@ const NavWrapper: React.FC<NavProps> = ({ children }) => {
 			href: `/services/consumer-protection/sim-registration`,
 			label: 'SIM Registration (FAQ)',
 			active: pathname === '/services/consumer-protection/sim-registration',
-		},
-		{
-			href: `/services/consumer-protection/internet-safety-manual`,
-			label: 'Internet Safety Manual',
-			active:
-				pathname === '/services/consumer-protection/internet-safety-manual',
-		},
-		{
-			href: `/services/consumer-protection/child-online-protection`,
-			label: 'Child Online Protection',
-			active:
-				pathname === '/services/consumer-protection/child-online-protection',
 		},
 		{
 			href: `/services/consumer-protection/consumer-responsibilities`,
