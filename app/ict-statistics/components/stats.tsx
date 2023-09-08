@@ -37,6 +37,11 @@ const StatisticsWrapper: React.FC<StatisticsProps> = ({ children }) => {
 			label: 'PSTN Statistics',
 			active: pathname === '/ict-statistics/pstn-stats',
 		},
+		{
+			href: `/ict-statistics/report`,
+			label: 'National ICT Survey Report',
+			active: pathname === '/ict-statistics/report',
+		},
 	]
 	return (
 		<>
