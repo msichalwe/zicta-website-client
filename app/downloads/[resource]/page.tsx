@@ -16,6 +16,9 @@ interface ReourcePageProps {
 		resource: string
 	}
 }
+
+export const revalidate = 0
+
 const Resource: React.FC<ReourcePageProps> = async ({ params }) => {
 	const resource = await getResource(params.resource)
 
