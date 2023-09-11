@@ -2,15 +2,17 @@
 import React from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import useSWR from 'swr'
-import Spinner from '../components/Spinner'
 import SearchResult from './SearchResult'
 import SearchInput from './SearchInput'
 import SearchResourcesResult from './SearchResourcesResults'
+import Loader from '@/components/ui/loader'
+import Navbar from '../components/navbar'
 
 interface Post {
 	id: string
 	title: string
 	description: string
+	type: string
 	fileUrl: string
 	// Add more properties if needed
 }
@@ -52,50 +54,55 @@ const Search: React.FC = () => {
 	}
 
 	return (
-		<div className="sm:w-5/6 w-full mx-auto my-[5vh] min-h-screen">
-			<div className="bg-peaks bg-no-repeat px-2 w-full  bg-cover flex-col space-y-4  h-full min-h-[400px] sm:rounded-xl mb-20 flex items-center justify-center">
-				<h1 className=" text-2xl sm:text-4xl max-w-3xl text-center  text-white font-bold">
-					Find Information, Regulations and Services.
-				</h1>
-				<p className="text-xs text-center text-white font">
-					Effortlessly find information, regulations, and services on the ZICTA
-					website with our powerful search tool.
-				</p>
+		<>
+			<Navbar />
+			<div className="flex gap-10 w-full mt-16 flex-col">
+				<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8] p-10  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px] space-y-6 mb-20 flex items-center justify-center">
+					<h1 className=" text-2xl sm:text-4xl max-w-3xl text-center  text-white font-bold">
+						Find Information, Regulations and Services.
+					</h1>
+					<p className="text-xs text-center text-white font">
+						Effortlessly find information, regulations, and services on the
+						ZICTA website with our powerful search tool.
+					</p>
 
-				<div className=" w-full">
-					<SearchInput />
+					<div className=" w-full">
+						<SearchInput />
+					</div>
+				</div>
+
+				{/* Search Results */}
+				<div className="w-full md:w-5/6 md:mx-auto">
+					{data ? (
+						<>
+							{data.resources.length === 0 &&
+							data.services.length === 0 &&
+							data.procurement.length === 0 &&
+							data.media.length === 0 ? (
+								<div>No Results Found</div>
+							) : (
+								<>
+									{/* Using SearchResult component for each type of data */}
+									{data.media.length > 0 && (
+										<SearchResult type="media" posts={data.media} />
+									)}
+									{data.services.length > 0 && (
+										<SearchResult type="service" posts={data.services} />
+									)}
+									{data.resources.length > 0 && (
+										<SearchResourcesResult posts={data.resources} />
+									)}
+								</>
+							)}
+						</>
+					) : (
+						<div className="w-full flex items-center justify-center">
+							<Loader />
+						</div>
+					)}
 				</div>
 			</div>
-
-			{/* Search Results */}
-			<>
-				{data ? (
-					<>
-						{data.resources.length === 0 &&
-						data.services.length === 0 &&
-						data.procurement.length === 0 &&
-						data.media.length === 0 ? (
-							<div>No Results Found</div>
-						) : (
-							<>
-								{/* Using SearchResult component for each type of data */}
-								{data.media.length > 0 && <SearchResult posts={data.media} />}
-								{data.services.length > 0 && (
-									<SearchResult posts={data.services} />
-								)}
-								{data.resources.length > 0 && (
-									<SearchResourcesResult posts={data.resources} />
-								)}
-							</>
-						)}
-					</>
-				) : (
-					<div className="w-full flex items-center justify-center">
-						<Spinner />
-					</div>
-				)}
-			</>
-		</div>
+		</>
 	)
 }
 

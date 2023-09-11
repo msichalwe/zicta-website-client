@@ -4,6 +4,7 @@ interface Post {
 	id: string
 	title: string
 	fileUrl: string
+	type: string
 	// Add more properties if needed
 }
 

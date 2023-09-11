@@ -2,7 +2,6 @@
 import { Toaster } from 'react-hot-toast'
 import { useEffect, useState } from 'react'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
-import Navbar from '@/app/components/nav'
 import { Provider } from 'react-redux'
 import { store } from '@/state/store'
 
