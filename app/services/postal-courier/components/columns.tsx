@@ -1,25 +1,30 @@
 'use client'
 
 import { ColumnDef } from '@tanstack/react-table'
-import { CellAction } from './cell-action'
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-export type LicensesColumn = {
+export type PostalRegistryColumn = {
 	id: string
-	title: string
-	file: string
+	orderedId: number
+	operator: string
+	licenceNumber: string
+	type: string
 }
 
-export const columns: ColumnDef<LicensesColumn>[] = [
+export const columns: ColumnDef<PostalRegistryColumn>[] = [
 	{
-		accessorKey: 'title',
-		header: 'Title',
+		accessorKey: 'orderedId',
+		header: '#',
 	},
-
 	{
-		id: 'actions',
-		header: 'Actions',
-		cell: ({ row }) => <CellAction data={row.original} />,
+		accessorKey: 'licenceNumber',
+		header: 'Licence Number',
+	},
+	{
+		accessorKey: 'operator',
+		header: 'Name of Operator',
+	},
+	{
+		accessorKey: 'type',
+		header: 'Licence Type',
 	},
 ]

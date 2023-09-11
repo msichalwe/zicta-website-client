@@ -19,8 +19,23 @@ const NavWrapper: React.FC<NavProps> = ({ children }) => {
 	const routes = [
 		{
 			href: `/services/postal-courier`,
-			label: 'Postal-courier',
+			label: 'Postal & Courier',
 			active: pathname === '/services/postal-courier',
+		},
+		{
+			href: `/services/postal-courier/fees-types`,
+			label: 'License Types & Fees',
+			active: pathname === '/services/postal-courier/fees-types',
+		},
+		{
+			href: `/services/postal-courier/registry`,
+			label: 'Registry',
+			active: pathname === '/services/postal-courier/registry',
+		},
+		{
+			href: `/services/postal-courier/projects`,
+			label: 'Projects',
+			active: pathname === '/services/postal-courier/projects',
 		},
 	]
 

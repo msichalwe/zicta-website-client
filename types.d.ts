@@ -68,6 +68,13 @@ interface LicenseRegister {
 	fileType: string
 	createdAt: string
 }
+interface PostalRegister {
+	id: string
+	orderedId: number
+	type: string
+	operator: string
+	licenceNumber: string
+}
 
 interface Faq {
 	id: string
