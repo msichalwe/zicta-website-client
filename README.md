@@ -1,34 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Introduction
 
-## Getting Started
+We are thrilled to unveil the next generation of the Zambia Information and Communications Technology Authority (ZICTA) website, powered by Next.js 13. As we take this significant step forward in enhancing our online presence.
 
-First, run the development server:
+## Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Using the command **`npm install`** to install the packages locally and run it using the **`npm run dev`** for local development.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To **\*\***Run the website locally**\*\*** ensure the admin folder is setup first and running before the client, because the client depends on the admin server to pull data from.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Issue the **.env** file is added to the root of the each project, and the API URL is set to your local project URL, e.g `NEXT_PUBLIC_API_URL = ‘http://localhost:3000/api’`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Directory Structure
 
-## Learn More
+The website is split into two separate project, the Client that will be public facing, and the Admin which is a in-built CMS system the is also built with Next.js 13
 
-To learn more about Next.js, take a look at the following resources:
+### [Next.js 13 Project Structure](https://nextjs.org/docs/getting-started/project-structure#top-level-folders)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Top-level folders**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+|            |                                                                               |
+| ---------- | ----------------------------------------------------------------------------- |
+| app        | App Router                                                                    |
+| public     | Static assets to be served                                                    |
+| components | prebuilt reusable components                                                  |
+| hooks      | functional components to manage state, side effects, and other React features |
+| state      | all Redux toolkit files that handle global state of the project               |
 
-## Deploy on Vercel
+### **Top-level files**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+|                    |                                         |
+| ------------------ | --------------------------------------- |
+| Next.js            |                                         |
+| next.config.js     | Configuration file for Next.js          |
+| package.json       | Project dependencies and scripts        |
+| middleware.ts      | Next.js request middleware              |
+| .env               | Environment variables                   |
+| .env.local         | Local environment variables             |
+| .gitignore         | Git files and folders to ignore         |
+| next-env.d.ts      | TypeScript declaration file for Next.js |
+| tsconfig.json      | Configuration file for TypeScript       |
+| postcss.config.js  | Configuration file for Tailwind CSS     |
+| tailwind.config.js | Configuration file for Tailwind CSS     |
+| components.json    | Shadcn UI components.json file          |
+| navbar.json        | Shadcn UI navbar.json file              |
+|                    |                                         |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### **Routing Conventions**
+
+### **[Routing Files](https://nextjs.org/docs/getting-started/project-structure#routing-files)**
+
+|              |               |                              |
+| ------------ | ------------- | ---------------------------- |
+| layout       | .js .jsx .tsx | Layout                       |
+| page         | .js .jsx .tsx | Page                         |
+| loading      | .js .jsx .tsx | Loading UI                   |
+| not-found    | .js .jsx .tsx | Not found UI                 |
+| error        | .js .jsx .tsx | Error UI                     |
+| global-error | .js .jsx .tsx | Global error UI              |
+| route        | .js .ts       | API endpoint                 |
+| template     | .js .jsx .tsx | Re-rendered layout           |
+| default      | .js .jsx .tsx | Parallel route fallback page |
+
+### **[Nested Routes](https://nextjs.org/docs/getting-started/project-structure#nested-routes)**
+
+|               |                      |
+| ------------- | -------------------- |
+| folder        | Route segment        |
+| folder/folder | Nested route segment |
+
+### **[Dynamic Routes](https://nextjs.org/docs/getting-started/project-structure#dynamic-routes)**
+
+|               |                                 |
+| ------------- | ------------------------------- |
+| [folder]      | Dynamic route segment           |
+| [...folder]   | Catch-all route segment         |
+| [[...folder]] | Optional catch-all route segmen |
+
+**Simple Explanation**
+
+This is an overview of how the NextJs file structure looks like and what the files might represent, but if it still seems confusing, hopefully this helps.
+
+The main application runs in the app folder that is a top-level folder or in the root, and every folder in the app folder is a route to a new page as long as the folder has a page.tsx file in it, for example the about page, this would look like app/about/page.tsx that is how the http://localhost:3000/about route would look, and the same for endpoint, but the online difference is that in the api folder we have a folder with route.ts file in it, so an API route would look like http://localhost:3000/api/about and the file structure would look like app/api/about/route.ts
