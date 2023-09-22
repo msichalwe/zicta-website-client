@@ -7,8 +7,6 @@ import FaqSection from './sections/faq-section'
 import { Faq } from '@/types'
 import Navbar from './components/navbar'
 
-export const revalidate = 0
-
 export default async function Home() {
 	return (
 		<>

@@ -39,14 +39,18 @@ const Apply = () => {
 							</p>
 						</div>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-3 w-5/6 mx-auto gap-5 ">
+					<div className="grid grid-cols-1 md:grid-cols-2 w-5/6 mx-auto gap-5 ">
 						{cardData.map((item: CardProps) => (
 							<div
 								onClick={() =>
 									router.push(
-										`https://zicta-application-hub.vercel.app/dashboard/${encodeURIComponent(
-											item.title.toLowerCase().replace(/[\s&]+/g, '-'),
-										)}`,
+										`${
+											item.title === 'Domain'
+												? `https://whois.zicta.zm`
+												: `https://zicta-application-hub.vercel.app/dashboard/${encodeURIComponent(
+														item.title.toLowerCase().replace(/[\s&]+/g, '-'),
+												  )}`
+										}`,
 									)
 								}
 								key={item.title}
@@ -71,12 +75,12 @@ const Apply = () => {
 export default Apply
 
 const cardData: Array<CardProps> = [
-	{
-		title: 'Short Code',
-		description:
-			'Obtain your unique short code for streamlined access and interactions. Experience the ease of sharing and connecting with others effortlessly.',
-		color: '#C6EBBE',
-	},
+	// {
+	// 	title: 'Short Code',
+	// 	description:
+	// 		'Obtain your unique short code for streamlined access and interactions. Experience the ease of sharing and connecting with others effortlessly.',
+	// 	color: '#C6EBBE',
+	// },
 	{
 		title: 'Dealer Certificate',
 		description:

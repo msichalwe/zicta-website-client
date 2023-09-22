@@ -31,6 +31,11 @@ export const MainNav = ({
 					description: 'Learn more about ZICTA',
 				},
 				{
+					title: 'Board of Authority',
+					description: 'Meet the ZICTA Board of Authority',
+				},
+
+				{
 					title: 'Management',
 					description: 'Meet the ZICTA Management Team',
 				},
@@ -66,7 +71,7 @@ export const MainNav = ({
 			items: [
 				{
 					title: 'Licensing',
-					description: ' Licensing for telecom services.',
+					description: ' Licensing services.',
 				},
 				{
 					title: 'Consumer Protection',
@@ -83,6 +88,10 @@ export const MainNav = ({
 				{
 					title: 'Service Charter',
 					description: 'Guidelines for service quality and standards.',
+				},
+				{
+					title: 'Postal and Courier',
+					description: 'Regulation of postal and courier services.',
 				},
 			],
 		},
@@ -105,10 +114,6 @@ export const MainNav = ({
 				},
 				{
 					title: 'Procurement',
-				},
-				,
-				{
-					title: 'Press Releases',
 				},
 			],
 		},
