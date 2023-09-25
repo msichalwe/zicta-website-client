@@ -30,12 +30,12 @@ const Apply = () => {
 					<div className="mx-auto max-w-4xl py-32 ">
 						<div className="text-center">
 							<h1 className="text-4xl font-bold tracking-tight text-zicta-blue sm:text-6xl">
-								Apply for services to enrich your business
+								Unlock a world of online services with ZICTA
 							</h1>
 							<p className="mt-6 text-lg leading-8 text-gray-600">
-								Whether you need professional assistance or a simpler life, we
-								have the perfect solution for you. Apply now and enhance your
-								business with our top-notch services below
+								Discover a world of digital solutions designed to enhance your
+								experience. From expert guidance to streamlined services, we've
+								got you covere
 							</p>
 						</div>
 					</div>
@@ -44,13 +44,17 @@ const Apply = () => {
 							<div
 								onClick={() =>
 									router.push(
-										`${
-											item.title === 'Domain'
-												? `https://whois.zicta.zm`
-												: `https://zicta-application-hub.vercel.app/dashboard/${encodeURIComponent(
-														item.title.toLowerCase().replace(/[\s&]+/g, '-'),
-												  )}`
-										}`,
+										item.title === 'Domain'
+											? 'https://whois.zicta.zm'
+											: item.title === 'ICT Statistics Portal'
+											? 'http://onlinesystems.zicta.zm:8585/statsfinal/'
+											: item.title === 'ICT Databank'
+											? 'https://databank.zicta.zm/'
+											: item.title === 'Numbering System (Short codes)'
+											? 'http://shortcodes.zicta.zm/nms/index.php'
+											: `https://zicta-application-hub.vercel.app/dashboard/${encodeURIComponent(
+													item.title.toLowerCase().replace(/[\s&]+/g, '-'),
+											  )}`,
 									)
 								}
 								key={item.title}
@@ -75,12 +79,6 @@ const Apply = () => {
 export default Apply
 
 const cardData: Array<CardProps> = [
-	// {
-	// 	title: 'Short Code',
-	// 	description:
-	// 		'Obtain your unique short code for streamlined access and interactions. Experience the ease of sharing and connecting with others effortlessly.',
-	// 	color: '#C6EBBE',
-	// },
 	{
 		title: 'Dealer Certificate',
 		description:
@@ -93,5 +91,23 @@ const cardData: Array<CardProps> = [
 		description:
 			'Secure your online presence with a personalized domain. Establish your digital identity and showcase your content in a memorable and professional manner.',
 		color: '#A9DBB8',
+	},
+	{
+		title: 'ICT Statistics Portal',
+		description:
+			'Access the latest ICT statistics and reports from the Authority. Stay informed with the latest trends and developments in the ICT sector.',
+		color: '#C6EBBE',
+	},
+	{
+		title: 'ICT Databank',
+		description:
+			'Explore a comprehensive database of valuable resources and information in the field of Information and Communication Technology (ICT). Access reports, data, and insights essential for professionals and researchers in the ICT sector.',
+		color: '#E2F9C0',
+	},
+	{
+		title: 'Numbering System (Short codes)',
+		description:
+			'Simplify communication and engagement with short codes. Whether for marketing, customer support, or quick access to services, our numbering system streamlines interactions for an enhanced online experience.',
+		color: '#F7A072',
 	},
 ]
