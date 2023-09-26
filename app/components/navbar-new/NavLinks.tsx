@@ -21,6 +21,9 @@ const NavLinks = () => {
 						{
 							name: 'Management',
 						},
+						{
+							name: 'Board of Authority',
+						},
 					],
 				},
 			],

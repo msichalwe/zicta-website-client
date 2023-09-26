@@ -5,9 +5,11 @@ import getTestimonial from '@/actions/getTestimonial'
 import Testimonial from '@/app/sections/testimonial-section'
 import Navbar from '../../components/navbar'
 import Footer from '../../components/footer'
+import prisma from '@/lib/prismadb'
 
 const About = async () => {
-	const testimonial = await getTestimonial()
+	const testimonial = await prisma.testimonial.findFirst({})
+
 	return (
 		<>
 			<Navbar />
@@ -139,7 +141,7 @@ const About = async () => {
 						</div>
 					</div>
 
-					<Testimonial data={testimonial} />
+					<Testimonial data={testimonial!} />
 				</div>
 			</div>
 			<Footer />

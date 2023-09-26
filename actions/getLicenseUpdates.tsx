@@ -1,6 +1,6 @@
 import { LicenseRegister } from '@/types'
 import axios from 'axios'
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/licensing-updates`
+const URL = `/api/licensing-updates`
 
 const getLicenseRegister = async (): Promise<LicenseRegister[]> => {
 	const res = await axios.get(`${URL}`)

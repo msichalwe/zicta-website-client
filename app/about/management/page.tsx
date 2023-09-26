@@ -8,10 +8,7 @@ import { fetcher } from '@/lib/fetcher'
 import Loader from '@/components/ui/loader'
 
 const Management = () => {
-	const { data, isLoading } = useSWR(
-		`${process.env.NEXT_PUBLIC_API_URL}/about/management`,
-		fetcher,
-	)
+	const { data, isLoading } = useSWR(`/api/about/management`, fetcher)
 
 	if (isLoading) {
 		return (

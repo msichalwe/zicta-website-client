@@ -8,11 +8,12 @@ const Licensing = async () => {
 			<div className="grid grid-cols-1 mb-10 lg:grid-cols-2 gap-10  ">
 				<div className="flex items-start justify-center space-y-2  flex-col">
 					<h1 className="text-3xl font-bold text-center">Licensing</h1>
-					<p>{service.description}</p>
+					<p>{service?.description}</p>
 				</div>
 				<div>
 					<img
-						src={service.imageUrl}
+						// @ts-ignore
+						src={service?.imageUrl}
 						alt="licensing"
 						className="w-full h-full object-cover rounded"
 					/>

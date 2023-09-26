@@ -10,7 +10,7 @@ const Postal = async () => {
 					<h1 className="text-3xl font-bold text-center">
 						Postal & Courier Regulation
 					</h1>
-					<p>{service.description}</p>
+					<p>{service?.description}</p>
 					<p>
 						The Authority has a mandate under the Postal Services Act of 2009,
 						to regulate postal and courier services throughout the country.
@@ -24,7 +24,8 @@ const Postal = async () => {
 				</div>
 				<div>
 					<img
-						src={service.imageUrl}
+						// @ts-ignore
+						src={service?.imageUrl}
 						alt="postal"
 						className="w-full h-full max-h-96 object-cover rounded"
 					/>

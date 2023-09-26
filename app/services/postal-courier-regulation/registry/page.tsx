@@ -1,14 +1,20 @@
-import getPostalRegister from '@/actions/getPostalRegister'
+'use client'
 import { PostalRegistryColumn, columns } from '../components/columns'
 import Heading from '@/app/components/Heading'
 import { Separator } from '@/components/ui/separator'
 import { DataTable } from '@/components/ui/data-table'
+import useSWR from 'swr'
+import { fetcher } from '@/lib/fetcher'
 
+export const revalidate = 0
 const PostalRegistry = async () => {
-	const postalRegistry = await getPostalRegister()
+	const { data: postalRegistry, isLoading } = useSWR(
+		'/api/registered-postal',
+		fetcher,
+	)
 
 	const formattedRegistry: PostalRegistryColumn[] = postalRegistry.map(
-		(data) => {
+		(data: any) => {
 			return {
 				id: data.id,
 				orderedId: data.orderedId,

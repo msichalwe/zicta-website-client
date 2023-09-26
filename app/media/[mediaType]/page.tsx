@@ -4,11 +4,13 @@ import Heading from '@/app/components/Heading'
 import Footer from '@/app/components/footer'
 import Navbar from '@/app/components/navbar'
 import Loader from '@/components/ui/loader'
+import { fetcher } from '@/lib/fetcher'
 import { useQuery } from '@tanstack/react-query'
 import { format } from 'date-fns'
 import { useParams, useRouter } from 'next/navigation'
 import React from 'react'
 import { Balancer } from 'react-wrap-balancer'
+import useSWR from 'swr'
 
 interface MediaTypeProps {
 	params: {
@@ -18,10 +20,7 @@ interface MediaTypeProps {
 const MediaType = () => {
 	const params = useParams()
 
-	const { data, isLoading } = useQuery({
-		queryKey: ['mediaData'],
-		queryFn: async () => await getMediaType(params.mediaType),
-	})
+	const { data, isLoading } = useSWR(`/api/media/${params.mediaType}`, fetcher)
 
 	const router = useRouter()
 	if (isLoading) {
@@ -50,7 +49,7 @@ const MediaType = () => {
 							<p className="text-xl font-medium">{`No current ${params.mediaType}. Please check again soon.`}</p>
 						) : (
 							<>
-								{data?.map((post) => (
+								{data?.map((post: any) => (
 									<article
 										key={post.id}
 										className="flex flex-col items-start justify-between">
@@ -64,9 +63,14 @@ const MediaType = () => {
 										<div className="max-w-xl">
 											<div className="mt-8 flex items-center gap-x-4 text-xs">
 												<time
+													// @ts-ignore
 													dateTime={post.createdAt}
 													className="text-gray-500">
-													{format(new Date(post.createdAt), 'MMMM do, yyyy')}
+													{
+														// @ts-ignore
+
+														format(new Date(post.createdAt), 'MMMM do, yyyy')
+													}
 												</time>
 											</div>
 											<div className="group relative">

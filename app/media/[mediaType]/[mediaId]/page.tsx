@@ -8,6 +8,7 @@ import { Balancer } from 'react-wrap-balancer'
 import Parser from 'html-react-parser'
 import Navbar from '@/app/components/navbar'
 import Loader from '@/components/ui/loader'
+import axios from 'axios'
 
 interface MediaPostProps {
 	params: {
@@ -18,7 +19,10 @@ interface MediaPostProps {
 const MediaPost: React.FC<MediaPostProps> = ({ params }) => {
 	const { data, isLoading } = useQuery({
 		queryKey: ['mediaData'],
-		queryFn: async () => await getMedia(params.mediaType, params.mediaId),
+		queryFn: async () =>
+			await axios
+				.get(`/api/media/${params.mediaType}/${params.mediaId}`)
+				.then((res) => res.data),
 	})
 
 	if (isLoading)

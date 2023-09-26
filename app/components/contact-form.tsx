@@ -65,10 +65,7 @@ const ContactForm = () => {
 	const onSubmit: SubmitHandler<FieldValues> = async (data) => {
 		try {
 			setIsLoading(true)
-			await axios.post(
-				`${process.env.NEXT_PUBLIC_API_URL}/complaints-queries`,
-				data,
-			)
+			await axios.post(`/api/complaints-queries`, data)
 			router.refresh()
 			toast.success('Your Message has been submitted successfully')
 			form.reset()

@@ -1,10 +1,14 @@
 import { Resource } from '@/types'
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/resources`
+import prisma from '@/lib/prismadb'
 
-const getResource = async (resource: string, id: string): Promise<Resource> => {
-	const res = await fetch(`${URL}/${resource}/${id}`)
+const getResource = async (resource: string, id: string) => {
+	const resources = await prisma.resource.findUnique({
+		where: {
+			id,
+		},
+	})
 
-	return res.json()
+	return resources
 }
 
 export default getResource

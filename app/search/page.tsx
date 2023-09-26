@@ -43,7 +43,7 @@ const Search: React.FC = () => {
 	const encodedSearchQuery = encodeURI(searchQuery || '')
 
 	const { data, error } = useSWR<SearchData>(
-		`${process.env.NEXT_PUBLIC_API_URL}/search?q=${encodedSearchQuery}`,
+		`/api/search?q=${encodedSearchQuery}`,
 		fetchPosts,
 		{ revalidateOnFocus: false },
 	)

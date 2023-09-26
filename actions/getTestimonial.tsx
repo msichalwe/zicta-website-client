@@ -1,11 +1,9 @@
 import { Testimonial } from '@/types'
-
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/testimonial`
+import axios from 'axios'
 
 const getTestimonial = async (): Promise<Testimonial> => {
-	const res = await fetch(URL)
-
-	return res.json()
+	const res = await axios.get(`/api/testimonial`)
+	return res.data
 }
 
 export default getTestimonial

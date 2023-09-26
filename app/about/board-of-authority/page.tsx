@@ -7,10 +7,7 @@ import { fetcher } from '@/lib/fetcher'
 import Loader from '@/components/ui/loader'
 
 const BoardOfAuthority = () => {
-	const { data, isLoading } = useSWR(
-		`${process.env.NEXT_PUBLIC_API_URL}/about/board-of-authority`,
-		fetcher,
-	)
+	const { data, isLoading } = useSWR(`/api/about/board-of-authority`, fetcher)
 
 	if (isLoading) {
 		return (

@@ -1,7 +1,7 @@
 import { Media } from '@/types'
 import axios from 'axios'
 
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/media`
+const URL = `/api/media`
 
 const getAllMedia = async (): Promise<Media[]> => {
 	const res = await axios.get(`${URL}`)

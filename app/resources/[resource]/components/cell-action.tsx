@@ -29,9 +29,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 		try {
 			setLoading(true)
 			await axios
-				.get(
-					`${process.env.NEXT_PUBLIC_API_URL}/resources/${params.resource}/${data.id}`,
-				)
+				.get(`/api/resources/${params.resource}/${data.id}`)
 				.then((res) => {
 					const downloadUrl = res.data // Assuming the response contains the download URL
 

@@ -1,18 +1,26 @@
 'use client'
-import { Toaster } from 'react-hot-toast'
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
-import { Provider } from 'react-redux'
-import { store } from '@/state/store'
 import { useEffect, useState } from 'react'
+import { Layout } from 'antd'
+import Sider from 'antd/es/layout/Sider'
+import { Header, Content } from 'antd/es/layout/layout'
+import Menu from '@/app/dashboard/components/Menu'
+import Navbar from '@/app/dashboard/components/Navbar'
 
-type WrapperProps = {
+type WrapperContextProps = {
 	children: React.ReactNode
 }
 
-const queryClient = new QueryClient()
+const siderStyle: React.CSSProperties = {
+	textAlign: 'center',
+	lineHeight: '120px',
+	color: '#fff',
+	backgroundColor: '#3ba0e9',
+	position: 'sticky',
+}
 
-const Wrapper: React.FC<WrapperProps> = ({ children }) => {
+const WrapperContext: React.FC<WrapperContextProps> = ({ children }) => {
 	const [isMounted, setIsMounted] = useState(false)
+
 	useEffect(() => {
 		setIsMounted(true)
 	}, [])
@@ -21,15 +29,24 @@ const Wrapper: React.FC<WrapperProps> = ({ children }) => {
 		return null
 	}
 	return (
-		<div>
-			<Provider store={store}>
-				<QueryClientProvider client={queryClient}>
-					<Toaster />
-					{children}
-				</QueryClientProvider>
-			</Provider>
-		</div>
+		<>
+			{/* <Navbar /> */}
+			<Layout hasSider>
+				<Sider theme="light">
+					<Menu />
+				</Sider>
+
+				<Layout style={{ height: '100vh' }}>
+					<Header style={{ backgroundColor: 'white', position: 'sticky' }}>
+						<Navbar />
+					</Header>
+					<Content style={{ padding: 16, overflow: 'auto' }}>
+						{children}
+					</Content>
+				</Layout>
+			</Layout>
+		</>
 	)
 }
 
-export default Wrapper
+export default WrapperContext

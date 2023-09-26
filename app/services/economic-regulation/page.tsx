@@ -11,7 +11,7 @@ const EconomicRegulation = async () => {
 			<div className="flex gap-10 w-full flex-col my-10">
 				<div className="bg-gradient-to-l  mt-10 md:mt-0 to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px] flex items-center justify-center">
 					<h1 className="sm:text-4xl text-3xl  text-white font-medium">
-						<Balancer>{service.title}</Balancer>
+						<Balancer>{service?.title}</Balancer>
 					</h1>
 					<p className="max-w-4xl mt-5 text-sm text-white"></p>
 				</div>
@@ -19,12 +19,13 @@ const EconomicRegulation = async () => {
 			<div className="w-5/6 mx-auto mb-10">
 				<div className="grid grid-cols-1 mb-10 lg:grid-cols-2 gap-10  ">
 					<div className="flex items-start justify-center space-y-2  flex-col">
-						<h1 className="text-3xl font-bold text-center">{service.title}</h1>
-						<p>{service.description}</p>
+						<h1 className="text-3xl font-bold text-center">{service?.title}</h1>
+						<p>{service?.description}</p>
 					</div>
 					<div>
 						<img
-							src={service.imageUrl}
+							// @ts-ignore
+							src={service?.imageUrl}
 							alt="postal"
 							className="w-full h-full max-h-96 object-cover rounded"
 						/>

@@ -1,11 +1,12 @@
-import { Service } from '@/types'
-import axios from 'axios'
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/service`
+import prisma from '@/lib/prismadb'
+const getServices = async (serviceType: string) => {
+	const sevices = await prisma.service.findFirst({
+		where: {
+			type: serviceType,
+		},
+	})
 
-const getServices = async (serviceType: string): Promise<Service> => {
-	const res = await axios.get(`${URL}/${serviceType}`)
-
-	return res.data
+	return sevices
 }
 
 export default getServices

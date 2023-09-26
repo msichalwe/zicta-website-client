@@ -1,23 +1,28 @@
-import getAllMedia from '@/actions/getAllMedia'
+'use client'
 import { Separator } from '@/components/ui/separator'
-import Link from 'next/link'
+import { fetcher } from '@/lib/fetcher'
 import { format } from 'date-fns'
-import React from 'react'
-import getMediaType from '@/actions/getMediaType'
 
-const SideMenu = async () => {
-	const media = await getMediaType('news')
+import useSWR from 'swr'
+
+const SideMenu = () => {
+	const { data: media, isLoading } = useSWR(`/api/media/news`, fetcher)
+
+	if (isLoading) {
+		return <div>Loading...</div>
+	}
 
 	return (
 		<div className="flex flex-col space-y-5 justify-around p-5">
 			<h2 className="text-2xl font-black">Latest News</h2>
 			<div className=" space-y-2  ">
-				{media.map((post) => (
+				{media?.map((post: any) => (
 					<div key={post.id} className="gap-2">
 						<article className="relative isolate flex flex-col lg:flex-row max-h-24 mb-2  ">
 							<div>
 								<div className="flex items-center gap-x-4 text-[10px] mb-2">
 									<p className="text-gray-500">
+										{/* @ts-ignore */}
 										{format(new Date(post.createdAt), 'MMMM do, yyyy')}
 									</p>
 								</div>
