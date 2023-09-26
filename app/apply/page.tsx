@@ -52,7 +52,7 @@ const Apply = () => {
 											? 'https://databank.zicta.zm/'
 											: item.title === 'Numbering System (Short codes)'
 											? 'http://shortcodes.zicta.zm/nms/index.php'
-											: `https://zicta-application-hub.vercel.app/dashboard/${encodeURIComponent(
+											: `${process.env.NEXT_PUBLIC_APPLICATION_API_URL}/dashboard/${encodeURIComponent(
 													item.title.toLowerCase().replace(/[\s&]+/g, '-'),
 											  )}`,
 									)

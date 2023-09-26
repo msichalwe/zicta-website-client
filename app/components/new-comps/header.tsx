@@ -65,8 +65,8 @@ export default Header
 
 const buttonData = [
 	{
-		title: 'Toll Free: 7070',
-		link: `tel:7070`,
+		title: 'Projects',
+		link: `/media/projects`,
 	},
 	{
 		title: 'Complaints & Queries',
@@ -74,7 +74,7 @@ const buttonData = [
 	},
 	{
 		title: 'Procurement',
-		link: '/downloads/procurement',
+		link: '/resources/procurement',
 	},
 	{
 		title: 'ICT Statistics',

@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { Provider } from 'react-redux'
 import { store } from '@/state/store'
+import { useEffect, useState } from 'react'
 
 type WrapperProps = {
 	children: React.ReactNode
@@ -11,6 +12,14 @@ type WrapperProps = {
 const queryClient = new QueryClient()
 
 const Wrapper: React.FC<WrapperProps> = ({ children }) => {
+	const [isMounted, setIsMounted] = useState(false)
+	useEffect(() => {
+		setIsMounted(true)
+	}, [])
+
+	if (!isMounted) {
+		return null
+	}
 	return (
 		<div>
 			<Provider store={store}>

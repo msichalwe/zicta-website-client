@@ -1,15 +1,9 @@
 import StatisticsWrapper from './components/stats'
 
-export default function RootLayout({
+export default function StatisticsLayout({
 	children,
 }: {
 	children: React.ReactNode
 }) {
-	return (
-		<html lang="en">
-			<body>
-				<StatisticsWrapper>{children}</StatisticsWrapper>
-			</body>
-		</html>
-	)
+	return <StatisticsWrapper>{children}</StatisticsWrapper>
 }

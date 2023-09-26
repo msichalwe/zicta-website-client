@@ -5,9 +5,7 @@ import React from 'react'
 const Services = () => {
 	const router = useRouter()
 	return (
-
 		<div id="services">
-
 			<div className="w-5/6 mx-auto py-10 space-y-4 ">
 				<h2 className="font-medium text-3xl uppercase">Services</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-5 gap-5">
@@ -89,7 +87,7 @@ const servicesData = [
 		color: '#C6EBBE',
 	},
 	{
-		title: 'Postal & Courier',
+		title: 'Postal & Courier Regulation',
 		description:
 			'Beyond the digital realm. ZICTA manages postal and courier services, bridging the gap between physical and digital communication..',
 		color: '#F7A072',

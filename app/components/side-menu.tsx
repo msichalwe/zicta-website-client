@@ -22,7 +22,7 @@ const SideMenu = async () => {
 								</div>
 								<div className="group relative max-w-xl space-y-2">
 									<h3 className="text-md font-semibold  line-clamp-1  text-gray-900 group-hover:text-gray-600">
-										<a href={`/press-room/${post.type}/${post.id}`}>
+										<a href={`/media/${post.type}/${post.id}`}>
 											<span className="absolute inset-0" />
 											{post.title}
 										</a>

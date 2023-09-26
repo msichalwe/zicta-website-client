@@ -42,7 +42,7 @@ export const MainNav = ({
 			],
 		},
 		{
-			title: 'Press Room',
+			title: 'Media',
 			items: [
 				{
 					title: 'News',
@@ -90,14 +90,14 @@ export const MainNav = ({
 					description: 'Guidelines for service quality and standards.',
 				},
 				{
-					title: 'Postal and Courier',
+					title: 'Postal & Courier Regulation',
 					description: 'Regulation of postal and courier services.',
 				},
 			],
 		},
 
 		{
-			title: 'Downloads',
+			title: 'Resources',
 
 			items: [
 				{
@@ -161,9 +161,9 @@ export const MainNav = ({
 									{nav.items?.map((item) => {
 										const href = `/${nav.title
 											.toLowerCase()
-											.replace(/ /g, '-')}/${item?.title
+											.replace(/[\s&]+/g, '-')}/${item?.title
 											.toLowerCase()
-											.replace(/ /g, '-')}`
+											.replace(/[\s&]+/g, '-')}`
 
 										return (
 											<ListItem href={href} title={item?.title}>

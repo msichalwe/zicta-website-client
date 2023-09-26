@@ -1,15 +1,9 @@
 import NavWrapper from './components/nav-wrapper'
 
-export default function RootLayout({
+export default function LicensingLayout({
 	children,
 }: {
 	children: React.ReactNode
 }) {
-	return (
-		<html lang="en">
-			<body>
-				<NavWrapper>{children}</NavWrapper>
-			</body>
-		</html>
-	)
+	return <NavWrapper>{children}</NavWrapper>
 }

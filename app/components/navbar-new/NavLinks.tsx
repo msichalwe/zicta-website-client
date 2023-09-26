@@ -51,7 +51,7 @@ const NavLinks = () => {
 			],
 		},
 		{
-			name: 'Press Room',
+			name: 'Media',
 			submenu: true,
 			sublinks: [
 				{
@@ -65,12 +65,15 @@ const NavLinks = () => {
 						{
 							name: 'Publications',
 						},
+						{
+							name: 'Press Releases',
+						},
 					],
 				},
 			],
 		},
 		{
-			name: 'Downloads',
+			name: 'Resources',
 			submenu: true,
 			sublinks: [
 				{

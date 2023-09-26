@@ -1,7 +1,5 @@
 'use client'
 import React from 'react'
-import Navbar from '../components/navbar-new/Navbar'
-import { Balancer } from 'react-wrap-balancer'
 import MNOChart from './components/mno-chart'
 import Heading from '../components/Heading'
 

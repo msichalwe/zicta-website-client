@@ -5,7 +5,7 @@ import Navbar from '@/app/components/navbar'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Balancer } from 'react-wrap-balancer'
 
@@ -14,6 +14,16 @@ type StatisticsProps = {
 }
 
 const StatisticsWrapper: React.FC<StatisticsProps> = ({ children }) => {
+	const [isMounted, setIsMounted] = useState(false)
+
+	useEffect(() => {
+		setIsMounted(true)
+	}, [])
+
+	if (!isMounted) {
+		return null
+	}
+
 	const pathname = usePathname()
 
 	const routes = [

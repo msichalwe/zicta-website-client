@@ -3,6 +3,7 @@ import ContactForm from '../components/contact-form'
 import Heading from '../components/Heading'
 import { Balancer } from 'react-wrap-balancer'
 import Navbar from '@/app/components/navbar'
+import Footer from '../components/footer'
 
 type ContactItem = {
 	region: string
@@ -23,7 +24,7 @@ const Complaints = () => {
 					<h1 className="sm:text-4xl text-2xl  text-white font-medium">
 						<Balancer>Complaints & Queries</Balancer>
 					</h1>
-					<p className="max-w-4xl mt-5 text-lg text-white">
+					<p className="max-w-4xl mt-5 text-lg text-center text-white">
 						<Balancer>
 							We value your opinions and are here to listen. Whether you have
 							concerns to address or questions to ask, this is the place to
@@ -34,7 +35,7 @@ const Complaints = () => {
 				</div>
 				<div className="w-5/6 mx-auto">
 					<Heading
-						title="Submit Complaints & Queries."
+						title="Submit Complaints & Queries"
 						description=" Submit your complaints or queries in the form below "
 					/>
 					<div className="grid grid-cols-2 gap-10">
@@ -75,6 +76,7 @@ const Complaints = () => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	)
 }
