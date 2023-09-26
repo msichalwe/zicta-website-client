@@ -3,9 +3,10 @@ import { Separator } from '@/components/ui/separator'
 import Link from 'next/link'
 import { format } from 'date-fns'
 import React from 'react'
+import getMediaType from '@/actions/getMediaType'
 
 const SideMenu = async () => {
-	const media = await getAllMedia()
+	const media = await getMediaType('news')
 
 	return (
 		<div className="flex flex-col space-y-5 justify-around p-5">

@@ -54,7 +54,7 @@ const MediaPost: React.FC<MediaPostProps> = ({ params }) => {
 							<SideMenu />
 						</div>
 					</div>
-					<p className="text-justify leading-8 content ">
+					<p className="text-justify leading-4 content ">
 						{data && data.content ? Parser(data.content) : null}
 					</p>
 				</div>
