@@ -41,7 +41,7 @@ const BoardOfAuthority = () => {
 							</Balancer>
 						</p>
 					</div>
-					<ul className="mx-auto mt-20 grid max-w-2xl mb-10 gap-x-8 gap-y-16 sm:grid-cols-3 lg:mx-0 lg:max-w-none">
+					<ul className="mx-auto my-20 grid max-w-2xl mb-10 gap-x-8 gap-y-16 grid-cols-1 sm:grid-cols-2 grid-cols-3 lg:mx-0 lg:max-w-none ">
 						{data.map((person: any) => (
 							<li
 								key={person._id}
