@@ -94,12 +94,12 @@ const cardData: Array<CardProps> = [
 			'Secure your online presence with a personalized domain. Establish your digital identity and showcase your content in a memorable and professional manner.',
 		color: '#A9DBB8',
 	},
-	{
-		title: 'ICT Statistics Portal',
-		description:
-			'Access the latest ICT statistics and reports from the Authority. Stay informed with the latest trends and developments in the ICT sector.',
-		color: '#C6EBBE',
-	},
+	// {
+	// 	title: 'ICT Statistics Portal',
+	// 	description:
+	// 		'Access the latest ICT statistics and reports from the Authority. Stay informed with the latest trends and developments in the ICT sector.',
+	// 	color: '#C6EBBE',
+	// },
 	{
 		title: 'ICT Databank',
 		description:
