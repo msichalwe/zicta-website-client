@@ -70,7 +70,7 @@ const Postal = async () => {
 				<p className="text-lg font-medium">
 					For more information on the types of licenses and their fees, click{' '}
 					<Link
-						href="/services/postal-courier/fees-types"
+						href="/services/postal-courier-regulation/fees-types"
 						className="cursor-pointer text-zicta-yellow">
 						here
 					</Link>
