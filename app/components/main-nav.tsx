@@ -62,6 +62,11 @@ export const MainNav = ({
 				},
 				{
 					title: 'Press Releases',
+					description: 'ZICTA Press Releases',
+				},
+				{
+					title: 'Projects',
+					description: ' Projects undertaken by ZICTA',
 				},
 			],
 		},

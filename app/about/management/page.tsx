@@ -44,12 +44,14 @@ const Management = () => {
 
 					<ul
 						role="list"
-						className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+						className="mx-auto my-20 grid max-w-2xl grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16  lg:mx-0 lg:max-w-none md:grid-cols-3">
 						{data.map((person: any) => (
 							<li
 								key={person._id}
 								className={` ${
-									person.description === 'Director General' ? 'col-span-3 ' : ''
+									person.description === 'Director General'
+										? 'md:col-span-3 sm:col-span-2 col-span-1'
+										: ''
 								} flex flex-col items-center`}>
 								<img
 									className="h-40 w-40 rounded-2xl object-cover border-2 border-zicta-yellow "

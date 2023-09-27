@@ -18,24 +18,24 @@ const NavWrapper: React.FC<NavProps> = ({ children }) => {
 
 	const routes = [
 		{
-			href: `/services/postal-courier`,
+			href: `/services/postal-courier-regulation`,
 			label: 'Postal & Courier',
-			active: pathname === '/services/postal-courier',
+			active: pathname === '/services/postal-courier-regulation',
 		},
 		{
-			href: `/services/postal-courier/fees-types`,
+			href: `/services/postal-courier-regulation/fees-types`,
 			label: 'License Types & Fees',
-			active: pathname === '/services/postal-courier/fees-types',
+			active: pathname === '/services/postal-courier-regulation/fees-types',
 		},
 		{
-			href: `/services/postal-courier/registry`,
+			href: `/services/postal-courier-regulation/registry`,
 			label: 'Registry',
-			active: pathname === '/services/postal-courier/registry',
+			active: pathname === '/services/postal-courier-regulation/registry',
 		},
 		{
-			href: `/services/postal-courier/projects`,
+			href: `/services/postal-courier-regulation/projects`,
 			label: 'Projects',
-			active: pathname === '/services/postal-courier/projects',
+			active: pathname === '/services/postal-courier-regulation/projects',
 		},
 	]
 

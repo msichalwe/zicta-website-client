@@ -41,14 +41,14 @@ const BoardOfAuthority = () => {
 							</Balancer>
 						</p>
 					</div>
-					<ul className="mx-auto mt-20 grid max-w-2xl mb-10 gap-x-8 gap-y-16 sm:grid-cols-3 lg:mx-0 lg:max-w-none">
+					<ul className="mx-auto mt-20 grid max-w-2xl mb-10 gap-x-8 gap-y-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:mx-0 lg:max-w-none">
 						{data.map((person: any) => (
 							<li
 								key={person._id}
 								className={` ${
 									person.description === 'Chairperson' ||
 									person.description === 'Authority Secretary'
-										? 'col-span-3 '
+										? 'md:col-span-3 sm:col-span-2 col-span-1 '
 										: ''
 								} flex flex-col items-center`}>
 								<img
