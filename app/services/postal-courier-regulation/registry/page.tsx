@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator'
 import { DataTable } from '@/components/ui/data-table'
 import useSWR from 'swr'
 import { fetcher } from '@/lib/fetcher'
+import Loader from '@/components/ui/loader'
 
 export const revalidate = 0
 const PostalRegistry = async () => {
@@ -12,6 +13,8 @@ const PostalRegistry = async () => {
 		'/api/registered-postal',
 		fetcher,
 	)
+
+	if (isLoading) return <Loader />
 
 	const formattedRegistry: PostalRegistryColumn[] = postalRegistry.map(
 		(data: any) => {
