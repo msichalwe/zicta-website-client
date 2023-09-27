@@ -89,7 +89,7 @@ const Postal = async () => {
 					following link:{' '}
 					<Link
 						className="cursor-pointer font-medium text-zicta-yellow "
-						href="/services/postal-courier/registry">
+						href="/services/postal-courier-regulation/registry">
 						Registry
 					</Link>
 				</p>
