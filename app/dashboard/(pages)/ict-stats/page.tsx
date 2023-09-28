@@ -3,6 +3,8 @@ import ICTStatsClient from './components/client'
 import { format } from 'date-fns'
 import prisma from '@/lib/prismadb'
 
+export const revalidate = 0
+
 const ICTStats = async () => {
 	const stats = await prisma.iCTStats.findMany({
 		orderBy: {

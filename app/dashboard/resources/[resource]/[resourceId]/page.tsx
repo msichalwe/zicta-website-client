@@ -2,6 +2,8 @@ import React from 'react'
 import { ResourceForm } from './components/resource-form'
 import prisma from '@/lib/prismadb'
 
+export const revalidate = 0
+
 const ResourcePage = async ({ params }: { params: { resourceId: string } }) => {
 	const resource = await prisma.resource.findUnique({
 		where: {

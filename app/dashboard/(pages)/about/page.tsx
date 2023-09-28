@@ -9,9 +9,10 @@ import { useQuery } from '@tanstack/react-query'
 import { Separator } from '@/components/ui/separator'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Image from 'next/image'
-import { About } from '@prisma/client'
 import Parser from 'html-react-parser'
 import getAbout from '@/actions/getAbout'
+
+export const revalidate = 0
 const AboutPage = () => {
 	const router = useRouter()
 

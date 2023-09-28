@@ -24,19 +24,13 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 	const router = useRouter()
 	const [loading, setLoading] = useState(false)
 	const [open, setOpen] = useState(false)
-	const params = useParams()
-
-	const onCopyId = (id: string) => {
-		navigator.clipboard.writeText(id)
-		toast.success('Copied to clipboard')
-	}
 
 	const onDelete = async () => {
 		try {
 			setLoading(true)
 			await axios.delete(`/api/faq/${data.id}`)
 			router.refresh()
-			toast.success('Media Deleted')
+			toast.success('FAQ Deleted')
 		} catch (error) {
 			toast.error('Something went wrong')
 		} finally {
@@ -63,16 +57,9 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 				<DropdownMenuContent align="end">
 					<DropdownMenuLabel>Actions</DropdownMenuLabel>
 					<DropdownMenuItem
-						onClick={() => router.push(`/dashboard/home-page/faqs/${data.id}`)}>
+						onClick={() => router.push(`/dashboard/faqs/${data.id}`)}>
 						<Edit className="mr-2 h-4 w-4" />
 						Update
-					</DropdownMenuItem>
-					<DropdownMenuItem
-						onClick={() =>
-							router.push(`/dashboard/home-page/faqs/${data.id}/view`)
-						}>
-						<View className="mr-2 h-4 w-4" />
-						Preview
 					</DropdownMenuItem>
 					<DropdownMenuItem onClick={() => setOpen(true)}>
 						<Trash className="mr-2 h-4 w-4" />

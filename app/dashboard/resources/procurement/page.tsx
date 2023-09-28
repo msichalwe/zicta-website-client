@@ -4,6 +4,8 @@ import prisma from '@/lib/prismadb'
 import ProcurementClient from './components/client'
 import { ProcurementColumn } from './components/columns'
 
+export const revalidate = 0
+
 const Procurement = async ({ params }: { params: { procurement: string } }) => {
 	const procurement = await prisma.procurement.findMany({
 		orderBy: {

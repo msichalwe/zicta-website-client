@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Heading from './components/Heading'
 
+export const revalidate = 0
 const DashboardPage = async () => {
 	return (
 		<div className="flex-col">

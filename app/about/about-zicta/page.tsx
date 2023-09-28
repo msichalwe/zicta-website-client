@@ -119,7 +119,7 @@ const About = async () => {
 										</div>
 									</div>
 									<p className="text-xs md:text-lg  w-[70%] ">
-										A Regulator Advancing the Nation to a Digital Society.
+										A Regulator at the nexus of an inclusive digital economy.
 									</p>
 								</div>
 							</div>
@@ -133,8 +133,8 @@ const About = async () => {
 										</div>
 									</div>
 									<p className="text-xs md:text-lg w-[70%]  ">
-										To ensure quality, secure, accessible and affordable ICT
-										services and products for all through effective regulation.
+										To foster digital transformation through access to quality,
+										secure and affordable ICT and Postal services.
 									</p>
 								</div>
 							</div>

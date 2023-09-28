@@ -2,6 +2,8 @@ import React from 'react'
 import { MediaForm } from './components/media-form'
 import prisma from '@/lib/prismadb'
 
+export const revalidate = 0
+
 const CategoriesPage = async ({ params }: { params: { mediaId: string } }) => {
 	const categories = await prisma.category.findMany()
 

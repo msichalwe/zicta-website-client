@@ -46,10 +46,9 @@ export const FaqForm = ({ initialData }: FaqFormProps) => {
 	const toastMessage = initialData ? `FAQ updated.` : `FAQ created.`
 	const action = initialData ? 'Save changes' : 'Create'
 
-	const defaultValues = {
-		question: '',
-		answer: '',
-	}
+	const defaultValues = initialData
+		? { ...initialData }
+		: { question: '', answer: '' }
 
 	const form = useForm<FaqFormValues>({
 		resolver: zodResolver(formSchema),
@@ -67,7 +66,7 @@ export const FaqForm = ({ initialData }: FaqFormProps) => {
 				await axios.post(`/api/faq`, data)
 			}
 			router.refresh()
-			router.push(`/dashboard/home-page/faqs`)
+			router.push(`/dashboard/faqs`)
 			toast.success(toastMessage)
 		} catch (error: any) {
 			toast.error('Something went wrong.')
@@ -81,7 +80,7 @@ export const FaqForm = ({ initialData }: FaqFormProps) => {
 			setLoading(true)
 			await axios.delete(`/api/faq/${params.faqId}`)
 			router.refresh()
-			router.push(`/dashboard/home-page/faqs`)
+			router.push(`/dashboard/faqs`)
 			toast.success('FAQ Deleted')
 		} catch (error) {
 			toast.error('Something went wrong')

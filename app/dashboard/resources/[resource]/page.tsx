@@ -4,6 +4,8 @@ import prisma from '@/lib/prismadb'
 import ResourceClient from './components/client'
 import { ResourceColumn } from './components/columns'
 
+export const revalidate = 0
+
 const Resource = async ({ params }: { params: { resource: string } }) => {
 	const resource = await prisma.resource.findMany({
 		where: {

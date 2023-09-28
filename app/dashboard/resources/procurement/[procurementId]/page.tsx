@@ -2,6 +2,8 @@ import React from 'react'
 import { ProcurementForm } from './components/procurement-form'
 import prisma from '@/lib/prismadb'
 
+export const revalidate = 0
+
 const ProcurementPage = async ({
 	params,
 }: {

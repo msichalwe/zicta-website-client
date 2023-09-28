@@ -3,6 +3,8 @@ import React from 'react'
 import prisma from '@/lib/prismadb'
 import { FaqForm } from './components/faq-form'
 
+export const revalidate = 0
+
 const EditPage = async ({ params }: { params: { faqId: string } }) => {
 	const faq = await prisma.faq.findUnique({
 		where: {

@@ -6,15 +6,22 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from '@/components/ui/accordion'
+import Loader from '@/components/ui/loader'
+import { fetcher } from '@/lib/fetcher'
 import { Faq } from '@/types'
 import HTMLReactParser from 'html-react-parser'
 import React from 'react'
+import useSWR from 'swr'
 
-interface FaqSectionPorps {
-	data: Faq[]
-}
+const FaqSection = () => {
+	const { data, isLoading } = useSWR('/api/faq', fetcher)
 
-const FaqSection: React.FC<FaqSectionPorps> = ({ data: faqs }) => {
+	if (isLoading) {
+		return <Loader />
+	}
+
+	const faqs = data.slice(0, 3)
+
 	return (
 		<div className="bg-white shadow-sm">
 			<div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
@@ -24,7 +31,7 @@ const FaqSection: React.FC<FaqSectionPorps> = ({ data: faqs }) => {
 					</h2>
 					<dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
 						<Accordion type="single" collapsible className="w-full">
-							{faqs?.map((faq) => (
+							{faqs?.map((faq: any) => (
 								<AccordionItem value={faq.question}>
 									<AccordionTrigger>{faq.question}</AccordionTrigger>
 									<AccordionContent>

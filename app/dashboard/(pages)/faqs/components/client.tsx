@@ -1,32 +1,40 @@
 'use client'
 import React from 'react'
+
+import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { Plus } from 'lucide-react'
+import { useRouter, useParams } from 'next/navigation'
+import { FaqColumn, columns } from './columns'
 import { DataTable } from '@/components/ui/data-table'
 import Heading from '@/app/dashboard/components/Heading'
-import { Button } from '@/components/ui/button'
-import { Plus } from 'lucide-react'
-import { useRouter } from 'next/navigation'
 
-interface FAQProps {
-	data: any[]
+interface FaqProps {
+	data: FaqColumn[]
 }
 
-const FAQClient: React.FC<FAQProps> = ({ data }) => {
+const FaqClient: React.FC<FaqProps> = ({ data }) => {
 	const router = useRouter()
+	const params = useParams()
 	return (
 		<>
 			<div className="flex items-center justify-between">
 				<Heading
 					title={`FAQs (${data.length})`}
-					description={`Manage all the FAQs here.`}
+					description={`Manage Faq available on the platform`}
 				/>
-				<Button onClick={() => router.push('/dashboard/faqs/new')}>
-					Add New <Plus size={16} />
+				<Button
+					onClick={() =>
+						router.push(`/dashboard/faqs/6e65772d70726f7065727479`)
+					}>
+					<Plus className="mr-2 h-4 w-4" />
+					Add New
 				</Button>
 			</div>
 			<Separator />
+			<DataTable columns={columns} data={data} searchKey="question" />
 		</>
 	)
 }
 
-export default FAQClient
+export default FaqClient

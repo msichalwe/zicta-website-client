@@ -1,5 +1,4 @@
 import getServices from '@/actions/getServices'
-import React from 'react'
 
 const Licensing = async () => {
 	const service = await getServices('licensing')

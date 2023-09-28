@@ -1,4 +1,4 @@
-import WrapperContext from '../../context/wrapper'
+import WrapperContext from '../../context/Wrapper'
 
 export default async function DashboardLayout({
 	children,

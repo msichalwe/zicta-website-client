@@ -9,6 +9,7 @@ import { columns } from './components/columns'
 import useSWR from 'swr'
 import { fetcher } from '@/lib/fetcher'
 
+export const revalidate = 0
 const Management = () => {
 	const router = useRouter()
 

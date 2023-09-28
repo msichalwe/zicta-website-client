@@ -4,6 +4,8 @@ import prisma from '@/lib/prismadb'
 import MediaClient from './components/client'
 import { MediaColumn } from './components/columns'
 
+export const revalidate = 0
+
 const Media = async ({ params }: { params: { mediaType: string } }) => {
 	const media = await prisma.media.findMany({
 		where: {

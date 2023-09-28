@@ -37,7 +37,9 @@ const items: MenuProps['items'] = [
 				key: 'projects',
 			},
 			{
-				label: <Link href="/dashboard/media/publications">Publications</Link>,
+				label: (
+					<Link href="/dashboard/resources/publications">Publications</Link>
+				),
 				key: 'publications',
 			},
 		],

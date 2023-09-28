@@ -36,8 +36,7 @@ const contactSideItems: Array<contactSideItemProps> = [
 	{
 		title: 'Visit Us',
 		description: 'Come say hello at our office HQ:',
-		content:
-			'ZICTA House, Plot No. 314 Independence Avenue, P.O. Box 36871, Lusaka, Zambia',
+		content: 'Plot 4909 Corner of Independence Avenue & United Nations Road',
 	},
 	{
 		title: 'Call Us',

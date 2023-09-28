@@ -6,6 +6,9 @@ const getResource = async (resource: string) => {
 		where: {
 			type: resource,
 		},
+		orderBy: {
+			createdAt: 'desc',
+		},
 	})
 
 	return resources
