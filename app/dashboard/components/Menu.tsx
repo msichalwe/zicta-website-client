@@ -163,6 +163,16 @@ const items: MenuProps['items'] = [
 		icon: <Layers className="h-4 w-4 text-zicta-blue" />,
 		children: [
 			{
+				label: <Link href={'/dashboard/home-page'}>Home</Link>,
+				key: 'home-page',
+				children: [
+					{
+						label: <Link href={'/dashboard/home-page/banner'}>Banner</Link>,
+						key: 'banner',
+					},
+				],
+			},
+			{
 				label: <Link href={'/dashboard/about'}>About</Link>,
 				key: 'about',
 				children: [
