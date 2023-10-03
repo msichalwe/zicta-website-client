@@ -57,7 +57,7 @@ const MediaType = () => {
 											src={post.imageUrl}
 											alt=""
 											onClick={() => router}
-											className="aspect-[16/9] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+											className="aspect-[16/9] w-full rounded-xl bg-gray-100 object-fit sm:aspect-[2/1] lg:aspect-[3/2]"
 										/>
 
 										<div className="max-w-xl">

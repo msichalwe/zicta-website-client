@@ -6,17 +6,19 @@ import { format } from 'date-fns'
 import useSWR from 'swr'
 
 const SideMenu = () => {
-	const { data: media, isLoading } = useSWR(`/api/media/news`, fetcher)
+	const { data: media, isLoading } = useSWR(`/api/get-events-news`, fetcher)
 
 	if (isLoading) {
 		return <div>Loading...</div>
 	}
 
+	const sliceMedia = media?.slice(0, 3)
+
 	return (
 		<div className="flex flex-col space-y-5 justify-around p-5">
-			<h2 className="text-2xl font-black">Latest News</h2>
+			<h2 className="text-2xl font-black">News & Events</h2>
 			<div className=" space-y-2  ">
-				{media?.map((post: any) => (
+				{sliceMedia?.map((post: any) => (
 					<div key={post.id} className="gap-2">
 						<article className="relative isolate flex flex-col lg:flex-row max-h-24 mb-2  ">
 							<div>

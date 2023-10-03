@@ -17,12 +17,12 @@ const LatestNews = () => {
 			<div className="w-5/6 mx-auto grid grid-cols-1 md:grid-cols-6 gap-5 ">
 				<img
 					src={banner?.imageUrl}
-					className=" object-contain md:object-cover bg-no-repeat h-full md:col-span-4 md:min-h-[40vh] "
+					className="md:object-fill object-contain h-full md:col-span-4 md:min-h-[40vh] "
 				/>
 
-				<div className="md:col-span-2 min-h-[40vh] grid grid-rows-5 bg-white">
+				<div className="md:col-span-2 grid grid-rows-5 bg-white">
 					<div className="row-span-1 flex items-center justify-start p-5 bg-zicta-blue text-white">
-						<h1 className="font-medium text-lg uppercase">Latest News</h1>
+						<h1 className="font-medium text-lg uppercase">Latest</h1>
 					</div>
 					<div className="row-span-4">
 						<SideMenu />
