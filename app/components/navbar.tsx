@@ -94,6 +94,14 @@ const Navbar = () => {
 								Online Services
 							</Link>
 						</li>
+						<li>
+							<Link
+								onClick={() => dispatch(setOpenMenu(false))}
+								href={'https://zicta.mcidirecthire.com/'}
+								className="py-7  lg:px-2 px-1  inline-block">
+								Jobs
+							</Link>
+						</li>
 					</ul>
 				</div>
 			)}
