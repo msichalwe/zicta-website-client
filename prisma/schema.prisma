@@ -247,6 +247,7 @@ model Complaints {
   phone     String
   subject   String
   message   String
+  other     String?
 }
 
 model About {
@@ -280,4 +281,28 @@ model registeredPostal {
   licenceNumber String
   operator      String?
   type          String
+}
+
+model nomination {
+  id                    String        @id @default(auto()) @map("_id") @db.ObjectId
+  proposer_name         String
+  proposer_email        String
+  proposer_organization String?
+  nominee               String
+  nominee_email         String
+  nominee_reason        String
+  nominee_organization  String?
+  nominee_phone         String
+  awardCategoryId       String        @db.ObjectId
+  awardCategory         AwardCategory @relation(fields: [awardCategoryId], references: [id])
+}
+
+model AwardCategory {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  name        String
+  description String
+  criteria    String
+  evaluation  String
+  nomination  nomination[]
 }

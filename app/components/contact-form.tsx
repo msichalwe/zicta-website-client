@@ -17,6 +17,13 @@ import { Textarea } from '@/components/ui/textarea'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from '@/components/ui/select'
 
 const formSchema = z.object({
 	name: z
@@ -32,9 +39,37 @@ const formSchema = z.object({
 	message: z
 		.string()
 		.min(1, { message: 'Message must be 2 or more characters long' }),
+	other: z.string().optional(),
 })
 
 type FormValues = z.infer<typeof formSchema>
+
+const subjectTypes = [
+	{
+		label: 'Cyber Harassment',
+		value: 'cyber-harassment',
+	},
+	{
+		label: 'Content Related',
+		value: 'content-related',
+	},
+	{
+		label: 'Fraud',
+		value: 'fraud',
+	},
+	{
+		label: 'Instrusion',
+		value: 'instrusion',
+	},
+	{
+		label: 'Malicious Codes',
+		value: 'malicious-codes',
+	},
+	{
+		label: 'Other',
+		value: 'other',
+	},
+]
 
 const ContactForm = () => {
 	const [isLoading, setIsLoading] = useState(false)
@@ -59,6 +94,7 @@ const ContactForm = () => {
 			message: '',
 			phone: '',
 			subject: '',
+			other: '',
 		},
 	})
 
@@ -120,17 +156,47 @@ const ContactForm = () => {
 						render={({ field }) => (
 							<FormItem>
 								<FormLabel>Subject</FormLabel>
-								<FormControl>
-									<Input
-										disabled={isLoading}
-										placeholder="Subject "
-										{...field}
-									/>
-								</FormControl>
+								<Select
+									disabled={isLoading}
+									onValueChange={field.onChange}
+									value={field.value}
+									defaultValue={field.value}>
+									<FormControl>
+										<SelectTrigger>
+											<SelectValue placeholder="Select Subject" />
+										</SelectTrigger>
+									</FormControl>
+									<SelectContent>
+										{subjectTypes.map((subject) => (
+											<SelectItem key={subject.value} value={subject.value}>
+												{subject.label}
+											</SelectItem>
+										))}
+									</SelectContent>
+								</Select>
 								<FormMessage />
 							</FormItem>
 						)}
 					/>
+					{form.watch('subject') === 'other' && (
+						<FormField
+							name="other"
+							control={form.control}
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Other</FormLabel>
+									<FormControl>
+										<Input
+											disabled={isLoading}
+											placeholder="Describe your issue"
+											{...field}
+										/>
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+					)}
 					<FormField
 						name="phone"
 						control={form.control}
