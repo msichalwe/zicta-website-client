@@ -7,7 +7,6 @@ export type AwardCategoriesColumn = {
 	name: string
 	description: string
 	criteria: string
-	evaluation: string
 }
 
 export const columns: ColumnDef<AwardCategoriesColumn>[] = [
@@ -23,10 +22,5 @@ export const columns: ColumnDef<AwardCategoriesColumn>[] = [
 	{
 		accessorKey: 'criteria',
 		header: 'Eligibility Criteria',
-	},
-	{
-		accessorKey: 'evaluation',
-		header: 'Method of Evaluation (Judging Panel / Public Voting)',
-		cell: ({ row }) => <p className="font-medium">{row.original.evaluation}</p>,
 	},
 ]

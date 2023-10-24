@@ -284,17 +284,14 @@ model registeredPostal {
 }
 
 model nomination {
-  id                    String        @id @default(auto()) @map("_id") @db.ObjectId
-  proposer_name         String
-  proposer_email        String
-  proposer_organization String?
-  nominee               String
-  nominee_email         String
-  nominee_reason        String
-  nominee_organization  String?
-  nominee_phone         String
-  awardCategoryId       String        @db.ObjectId
-  awardCategory         AwardCategory @relation(fields: [awardCategoryId], references: [id])
+  id                   String        @id @default(auto()) @map("_id") @db.ObjectId
+  nominee              String?
+  nominee_email        String?
+  nominee_reason       String?
+  nominee_organization String?
+  nominee_phone        String?
+  awardCategoryId      String        @db.ObjectId
+  awardCategory        AwardCategory @relation(fields: [awardCategoryId], references: [id])
 }
 
 model AwardCategory {

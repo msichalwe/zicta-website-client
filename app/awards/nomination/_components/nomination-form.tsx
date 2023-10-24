@@ -17,19 +17,17 @@ import {
 import { Input } from '@/components/ui/input'
 import { useRouter } from 'next/navigation'
 import axios from 'axios'
-import toast from 'react-hot-toast'
+import { useToast } from '@/components/ui/use-toast'
+
 import { Combobox } from '@/components/ui/combobox'
 import { Textarea } from '@/components/ui/textarea'
 
 const formSchema = z.object({
-	proposer_name: z.string().min(1),
-	proposer_email: z.string().min(1),
-	proposer_organization: z.string().optional(),
 	nominee: z.string().min(1),
-	nominee_reason: z.string().min(1).max(150),
+	nominee_reason: z.string().max(500).optional(),
 	nominee_organization: z.string().optional(),
-	nominee_email: z.string().min(1),
-	nominee_phone: z.string().min(1),
+	nominee_email: z.string().optional(),
+	nominee_phone: z.string().optional(),
 	awardCategoryId: z.string().min(1),
 })
 
@@ -39,11 +37,14 @@ interface NominationProps {
 	options: {
 		label: string
 		value: string
+		description?: string
+		criteria?: string
 	}[]
 }
 
 const NominationForm: React.FC<NominationProps> = ({ options }) => {
 	const router = useRouter()
+	const { toast } = useToast()
 	const form = useForm<NominationFormValues>({
 		resolver: zodResolver(formSchema),
 	})
@@ -53,80 +54,33 @@ const NominationForm: React.FC<NominationProps> = ({ options }) => {
 	const onSubmit = async (values: NominationFormValues) => {
 		try {
 			await axios.post('/api/awards/nomination', values)
-			toast.success('Successfully Submitted')
-			form.reset()
-			router.refresh()
+			toast({
+				title: 'Nomination submitted',
+				description: 'Your nomination has been submitted successfully.',
+			})
+			form.reset({
+				nominee: '',
+				nominee_reason: '',
+				nominee_organization: '',
+				nominee_email: '',
+				nominee_phone: '',
+				awardCategoryId: '',
+			})
 		} catch (error) {
-			toast.error('Oops.. Something went wrong')
+			toast({
+				title: 'Oops! An error occurred.',
+				description: 'Unable to submit nomination.',
+				variant: 'destructive',
+			})
 		}
 	}
 
 	return (
 		<>
 			<Form {...form}>
-				<form className="py-4 space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-						<FormField
-							control={form.control}
-							name="proposer_name"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>
-										Name <span className="text-red-500">*</span>
-									</FormLabel>
-									<FormControl>
-										<Input disabled={isSubmitting} {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<FormField
-							control={form.control}
-							name="proposer_email"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>
-										Email <span className="text-red-500">*</span>
-									</FormLabel>
-									<FormControl>
-										<Input disabled={isSubmitting} {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<FormField
-							control={form.control}
-							name="proposer_organization"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Organization</FormLabel>
-									<FormControl>
-										<Input disabled={isSubmitting} {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-					</div>
-
-					<FormField
-						control={form.control}
-						name="awardCategoryId"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>
-									Category <span className="text-red-500">*</span>
-								</FormLabel>
-								<FormControl>
-									<Combobox options={...options} {...field} />
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
-
+				<form
+					className="space-y-4 bg-white p-10 rounded shadow"
+					onSubmit={form.handleSubmit(onSubmit)}>
 					<FormField
 						control={form.control}
 						name="nominee"
@@ -147,12 +101,53 @@ const NominationForm: React.FC<NominationProps> = ({ options }) => {
 					/>
 					<FormField
 						control={form.control}
-						name="nominee_reason"
+						name="awardCategoryId"
 						render={({ field }) => (
 							<FormItem>
 								<FormLabel>
-									Reason <span className="text-red-500">*</span>
+									Category <span className="text-red-500">*</span>
 								</FormLabel>
+								<FormControl>
+									<Combobox options={...options} {...field} />
+								</FormControl>
+
+								{/* show the description of the option selected */}
+								{field.value && (
+									<FormDescription>
+										{
+											options.find((option) => option.value === field.value)
+												?.description
+										}
+									</FormDescription>
+								)}
+
+								{/* show the criteria of the option selected */}
+
+								{field.value && (
+									<>
+										<p className="text-xs font-medium text-slate-400 mt-2">
+											Eligibility Criteria:
+										</p>
+										<FormDescription>
+											{
+												options.find((option) => option.value === field.value)
+													?.criteria
+											}
+										</FormDescription>
+									</>
+								)}
+
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+
+					<FormField
+						control={form.control}
+						name="nominee_reason"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>Reason</FormLabel>
 								<FormControl>
 									<Textarea disabled={isSubmitting} {...field} />
 								</FormControl>
@@ -171,9 +166,7 @@ const NominationForm: React.FC<NominationProps> = ({ options }) => {
 							name="nominee_organization"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>
-										Name <span className="text-red-500">*</span>
-									</FormLabel>
+									<FormLabel>Name</FormLabel>
 									<FormControl>
 										<Input disabled={isSubmitting} {...field} />
 									</FormControl>
@@ -189,9 +182,7 @@ const NominationForm: React.FC<NominationProps> = ({ options }) => {
 							name="nominee_phone"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>
-										Contact Number <span className="text-red-500">*</span>
-									</FormLabel>
+									<FormLabel>Contact Number</FormLabel>
 									<FormControl>
 										<Input disabled={isSubmitting} {...field} />
 									</FormControl>
@@ -204,9 +195,7 @@ const NominationForm: React.FC<NominationProps> = ({ options }) => {
 							name="nominee_email"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>
-										Email <span className="text-red-500">*</span>
-									</FormLabel>
+									<FormLabel>Email</FormLabel>
 									<FormControl>
 										<Input disabled={isSubmitting} {...field} />
 									</FormControl>

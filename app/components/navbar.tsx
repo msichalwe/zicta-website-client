@@ -18,7 +18,7 @@ const Navbar = () => {
 	return (
 		<nav>
 			<div
-				className={`bg-white  text-zicta-blu ${flexBetween} fixed top-0 z-30 w-full py-4 `}>
+				className={`bg-white shadow text-zicta-blu ${flexBetween} fixed top-0 z-30 w-full py-4 `}>
 				<div className={`${flexBetween} mx-auto w-5/6`}>
 					<div className={`${flexBetween} w-full z-[1000] gap-16`}>
 						<Link href={'/'}>
