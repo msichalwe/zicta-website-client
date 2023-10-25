@@ -57,6 +57,7 @@ const NominationForm: React.FC<NominationProps> = ({ options }) => {
 			toast({
 				title: 'Nomination submitted',
 				description: 'Your nomination has been submitted successfully.',
+				variant: 'success',
 			})
 			form.reset({
 				nominee: '',
@@ -81,24 +82,10 @@ const NominationForm: React.FC<NominationProps> = ({ options }) => {
 				<form
 					className="space-y-4 bg-white p-10 rounded shadow"
 					onSubmit={form.handleSubmit(onSubmit)}>
-					<FormField
-						control={form.control}
-						name="nominee"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>
-									Nominee <span className="text-red-500">*</span>
-								</FormLabel>
-								<FormControl>
-									<Input disabled={isSubmitting} {...field} />
-								</FormControl>
-								<FormMessage />
-								<FormDescription>
-									(Name of organization or individual being nominated)
-								</FormDescription>
-							</FormItem>
-						)}
-					/>
+					<p className="font-medium text-center">
+						You may nominate up to 3 individuals or organizations per category.
+						Be sure to make nominations across all categories.
+					</p>
 					<FormField
 						control={form.control}
 						name="awardCategoryId"
@@ -141,7 +128,24 @@ const NominationForm: React.FC<NominationProps> = ({ options }) => {
 							</FormItem>
 						)}
 					/>
-
+					<FormField
+						control={form.control}
+						name="nominee"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>
+									Nominee <span className="text-red-500">*</span>
+								</FormLabel>
+								<FormControl>
+									<Input disabled={isSubmitting} {...field} />
+								</FormControl>
+								<FormMessage />
+								<FormDescription>
+									(Name of organization or individual being nominated)
+								</FormDescription>
+							</FormItem>
+						)}
+					/>
 					<FormField
 						control={form.control}
 						name="nominee_reason"
@@ -159,7 +163,9 @@ const NominationForm: React.FC<NominationProps> = ({ options }) => {
 						)}
 					/>
 
-					<h3 className="font-medium text-sm">Contact Details of Nominee:</h3>
+					<h3 className="font-medium text-sm">
+						Contact Details of Nominee (If Available) :
+					</h3>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 						<FormField
 							control={form.control}

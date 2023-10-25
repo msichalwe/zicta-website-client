@@ -33,7 +33,7 @@ const Awards = () => {
 						<div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
 							<div className="hidden sm:mb-8 sm:flex sm:justify-center">
 								<div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-									Announcing our nomination for the awards are{' '}
+									Nominations for the ICT, Postal and Courier Awards are{' '}
 									<Link
 										href="/awards/nomination"
 										className="font-semibold text-zicta-blue">
@@ -93,17 +93,22 @@ const Awards = () => {
 							About the Awards
 						</h1>
 						<p className="md:text-xl">
-							The Awards are aimed at providing incentives for improved
-							regulatory outcomes in both the ICT and Postal and Courier
-							Services sectors as well as recognise the contributions of
-							individuals and organizations that have made significant
-							contributions to the growth and development of the sector
+							The Awards are aimed at incentivizing improved regulatory outcomes
+							in both the ICT and Postal and Courier Services sectors as well as
+							recognizing the contributions of individuals and organizations
+							that have made significant contributions to the growth and
+							development of the sector
 						</p>
-						<div>
+						<div className="mt-10  gap-x-6">
 							<Link
 								href="/awards/nomination"
 								className="rounded-md bg-zicta-blue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zicta-blue">
-								Nominate
+								Awards
+							</Link>
+							<Link
+								href="/awards/about"
+								className="text-sm font-semibold leading-6 ml-4 text-gray-900">
+								Read more <span aria-hidden="true">→</span>
 							</Link>
 						</div>
 					</div>
