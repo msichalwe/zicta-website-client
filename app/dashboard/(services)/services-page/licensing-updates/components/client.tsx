@@ -13,6 +13,8 @@ interface ResourcesProps {
 	data: ResourceColumn[]
 }
 
+export const revalidate = 0
+
 const ResourcesClient: React.FC<ResourcesProps> = ({ data }) => {
 	const router = useRouter()
 	const params = useParams()

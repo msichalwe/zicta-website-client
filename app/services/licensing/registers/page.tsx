@@ -13,7 +13,7 @@ export const revalidate = 0
 
 const Registers = async () => {
 	const { data: registers, isLoading } = useSWR(
-		'/api/licensing-updates',
+		'/api/licensing-register',
 		fetcher,
 	)
 

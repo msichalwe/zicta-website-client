@@ -4,6 +4,8 @@ import { format } from 'date-fns'
 import ResourcesClient from './components/client'
 import { ResourceColumn } from './components/columns'
 
+export const revalidate = 0
+
 const Registers = async () => {
 	const registers = await prisma.licenceFiles.findMany({
 		where: {
