@@ -17,3 +17,22 @@ export async function POST(req: Request) {
 		return new NextResponse('Internal Error', { status: 500 })
 	}
 }
+
+export async function GET(req: Request) {
+	try {
+		const nominations = await prisma.nomination.findMany({
+			include: {
+				awardCategory: {
+					select: {
+						name: true,
+					},
+				},
+			},
+		})
+
+		return NextResponse.json(nominations)
+	} catch (error) {
+		console.error(error)
+		return new NextResponse('Internal Error', { status: 500 })
+	}
+}

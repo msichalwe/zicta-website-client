@@ -47,6 +47,7 @@
 		"date-fns": "^2.30.0",
 		"eslint-config-next": "^13.5.2",
 		"framer-motion": "^10.15.1",
+		"fuzzyset": "^1.0.7",
 		"gsap": "^3.12.2",
 		"hero-slider": "^3.2.0",
 		"html-react-parser": "^4.0.0",
@@ -60,6 +61,7 @@
 		"react": "18.2.0",
 		"react-anchor-link-smooth-scroll": "^1.0.12",
 		"react-countup": "^6.4.2",
+		"react-csv": "^2.2.2",
 		"react-dom": "18.2.0",
 		"react-hook-form": "^7.45.1",
 		"react-hot-toast": "^2.4.1",
@@ -81,7 +83,9 @@
 	},
 	"devDependencies": {
 		"@types/bcrypt": "^5.0.0",
+		"@types/fuzzyset": "^1.0.6",
 		"@types/nodemailer": "^6.4.11",
+		"@types/react-csv": "^1.1.7",
 		"@types/react-slick": "^0.23.10",
 		"prisma": "^5.0.0"
 	}

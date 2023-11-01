@@ -24,6 +24,7 @@ interface ComboboxProps {
 		value: string
 	}[]
 	value?: string
+	placeholder?: string
 	onChange: (value: string) => void
 }
 
@@ -31,6 +32,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
 	options,
 	value,
 	onChange,
+	placeholder = 'Select an option',
 }) => {
 	const [open, setOpen] = React.useState(false)
 
@@ -44,7 +46,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
 					className="w-full justify-between">
 					{value
 						? options.find((option) => option.value === value)?.label
-						: 'Select option...'}
+						: placeholder}
 					<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 				</Button>
 			</PopoverTrigger>

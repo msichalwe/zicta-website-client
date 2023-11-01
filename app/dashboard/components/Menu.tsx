@@ -203,10 +203,18 @@ const items: MenuProps['items'] = [
 				key: 'ict-stats',
 			},
 			{
+				label: <Link href={'/dashboard/awards'}>Awards</Link>,
+				key: 'awards',
+			},
+			{
 				label: <Link href={'/dashboard/faqs'}>FAQs</Link>,
 				key: 'faqs',
 			},
 		],
+	},
+	{
+		label: <Link href={'/dashboard/awards'}>Awards</Link>,
+		key: 'awards',
 	},
 ]
 const rootSubmenuKeys = [
