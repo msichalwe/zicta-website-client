@@ -24,6 +24,7 @@ import axios from 'axios'
 import { toast } from 'react-hot-toast'
 import Editor from '@/components/ui/editor/Editor'
 import ImageUpload from '@/components/ui/image-upload'
+import UploadFile from '@/app/dashboard/components/file-upload'
 
 const formSchema = z.object({
 	title: z.string().min(1),
@@ -178,11 +179,16 @@ export const ServiceForm: React.FC<ServiceFormProps> = ({ initialData }) => {
 								<FormItem>
 									<FormLabel>ImageUrl</FormLabel>
 									<FormControl>
-										<ImageUpload
+										{/* <ImageUpload
 											value={field.value ? [field.value] : []}
 											disabled={loading}
 											onChange={(url) => field.onChange(url)}
 											onRemove={() => field.onChange('')}
+										/> */}
+										<UploadFile
+											className="p-16 mt-10 border border-neutral-200  rounded"
+											value={field.value ? [field.value] : []}
+											onChange={(url) => field.onChange(url)}
 										/>
 									</FormControl>
 									<FormMessage />

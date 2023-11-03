@@ -34,6 +34,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select'
+import UploadFile from '@/app/dashboard/components/file-upload'
 
 const formSchema = z.object({
 	title: z.string().min(1),
@@ -197,11 +198,16 @@ export const ProcurementForm = ({ initialData }: ProcurementFormProps) => {
 							<FormItem>
 								<FormLabel>File</FormLabel>
 								<FormControl>
-									<FileUpload
+									{/* <FileUpload
 										value={field.value ? [field.value] : []}
 										disabled={loading}
 										onChange={(url) => field.onChange(url)}
 										onRemove={() => field.onChange('')}
+									/> */}
+									<UploadFile
+										className="p-16 mt-10 border border-neutral-200  rounded"
+										value={field.value ? [field.value] : []}
+										onChange={(url) => field.onChange(url)}
 									/>
 								</FormControl>
 								<FormMessage />

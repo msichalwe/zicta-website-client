@@ -21,6 +21,7 @@ import { BannerSection } from '@prisma/client'
 import { useRouter } from 'next/navigation'
 import Heading from '@/app/dashboard/components/Heading'
 import { toast } from 'react-hot-toast'
+import UploadFile from '@/app/dashboard/components/file-upload'
 
 const formSchema = z.object({
 	title: z.string().min(1),
@@ -128,11 +129,16 @@ export const BannerForm = ({ initialData }: BannerFormProps) => {
 							<FormItem>
 								<FormLabel>ImageUrl</FormLabel>
 								<FormControl>
-									<ImageUpload
+									{/* <ImageUpload
 										value={field.value ? [field.value] : []}
 										disabled={loading}
 										onChange={(url) => field.onChange(url)}
 										onRemove={() => field.onChange('')}
+									/> */}
+									<UploadFile
+										className="p-16 mt-10 border border-neutral-200  rounded"
+										value={field.value ? [field.value] : []}
+										onChange={(url) => field.onChange(url)}
 									/>
 								</FormControl>
 								<FormMessage />

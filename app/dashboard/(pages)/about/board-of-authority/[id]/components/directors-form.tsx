@@ -24,6 +24,7 @@ import ImageUpload from '@/components/ui/image-upload'
 import { Director } from '@prisma/client'
 import Heading from '@/app/dashboard/components/Heading'
 import FileUpload from '@/components/ui/file-upload'
+import UploadFile from '@/app/dashboard/components/file-upload'
 
 const formSchema = z.object({
 	name: z.string().min(1),
@@ -160,11 +161,10 @@ const DirectorsForm: React.FC<DirectorsFormProps> = ({ initialData }) => {
 							<FormItem>
 								<FormLabel>ImageUrl</FormLabel>
 								<FormControl>
-									<FileUpload
+									<UploadFile
+										className="p-16 mt-10 border border-neutral-200  rounded"
 										value={field.value ? [field.value] : []}
-										disabled={loading}
 										onChange={(url) => field.onChange(url)}
-										onRemove={() => field.onChange('')}
 									/>
 								</FormControl>
 								<FormMessage />

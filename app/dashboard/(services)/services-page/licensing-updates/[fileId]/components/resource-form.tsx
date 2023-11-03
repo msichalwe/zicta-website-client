@@ -25,6 +25,7 @@ import { AlertModal } from '@/components/ui/modal/alert-modal'
 import { Trash } from 'lucide-react'
 import { useAppSelector } from '@/hooks/hooks'
 import { selectFileFormat } from '@/state'
+import UploadFile from '@/app/dashboard/components/file-upload'
 
 const formSchema = z.object({
 	title: z.string().min(1),
@@ -50,7 +51,7 @@ export const ResourceForm = ({ initialData }: ResourceFormProps) => {
 	const action = initialData ? 'Save changes' : 'Create'
 
 	const defaultValues = initialData
-		? { ...initialData }
+		? { ...initialData, fileUrl: initialData.file }
 		: {
 				title: '',
 				fileUrl: '',
@@ -63,13 +64,20 @@ export const ResourceForm = ({ initialData }: ResourceFormProps) => {
 		},
 	})
 
+	console.log(initialData)
+
 	const onSubmit = async (data: ResourceFormValues) => {
 		try {
 			setLoading(true)
 			if (initialData) {
 				await axios.patch(
 					`/api/resources/${params.resource}/${params.resourceId}`,
-					{ ...data, fileType: fileFormat, type: 'updates' },
+					{
+						...data,
+						file: data.fileUrl,
+						fileType: fileFormat,
+						type: 'updates',
+					},
 				)
 			} else {
 				await axios.post(`/api/licensing-updates`, {
@@ -155,11 +163,16 @@ export const ResourceForm = ({ initialData }: ResourceFormProps) => {
 							<FormItem>
 								<FormLabel>File</FormLabel>
 								<FormControl>
-									<FileUpload
+									{/* <FileUpload
 										value={field.value ? [field.value] : []}
 										disabled={loading}
 										onChange={(url) => field.onChange(url)}
 										onRemove={() => field.onChange('')}
+									/> */}
+									<UploadFile
+										className="p-16 mt-10 border border-neutral-200  rounded"
+										value={field.value ? [field.value] : []}
+										onChange={(url) => field.onChange(url)}
 									/>
 								</FormControl>
 								<FormMessage />

@@ -64,6 +64,7 @@
 		"react-countup": "^6.4.2",
 		"react-csv": "^2.2.2",
 		"react-dom": "18.2.0",
+		"react-dropzone": "^14.2.3",
 		"react-hook-form": "^7.45.1",
 		"react-hot-toast": "^2.4.1",
 		"react-portable-text": "^0.6.0",

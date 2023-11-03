@@ -35,7 +35,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 		try {
 			setLoading(true)
 			await axios
-				.get(`/api/resources/${params.resource}/${data.id}`)
+				.get(`/api/services-page/licensing-registers/${data.id}`)
 				.then((res) => {
 					const downloadUrl = res.data // Assuming the response contains the download URL
 					window.open(downloadUrl, '_blank')
@@ -48,7 +48,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 	const onDelete = async () => {
 		try {
 			setLoading(true)
-			await axios.delete(`/api/resources/${params.resource}/${data.id}`)
+			await axios.delete(`/api/services-page/licensing-registers/${data.id}`)
 			router.refresh()
 			toast.success(' Deleted')
 		} catch (error) {
@@ -78,7 +78,9 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 					<DropdownMenuLabel>Actions</DropdownMenuLabel>
 					<DropdownMenuItem
 						onClick={() =>
-							router.push(`/dashboard/resources/${params.resource}/${data.id}`)
+							router.push(
+								`/dashboard/services-page/licensing-registers/${data.id}`,
+							)
 						}>
 						<Edit className="mr-2 h-4 w-4" />
 						Update
