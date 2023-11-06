@@ -1,12 +1,23 @@
+'use client'
 import { CreditCard, DollarSign, Package } from 'lucide-react'
 
 import { Separator } from '@/components/ui/separator'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Heading from './components/Heading'
+import { useSession } from 'next-auth/react'
+import { useEffect } from 'react'
+import { redirect } from 'next/navigation'
 
-export const revalidate = 0
-const DashboardPage = async () => {
+const DashboardPage = () => {
+	const session = useSession()
+
+	useEffect(() => {
+		if (session?.data?.user?.email === 'awards@zicta.zm') {
+			redirect('/dashboard/awards')
+		}
+	}, [session])
+
 	return (
 		<div className="flex-col">
 			<div className="flex-1 space-y-4 p-8 pt-6">

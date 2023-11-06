@@ -5,6 +5,8 @@ import Sider from 'antd/es/layout/Sider'
 import { Header, Content } from 'antd/es/layout/layout'
 import Menu from '@/app/dashboard/components/Menu'
 import Navbar from '@/app/dashboard/components/Navbar'
+import { UserProvider } from './user-context'
+import { useSession } from 'next-auth/react'
 
 type WrapperContextProps = {
 	children: React.ReactNode
@@ -19,6 +21,11 @@ const siderStyle: React.CSSProperties = {
 }
 
 const WrapperContext: React.FC<WrapperContextProps> = ({ children }) => {
+	const session = useSession()
+
+	const user = {
+		email: session?.data?.user?.email,
+	}
 	const [isMounted, setIsMounted] = useState(false)
 
 	useEffect(() => {
@@ -32,9 +39,11 @@ const WrapperContext: React.FC<WrapperContextProps> = ({ children }) => {
 		<>
 			{/* <Navbar /> */}
 			<Layout hasSider>
-				<Sider theme="light">
-					<Menu />
-				</Sider>
+				<UserProvider value={user}>
+					<Sider theme="light">
+						<Menu />
+					</Sider>
+				</UserProvider>
 
 				<Layout style={{ height: '100vh' }}>
 					<Header style={{ backgroundColor: 'white', position: 'sticky' }}>

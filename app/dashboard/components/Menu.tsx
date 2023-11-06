@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 
 import React, { useState } from 'react'
+import { UserConsumer } from '@/context/user-context'
 
 const items: MenuProps['items'] = [
 	{
@@ -217,6 +218,7 @@ const items: MenuProps['items'] = [
 		key: 'awards',
 	},
 ]
+
 const rootSubmenuKeys = [
 	'dashboard',
 	'media',
@@ -225,7 +227,8 @@ const rootSubmenuKeys = [
 	'resources',
 	'pages',
 ]
-const Menu = () => {
+
+const Menu = async () => {
 	const [openKeys, setOpenKeys] = useState(['dashboard'])
 
 	const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
@@ -236,26 +239,51 @@ const Menu = () => {
 			setOpenKeys(latestOpenKey ? [latestOpenKey] : [])
 		}
 	}
+
+	const canAccess = (email: string, itemKey: string) => {
+		const rolePermissions: { [key: string]: string[] } = {
+			'awards@zicta.zm': ['awards'],
+			'test@zicta.zm': [
+				'dashboard',
+				'media',
+				'services',
+				'categories',
+				'resources',
+				'pages',
+				'awards',
+			],
+		}
+
+		return rolePermissions[email]?.includes(itemKey) ?? false
+	}
+
 	return (
-		<MenuUI
-			className="gap-x-2"
-			openKeys={openKeys}
-			onOpenChange={onOpenChange}
-			theme="light"
-			mode="inline"
-			items={items}
-			style={{
-				height: '100%',
-				justifyContent: 'around',
-				display: 'flex',
-				paddingTop: '100px',
-				alignContent: 'center',
-				flexDirection: 'column',
-				columnGap: '0.5rem',
-				textAlign: 'left',
-				color: '#313180',
-			}}
-		/>
+		<UserConsumer>
+			{(user: any) => (
+				<MenuUI
+					className="gap-x-2"
+					openKeys={openKeys}
+					onOpenChange={onOpenChange}
+					theme="light"
+					mode="inline"
+					items={items.filter(
+						// @ts-ignore
+						(item) => item?.key && canAccess(user.email, item.key),
+					)}
+					style={{
+						height: '100%',
+						justifyContent: 'around',
+						display: 'flex',
+						paddingTop: '100px',
+						alignContent: 'center',
+						flexDirection: 'column',
+						columnGap: '0.5rem',
+						textAlign: 'left',
+						color: '#313180',
+					}}
+				/>
+			)}
+		</UserConsumer>
 	)
 }
 
