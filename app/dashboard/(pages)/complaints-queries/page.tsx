@@ -2,6 +2,8 @@ import { format } from 'date-fns'
 import prisma from '@/lib/prismadb'
 import ComplaintsClient from './components/client'
 
+export const revalidate = 0
+
 const ComplaintsQueries = async () => {
 	const complaints = await prisma.complaints.findMany({
 		orderBy: {

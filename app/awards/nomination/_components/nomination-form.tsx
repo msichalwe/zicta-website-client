@@ -15,12 +15,13 @@ import {
 	FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { useRouter } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import axios from 'axios'
 import { useToast } from '@/components/ui/use-toast'
 
 import { Combobox } from '@/components/ui/combobox'
 import { Textarea } from '@/components/ui/textarea'
+import { useEffect } from 'react'
 
 const formSchema = z.object({
 	nominee: z.string().min(1),
@@ -43,6 +44,10 @@ interface NominationProps {
 }
 
 const NominationForm: React.FC<NominationProps> = ({ options }) => {
+	useEffect(() => {
+		redirect('/awards')
+	}, [])
+
 	const router = useRouter()
 	const { toast } = useToast()
 	const form = useForm<NominationFormValues>({

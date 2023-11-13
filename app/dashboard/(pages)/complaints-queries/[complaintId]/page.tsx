@@ -16,6 +16,8 @@ import {
 } from '@/components/ui/card'
 import Image from 'next/image'
 
+export const revalidate = 0
+
 const Complaint = async ({ params }: { params: { complaintId: string } }) => {
 	const complaint = await prisma.complaints.findUnique({
 		where: {
