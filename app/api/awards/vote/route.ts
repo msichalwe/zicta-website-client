@@ -5,6 +5,19 @@ export async function POST(req: Request) {
 	try {
 		const body = await req.json()
 
+		const {voter_email} = body
+
+		const dbEmail = await prisma.votes.findUnique({
+			where: {
+				voter_email,
+			},
+		})
+
+		if (dbEmail) {
+			return new NextResponse('Email already voted', { status: 400 })
+		}
+
+
 		const vote = await prisma.votes.create({
 			data: {
 				...body,

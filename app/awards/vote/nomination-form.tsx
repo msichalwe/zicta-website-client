@@ -97,9 +97,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 		} catch (error) {
 			toast({
 				title: 'Oops! An error occurred.',
-				description: 'Unable to submit nomination.',
+				// @ts-ignore
+				description: `Unable to submit votes. ${error.response.data}`,
 				variant: 'destructive',
 			})
+			console.log(error)
 		}
 	}
 

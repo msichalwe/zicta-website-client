@@ -341,4 +341,6 @@ model votes{
   the_cyber_sentinel_award String
   the_best_digital_economy_coverage_award String
   the_digital_literacy_champion_award String
+
+  @@unique([voter_email])
 }
