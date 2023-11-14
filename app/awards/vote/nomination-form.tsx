@@ -147,7 +147,7 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Tamara Gondwe', label: 'Tamara Gondwe' },
     { value: 'INFRATEL', label: 'INFRATEL' },
     { value: 'Ernest Mafuta', label: 'Ernest Mafuta' },
-    { value: 'Airtel', label: 'Airtel' }
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' }
   ]}
   {...field} 
 />
@@ -170,8 +170,8 @@ const NominationForm: React.FC<NominationProps> = () => {
   options={[
     { value: 'ZTE Zambia Service Limited', label: 'ZTE Zambia Service Limited' },
     { value: 'VIZTRANIX Information Technology Limited', label: 'VIZTRANIX Information Technology Limited' },
-    { value: 'Airtel', label: 'Airtel' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
     { value: 'Musekiwa Moyo', label: 'Musekiwa Moyo' }
   ]}
   {...field} 
@@ -196,10 +196,10 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel', label: 'Airtel' },
-    { value: 'Zamtel', label: 'Zamtel' },
-    { value: 'Paratus Telecommunications', label: 'Paratus Telecommunications' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
+    { value: 'Paratus Telecommunications (Pty) Ltd', label: 'Paratus Telecommunications (Pty) Ltd' },
+    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
     { value: 'Bayobab Zambia', label: 'Bayobab Zambia' }
   ]}
   {...field} 
@@ -221,9 +221,9 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel', label: 'Airtel' },
-    { value: 'Zamtel', label: 'Zamtel' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
+    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
     { value: 'Camara Education', label: 'Camara Education' }
 //need input
 	
@@ -250,10 +250,10 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel', label: 'Airtel' },
-    { value: 'Zamtel', label: 'Zamtel' },
-    { value: 'Paratus Telecommunications', label: 'Paratus Telecommunications' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' }
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
+    { value: 'Paratus Telecommunications (Pty) Ltd', label: 'Paratus Telecommunications (Pty) Ltd' },
+    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' }
  //need guidance
   ]}
   {...field} 
@@ -275,9 +275,9 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel', label: 'Airtel' },
-    { value: 'Zamtel', label: 'Zamtel' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
+    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
     { value: 'lastonsinkuyu@gmail.com', label: 'lastonsinkuyu@gmail.com' } //???
   //need guidance
   ]}
@@ -305,7 +305,7 @@ const NominationForm: React.FC<NominationProps> = () => {
   options={[
     { value: 'Gavic Express', label: 'Gavic Express' },
     { value: 'Yafika Express', label: 'Yafika Express' },
-    { value: 'ZAMPOST', label: 'ZAMPOST' },
+    { value: 'ZAMPOST (Zambia Postal Services Corporation)', label: 'ZAMPOST (Zambia Postal Services Corporation)' },
     { value: 'Falcon Express', label: 'Falcon Express' },
     { value: 'One World', label: 'One World' }
   ]}
@@ -329,9 +329,9 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<Combobox 
   options={[
     { value: 'Eastlight Courier', label: 'Eastlight Courier' },
-    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
     { value: 'Yango', label: 'Yango' },
-    { value: 'ZAMPOST', label: 'ZAMPOST' },
+    { value: 'ZAMPOST (Zambia Postal Services Corporation)', label: 'ZAMPOST (Zambia Postal Services Corporation)' },
     { value: 'DHL', label: 'DHL' }
   ]}
   {...field} 
@@ -356,11 +356,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel', label: 'Airtel' },
-    { value: 'Zamtel', label: 'Zamtel' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
     { value: 'Bayobab Zambia', label: 'Bayobab Zambia' },
-    { value: 'Paratus Telecommunications', label: 'Paratus Telecommunications' },
-    { value: 'IHS Zambia', label: 'IHS Zambia' }
+    { value: 'Paratus Telecommunications (Pty) Ltd', label: 'Paratus Telecommunications (Pty) Ltd' },
+    { value: 'IHS Zambia Limited', label: 'IHS Zambia Limited' }
   ]}
   {...field} 
 />
@@ -381,11 +381,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
     { value: 'Bridging Gap Solutions', label: 'Bridging Gap Solutions' },
-    { value: 'Zamtel', label: 'Zamtel' },
-    { value: 'MTN', label: 'MTN' },
-    { value: 'Paratus', label: 'Paratus' }
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Paratus Telecommunications (Pty) Ltd', label: 'Paratus Telecommunications (Pty) Ltd' }
   ]}
   {...field} 
 />
@@ -409,9 +409,9 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Zampost', label: 'Zampost' },
+    { value: 'ZAMPOST (Zambia Postal Services Corporation)', label: 'ZAMPOST (Zambia Postal Services Corporation)' },
     { value: 'Ali Kingston Mwila', label: 'Ali Kingston Mwila' },
-    { value: 'MTN', label: 'MTN' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
     { value: 'One World', label: 'One World' },
     { value: 'Yango', label: 'Yango' }
   ]}
@@ -434,9 +434,9 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel', label: 'Airtel' },
-    { value: 'MTN', label: 'MTN' },
-    { value: 'ZAMTEL', label: 'ZAMTEL' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
     { value: 'Tiyeni Mobility', label: 'Tiyeni Mobility' }
  // need advice
   ]}
@@ -462,10 +462,10 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel', label: 'Airtel' },
-    { value: 'Paratus', label: 'Paratus' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'Paratus Telecommunications (Pty) Ltd', label: 'Paratus Telecommunications (Pty) Ltd' },
     { value: 'VIZTRANIX Information Technology Limited', label: 'VIZTRANIX Information Technology Limited' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
     { value: 'Bayobab Zambia', label: 'Bayobab Zambia' }
   ]}
   {...field} 
@@ -487,8 +487,8 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Zampost', label: 'Zampost' },
-    { value: 'Airtel', label: 'Airtel' },
+    { value: 'ZAMPOST (Zambia Postal Services Corporation)', label: 'ZAMPOST (Zambia Postal Services Corporation)' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
     { value: 'Yango', label: 'Yango' },
     { value: 'Eastlight Courier', label: 'Eastlight Courier' }
 //need guidance
@@ -516,9 +516,9 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<Combobox 
   options={[
     { value: 'Digital Safe Limited', label: 'Digital Safe Limited' },
-    { value: 'Airtel', label: 'Airtel' },
-    { value: 'MTN', label: 'MTN' },
-    { value: 'Zamtel', label: 'Zamtel' }
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' }
  //need guidance
   ]}
   {...field} 
@@ -540,10 +540,10 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
     { value: 'Ali Kingston Mwila', label: 'Ali Kingston Mwila' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
-    { value: 'Zamtel', label: 'Zamtel' },
+    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
     { value: 'Liquid Intelligent Technologies', label: 'Liquid Intelligent Technologies' }
   ]}
   {...field} 
@@ -568,8 +568,8 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel', label: 'Airtel' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
     { value: 'Triple Alliance Digital Academy', label: 'Triple Alliance Digital Academy' },
     { value: 'Zambian Cyber Security Initiative Foundation', label: 'Zambian Cyber Security Initiative Foundation' }
   ]}
