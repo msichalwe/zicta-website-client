@@ -194,11 +194,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'ZTE Zambia Service Limited', label: 'ZTE Zambia Service Limited' },
+    { value: 'Tamara Gondwe', label: 'Tamara Gondwe' },
+    { value: 'INFRATEL', label: 'INFRATEL' },
+    { value: 'Ernest Mafuta', label: 'Ernest Mafuta' },
+    { value: 'Airtel', label: 'Airtel' }
   ]}
   {...field} 
 />
@@ -219,11 +219,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'ZTE Zambia Service Limited', label: 'ZTE Zambia Service Limited' },
+    { value: 'VIZTRANIX Information Technology Limited', label: 'VIZTRANIX Information Technology Limited' },
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Musekiwa Moyo', label: 'Musekiwa Moyo' }
   ]}
   {...field} 
 />
@@ -247,11 +247,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Zamtel', label: 'Zamtel' },
+    { value: 'Paratus Telecommunications', label: 'Paratus Telecommunications' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Bayobab Zambia', label: 'Bayobab Zambia' }
   ]}
   {...field} 
 />
@@ -272,11 +272,12 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Zamtel', label: 'Zamtel' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Camara Education', label: 'Option 4' },
+    { value: 'Option 5', label: 'Option 5' }//need input
+	
   ]}
   {...field} 
 />
@@ -300,11 +301,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Zamtel', label: 'Zamtel' },
+    { value: 'Paratus Telecommunications', label: 'Paratus Telecommunications' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Option 5', label: 'Option 5' } //need guidance
   ]}
   {...field} 
 />
@@ -325,11 +326,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Zamtel', label: 'Zamtel' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'lastonsinkuyu@gmail.com', label: 'lastonsinkuyu@gmail.com' }, //???
+    { value: 'Option 5', label: 'Option 5' }//need guidance
   ]}
   {...field} 
 />
@@ -353,11 +354,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Gavic Express', label: 'Gavic Express' },
+    { value: 'Yafika Express', label: 'Yafika Express' },
+    { value: 'ZAMPOST', label: 'ZAMPOST' },
+    { value: 'Falcon Express', label: 'Falcon Express' },
+    { value: 'One World', label: 'One World' }
   ]}
   {...field} 
 />
@@ -378,11 +379,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Eastlight Courier', label: 'Eastlight Courier' },
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Yango', label: 'Yango' },
+    { value: 'ZAMPOST', label: 'ZAMPOST' },
+    { value: 'DHL', label: 'DHL' }
   ]}
   {...field} 
 />
@@ -406,11 +407,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Zamtel', label: 'Zamtel' },
+    { value: 'Bayobab Zambia', label: 'Bayobab Zambia' },
+    { value: 'Paratus Telecommunications', label: 'Paratus Telecommunications' },
+    { value: 'IHS Zambia', label: 'IHS Zambia' }
   ]}
   {...field} 
 />
@@ -431,11 +432,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Bridging Gap Solutions', label: 'Bridging Gap Solutions' },
+    { value: 'Zamtel', label: 'Zamtel' },
+    { value: 'MTN', label: 'MTN' },
+    { value: 'Paratus', label: 'Paratus' }
   ]}
   {...field} 
 />
@@ -459,11 +460,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Zampost', label: 'Zampost' },
+    { value: 'Ali Kingston Mwila', label: 'Ali Kingston Mwila' },
+    { value: 'MTN', label: 'MTN' },
+    { value: 'One World', label: 'One World' },
+    { value: 'Yango', label: 'Yango' }
   ]}
   {...field} 
 />
@@ -484,11 +485,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'MTN', label: 'MTN' },
+    { value: 'ZAMTEL', label: 'ZAMTEL' },
+    { value: 'Tiyeni Mobility', label: 'Tiyeni Mobility' },
+    { value: 'Option 5', label: 'Option 5' } // need advice
   ]}
   {...field} 
 />
@@ -512,11 +513,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Paratus', label: 'Paratus' },
+    { value: 'VIZTRANIX Information Technology Limited', label: 'VIZTRANIX Information Technology Limited' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Bayobab Zambia', label: 'Bayobab Zambia' }
   ]}
   {...field} 
 />
@@ -537,11 +538,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Zampost', label: 'Zampost' },
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Yango', label: 'Yango' },
+    { value: 'Eastlight Courier', label: 'Eastlight Courier' },
+    { value: 'Option 5', label: 'Option 5' }//need guidance
   ]}
   {...field} 
 />
@@ -565,11 +566,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Digital Safe Limited', label: 'Digital Safe Limited' },
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'MTN', label: 'MTN' },
+    { value: 'Zamtel', label: 'Zamtel' },
+    { value: 'Option 5', label: 'Option 5' } //need guidance
   ]}
   {...field} 
 />
@@ -590,11 +591,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'Ali Kingston Mwila', label: 'Ali Kingston Mwila' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Zamtel', label: 'Zamtel' },
+    { value: 'Liquid Intelligent Technologies', label: 'Liquid Intelligent Technologies' }
   ]}
   {...field} 
 />
@@ -618,11 +619,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Option 1', label: 'Option 1' },
-    { value: 'Option 2', label: 'Option 2' },
-    { value: 'Option 3', label: 'Option 3' },
-    { value: 'Option 4', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }
+    { value: 'Airtel', label: 'Airtel' },
+    { value: 'MTN Zambia', label: 'MTN Zambia' },
+    { value: 'Triple Alliance Digital Academy', label: 'Triple Alliance Digital Academy' },
+    { value: 'Option 4', label: 'Option 4' },//need guidance
+    { value: 'Zambian Cyber Security Initiative Foundation', label: 'Zambian Cyber Security Initiative Foundation' }
   ]}
   {...field} 
 />

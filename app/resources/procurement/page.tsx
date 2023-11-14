@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Navbar from '@/app/components/navbar'
 import { Balancer } from 'react-wrap-balancer'
 import Loader from '@/components/ui/loader'
-import { ResourceColumn, columns } from '../[resource]/components/columns'
+import { ResourceColumn, columns } from './components/columns'
 
 const Procurement = () => {
 	const { data: tenders, isLoading } = useQuery({

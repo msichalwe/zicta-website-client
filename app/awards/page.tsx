@@ -3,6 +3,7 @@ import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import Timer from './nomination/_components/countdown-timer'
 import Image from 'next/image'
+import { Button } from '@/components/ui/button'
 
 const Awards = () => {
 	return (
@@ -34,12 +35,10 @@ const Awards = () => {
 							<div className="hidden sm:mb-8 sm:flex sm:justify-center">
 								<div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
 									Nominations for the ICT, Postal and Courier Awards are{' '}
-									<Link
-										href="/awards/nomination"
-										className="font-semibold text-zicta-blue">
+									<span className="font-semibold text-zicta-blue">
 										<span className="absolute inset-0" aria-hidden="true" />
-										Now Open <span aria-hidden="true">&rarr;</span>
-									</Link>
+										Closed
+									</span>
 								</div>
 							</div>
 							<div className="text-center">
@@ -53,11 +52,11 @@ const Awards = () => {
 									Courier services.
 								</p>
 								<div className="mt-10 flex items-center justify-center gap-x-6">
-									<Link
-										href="/awards/nomination"
+									<Button
+										disabled={true}
 										className="rounded-md bg-zicta-blue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zicta-blue">
-										Nominate
-									</Link>
+										Nominations Closed
+									</Button>
 									<Link
 										href="#learn-more"
 										className="text-sm font-semibold leading-6 text-gray-900">
@@ -100,11 +99,11 @@ const Awards = () => {
 							development of the sector
 						</p>
 						<div className="mt-10  gap-x-6">
-							<Link
-								href="/awards/nomination"
+							<Button
+								disabled={true}
 								className="rounded-md bg-zicta-blue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zicta-blue">
-								Awards
-							</Link>
+								Nominations Closed
+							</Button>
 							<Link
 								href="/awards/about"
 								className="text-sm font-semibold leading-6 ml-4 text-gray-900">
