@@ -320,10 +320,7 @@ model rsvp {
 model votes{
   id        String    @id @default(auto()) @map("_id") @db.ObjectId
   createdAt   DateTime? @default(now())
-  voter_first_name String
-  voter_last_name  String
   voter_email      String
-  voter_phone      String
   the_digital_transformation_champion_award    String
   the_tech_for_good_trailblazer_award   String
   the_connected_communities_crusader_award String

@@ -23,10 +23,7 @@ import { Combobox } from '@/components/ui/combobox'
 import { Textarea } from '@/components/ui/textarea'
 
 const formSchema = z.object({
-	voter_first_name: z.string().min(1),
-	voter_last_name: z.string().min(1),
 	voter_email: z.string().email(),
-	voter_phone: z.string().min(10),
 	the_digital_transformation_champion_award: z.string().min(1),
 	the_tech_for_good_trailblazer_award: z.string().min(1),
 	the_connected_communities_crusader_award: z.string().min(1),
@@ -71,10 +68,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 				variant: 'success',
 			})
 			form.reset({
-				voter_first_name: '',
-				voter_last_name: '',
 				voter_email: '',
-				voter_phone: '',
 				the_digital_transformation_champion_award: '',
 				the_tech_for_good_trailblazer_award: '',
 				the_connected_communities_crusader_award: '',
@@ -116,57 +110,10 @@ const NominationForm: React.FC<NominationProps> = () => {
 
 					Get ready to cast your votes and electrify the ZICTA ICT Awards! Vote now and join us as we celebrate the tech world's brightest stars - your votes are the key to making this night unforgettable.
 					</p>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-						<FormField
-							control={form.control}
-							name="voter_first_name"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>First Name</FormLabel>
-									<FormControl>
-										<Input disabled={isSubmitting} {...field} />
-									</FormControl>
-									<FormMessage />
-									{/* <FormDescription>
-										(Name of organization or individual being nominated)
-									</FormDescription> */}
-								</FormItem>
-							)}
-						/>
-							<FormField
-							control={form.control}
-							name="voter_last_name"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Last Name</FormLabel>
-									<FormControl>
-										<Input disabled={isSubmitting} {...field} />
-									</FormControl>
-									<FormMessage />
-									{/* <FormDescription>
-										(Name of organization or individual being nominated)
-									</FormDescription> */}
-								</FormItem>
-							)}
-						/>
-					
-					</div>
+				
 					
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 				
-						<FormField
-							control={form.control}
-							name="voter_phone"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Contact Number</FormLabel>
-									<FormControl>
-										<Input disabled={isSubmitting} {...field} />
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
 						<FormField
 							control={form.control}
 							name="voter_email"
@@ -277,8 +224,8 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Airtel', label: 'Airtel' },
     { value: 'Zamtel', label: 'Zamtel' },
     { value: 'MTN Zambia', label: 'MTN Zambia' },
-    { value: 'Camara Education', label: 'Option 4' },
-    { value: 'Option 5', label: 'Option 5' }//need input
+    { value: 'Camara Education', label: 'Camara Education' }
+//need input
 	
   ]}
   {...field} 
@@ -306,8 +253,8 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Airtel', label: 'Airtel' },
     { value: 'Zamtel', label: 'Zamtel' },
     { value: 'Paratus Telecommunications', label: 'Paratus Telecommunications' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
-    { value: 'Option 5', label: 'Option 5' } //need guidance
+    { value: 'MTN Zambia', label: 'MTN Zambia' }
+ //need guidance
   ]}
   {...field} 
 />
@@ -331,8 +278,8 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Airtel', label: 'Airtel' },
     { value: 'Zamtel', label: 'Zamtel' },
     { value: 'MTN Zambia', label: 'MTN Zambia' },
-    { value: 'lastonsinkuyu@gmail.com', label: 'lastonsinkuyu@gmail.com' }, //???
-    { value: 'Option 5', label: 'Option 5' }//need guidance
+    { value: 'lastonsinkuyu@gmail.com', label: 'lastonsinkuyu@gmail.com' } //???
+  //need guidance
   ]}
   {...field} 
 />
@@ -490,8 +437,8 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Airtel', label: 'Airtel' },
     { value: 'MTN', label: 'MTN' },
     { value: 'ZAMTEL', label: 'ZAMTEL' },
-    { value: 'Tiyeni Mobility', label: 'Tiyeni Mobility' },
-    { value: 'Option 5', label: 'Option 5' } // need advice
+    { value: 'Tiyeni Mobility', label: 'Tiyeni Mobility' }
+ // need advice
   ]}
   {...field} 
 />
@@ -543,8 +490,8 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Zampost', label: 'Zampost' },
     { value: 'Airtel', label: 'Airtel' },
     { value: 'Yango', label: 'Yango' },
-    { value: 'Eastlight Courier', label: 'Eastlight Courier' },
-    { value: 'Option 5', label: 'Option 5' }//need guidance
+    { value: 'Eastlight Courier', label: 'Eastlight Courier' }
+//need guidance
   ]}
   {...field} 
 />
@@ -571,8 +518,8 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Digital Safe Limited', label: 'Digital Safe Limited' },
     { value: 'Airtel', label: 'Airtel' },
     { value: 'MTN', label: 'MTN' },
-    { value: 'Zamtel', label: 'Zamtel' },
-    { value: 'Option 5', label: 'Option 5' } //need guidance
+    { value: 'Zamtel', label: 'Zamtel' }
+ //need guidance
   ]}
   {...field} 
 />
@@ -624,7 +571,6 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Airtel', label: 'Airtel' },
     { value: 'MTN Zambia', label: 'MTN Zambia' },
     { value: 'Triple Alliance Digital Academy', label: 'Triple Alliance Digital Academy' },
-    { value: 'Option 4', label: 'Option 4' },//need guidance
     { value: 'Zambian Cyber Security Initiative Foundation', label: 'Zambian Cyber Security Initiative Foundation' }
   ]}
   {...field} 
