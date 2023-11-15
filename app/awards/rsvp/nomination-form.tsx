@@ -31,14 +31,11 @@ const formSchema = z.object({
 	guest_position: z.string().min(1),
 	guest_dietary_requirements: z.string().min(1),
 	guest_most_memorable_moment: z.string().min(1),
-
 })
 
 type NominationFormValues = z.infer<typeof formSchema>
 
-interface NominationProps {
-
-}
+interface NominationProps {}
 
 const NominationForm: React.FC<NominationProps> = () => {
 	const router = useRouter()
@@ -66,7 +63,6 @@ const NominationForm: React.FC<NominationProps> = () => {
 				guest_position: '',
 				guest_dietary_requirements: '',
 				guest_most_memorable_moment: '',
-				
 			})
 		} catch (error) {
 			toast({
@@ -83,9 +79,10 @@ const NominationForm: React.FC<NominationProps> = () => {
 				<form
 					className="space-y-4 bg-white p-10 rounded shadow"
 					onSubmit={form.handleSubmit(onSubmit)}>
-					<p className="font-medium text-center">
-
-						Get ready to electrify the ZICTA ICT Awards! RSVP now and join us as we celebrate the tech world's brightest stars - your presence is the key to making this night unforgettable.
+					<p className="font-black text-lg text-center">
+						Get ready to electrify the ZICTA ICT Awards! RSVP now and join us as
+						we celebrate the tech world's brightest stars - your presence is the
+						key to making this night unforgettable.
 					</p>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 						<FormField
@@ -104,7 +101,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 								</FormItem>
 							)}
 						/>
-							<FormField
+						<FormField
 							control={form.control}
 							name="guest_last_name"
 							render={({ field }) => (
@@ -120,48 +117,42 @@ const NominationForm: React.FC<NominationProps> = () => {
 								</FormItem>
 							)}
 						/>
-					
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-					<FormField
-						control={form.control}
-						name="guest_organization"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>
-									Organization <span className="text-red-500">*</span>
-								</FormLabel>
-								<FormControl>
-									<Input disabled={isSubmitting} {...field} />
-								</FormControl>
-								<FormMessage />
-								{/* <FormDescription>
+						<FormField
+							control={form.control}
+							name="guest_organization"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Organization</FormLabel>
+									<FormControl>
+										<Input disabled={isSubmitting} {...field} />
+									</FormControl>
+									<FormMessage />
+									{/* <FormDescription>
 									(Name of organization for individual being invited)
 								</FormDescription> */}
-							</FormItem>
-						)}
-					/>
-							<FormField
-						control={form.control}
-						name="guest_position"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>
-									Position <span className="text-red-500">*</span>
-								</FormLabel>
-								<FormControl>
-									<Input disabled={isSubmitting} {...field} />
-								</FormControl>
-								<FormMessage />
-								{/* <FormDescription>
+								</FormItem>
+							)}
+						/>
+						<FormField
+							control={form.control}
+							name="guest_position"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Position</FormLabel>
+									<FormControl>
+										<Input disabled={isSubmitting} {...field} />
+									</FormControl>
+									<FormMessage />
+									{/* <FormDescription>
 									(Position of individual being invited)
 								</FormDescription> */}
-							</FormItem>
-						)}
-					/>
+								</FormItem>
+							)}
+						/>
 					</div>
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-				
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 						<FormField
 							control={form.control}
 							name="guest_phone"
@@ -190,44 +181,47 @@ const NominationForm: React.FC<NominationProps> = () => {
 						/>
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-					<FormField
-						control={form.control}
-						name="guest_dietary_requirements"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Special Dietary Requirements and considerations</FormLabel>
-								<FormControl>
-									<Textarea disabled={isSubmitting} {...field} />
-								</FormControl>
-								<FormMessage />
-								{/* <FormDescription>
+						<FormField
+							control={form.control}
+							name="guest_dietary_requirements"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>
+										Special Dietary Requirements and considerations
+									</FormLabel>
+									<FormControl>
+										<Textarea disabled={isSubmitting} {...field} />
+									</FormControl>
+									<FormMessage />
+									{/* <FormDescription>
 									(Special dietary requirements of individual being invited)
 								</FormDescription> */}
-							</FormItem>
-						)}
-					/>
+								</FormItem>
+							)}
+						/>
 						<FormField
-						control={form.control}
-						name="guest_most_memorable_moment"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Most Reliable and consistent ICT provider or courier</FormLabel>
-								<FormControl>
-									<Textarea disabled={isSubmitting} {...field} />
-								</FormControl>
-								<FormMessage />
-								{/* <FormDescription>
+							control={form.control}
+							name="guest_most_memorable_moment"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>
+										Most Reliable and consistent ICT provider or courier
+									</FormLabel>
+									<FormControl>
+										<Textarea disabled={isSubmitting} {...field} />
+									</FormControl>
+									<FormMessage />
+									{/* <FormDescription>
 									(What is the most memorable consistent momment in the ICT and Postal Sector)
 								</FormDescription> */}
-							</FormItem>
-						)}
-					/>
-
-</div>
+								</FormItem>
+							)}
+						/>
+					</div>
 					{/* <h3 className="font-medium text-sm">
 						Contact Details of Nominee (If Available) :
 					</h3> */}
-		
+
 					<Button type="submit" disabled={!isValid || isSubmitting}>
 						Yes! I will be there
 					</Button>

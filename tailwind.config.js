@@ -86,6 +86,7 @@ module.exports = {
 				'hero-bg': "url('/assets/bg.png')",
 				'zicta-banner': "url('/assets/zicta-banner.png')",
 				'customer-care': "url('/assets/customer_care.png')",
+				'vote-bg': "url('/assets/bg-vote.svg')",
 			},
 		},
 	},

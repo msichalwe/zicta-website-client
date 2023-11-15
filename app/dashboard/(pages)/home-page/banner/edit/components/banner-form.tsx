@@ -129,17 +129,17 @@ export const BannerForm = ({ initialData }: BannerFormProps) => {
 							<FormItem>
 								<FormLabel>ImageUrl</FormLabel>
 								<FormControl>
-									{/* <ImageUpload
+									<ImageUpload
 										value={field.value ? [field.value] : []}
 										disabled={loading}
 										onChange={(url) => field.onChange(url)}
 										onRemove={() => field.onChange('')}
-									/> */}
-									<UploadFile
+									/>
+									{/* <UploadFile
 										className="p-16 mt-10 border border-neutral-200  rounded"
 										value={field.value ? [field.value] : []}
 										onChange={(url) => field.onChange(url)}
-									/>
+									/> */}
 								</FormControl>
 								<FormMessage />
 							</FormItem>

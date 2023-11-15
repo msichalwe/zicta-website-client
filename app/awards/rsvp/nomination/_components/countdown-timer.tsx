@@ -53,7 +53,7 @@ const Timer = () => {
 	return (
 		<div className="container-timer text-2xl md:text-7xl font-medium mt-20 text-zicta-blue">
 			<div className="container-segment">
-				<div className="segment-title italic">Days</div>
+				<div className="segment-title text-white italic">Days</div>
 				<div className="segment">
 					<div className="flip-card" data-hours-tens>
 						<div className=" bg-white   rounded p-2 md:p-5 text-center">
@@ -68,7 +68,7 @@ const Timer = () => {
 				</div>
 			</div>
 			<div className="container-segment">
-				<div className="segment-title italic">Hours</div>
+				<div className="segment-title text-white italic">Hours</div>
 				<div className="segment">
 					<div className="flip-card" data-hours-tens>
 						<div className=" bg-white  rounded p-2 md:p-5 text-center">
@@ -83,7 +83,7 @@ const Timer = () => {
 				</div>
 			</div>
 			<div className="container-segment">
-				<div className="segment-title italic">Minutes</div>
+				<div className="segment-title text-white italic">Minutes</div>
 				<div className="segment">
 					<div className="flip-card" data-minutes-tens>
 						<div className=" bg-white  rounded p-2 md:p-5 text-center">
@@ -98,7 +98,7 @@ const Timer = () => {
 				</div>
 			</div>
 			<div className="container-segment ">
-				<div className="segment-title italic">Seconds</div>
+				<div className="segment-title text-white italic">Seconds</div>
 				<div className="segment">
 					<div className="flip-card" data-seconds-tens>
 						<div className=" bg-white  rounded p-2 md:p-5 text-center">

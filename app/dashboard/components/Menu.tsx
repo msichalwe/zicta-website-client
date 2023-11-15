@@ -104,7 +104,7 @@ const items: MenuProps['items'] = [
 				),
 				key: 'postal-courier',
 			},
-		// 
+			//
 		],
 	},
 	{
@@ -195,10 +195,6 @@ const items: MenuProps['items'] = [
 			{
 				label: <Link href={'/dashboard/ict-stats'}>ICT Statistics</Link>,
 				key: 'ict-stats',
-			},
-			{
-				label: <Link href={'/dashboard/awards'}>Awards</Link>,
-				key: 'awards',
 			},
 			{
 				label: <Link href={'/dashboard/faqs'}>FAQs</Link>,
