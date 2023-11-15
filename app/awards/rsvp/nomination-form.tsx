@@ -30,7 +30,7 @@ const formSchema = z.object({
 	guest_organization: z.string().min(1),
 	guest_position: z.string().min(1),
 	guest_dietary_requirements: z.string().min(1),
-	guest_most_memorable_moment: z.string().min(1),
+	attending: z.string().min(1),
 })
 
 type NominationFormValues = z.infer<typeof formSchema>
@@ -62,7 +62,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 				guest_organization: '',
 				guest_position: '',
 				guest_dietary_requirements: '',
-				guest_most_memorable_moment: '',
+				attending: '',
 			})
 		} catch (error) {
 			toast({
@@ -79,7 +79,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 				<form
 					className="space-y-4 bg-white p-10 rounded shadow"
 					onSubmit={form.handleSubmit(onSubmit)}>
-					<p className="font-black text-lg text-center">
+					<p className="font-black text-lg text-center text-zicta-blue">
 						Get ready to electrify the ZICTA ICT Awards! RSVP now and join us as
 						we celebrate the tech world's brightest stars - your presence is the
 						key to making this night unforgettable.
@@ -180,7 +180,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 							)}
 						/>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+					<div className="grid grid-cols-1 md:grid-cols-1 gap-5">
 						<FormField
 							control={form.control}
 							name="guest_dietary_requirements"
@@ -199,16 +199,26 @@ const NominationForm: React.FC<NominationProps> = () => {
 								</FormItem>
 							)}
 						/>
+						</div>
+					<div className="grid grid-cols-1 md:grid-cols-1 gap-5 text-center text-zicta-blue">
 						<FormField
 							control={form.control}
-							name="guest_most_memorable_moment"
+							name="attending"
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>
-										Most Reliable and consistent ICT provider or courier
+										Are you Attending?
 									</FormLabel>
 									<FormControl>
-										<Textarea disabled={isSubmitting} {...field} />
+									<Combobox 
+  options={[
+    { value: 'Yes', label: 'Yes' },
+    { value: 'No', label: 'No' }
+ 
+ //need guidance
+  ]}
+  {...field} 
+/>
 									</FormControl>
 									<FormMessage />
 									{/* <FormDescription>
@@ -222,9 +232,12 @@ const NominationForm: React.FC<NominationProps> = () => {
 						Contact Details of Nominee (If Available) :
 					</h3> */}
 
-					<Button type="submit" disabled={!isValid || isSubmitting}>
-						Yes! I will be there
-					</Button>
+					<div style={{ display: 'flex', justifyContent: 'center' }}>
+						<Button type="submit" disabled={!isValid || isSubmitting}>
+							Submit!
+						</Button>
+					</div>
+
 				</form>
 			</Form>
 		</>

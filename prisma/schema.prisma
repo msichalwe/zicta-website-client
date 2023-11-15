@@ -313,7 +313,7 @@ model rsvp {
   guest_organization    String
   guest_position   String
   guest_dietary_requirements String
-  guest_most_memorable_moment String
+  attending String
 
 }
 
