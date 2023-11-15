@@ -104,14 +104,7 @@ const items: MenuProps['items'] = [
 				),
 				key: 'postal-courier',
 			},
-			{
-				label: (
-					<Link href="/dashboard/services-page/service-providers">
-						Service Providers
-					</Link>
-				),
-				key: 'service-providers',
-			},
+		// 
 		],
 	},
 	{
