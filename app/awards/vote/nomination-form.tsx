@@ -144,10 +144,10 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<Combobox 
   options={[
     { value: 'ZTE Zambia Service Limited', label: 'ZTE Zambia Service Limited' },
-    { value: 'Tamara Gondwe', label: 'Tamara Gondwe' },
-    { value: 'INFRATEL', label: 'INFRATEL' },
-    { value: 'Ernest Mafuta', label: 'Ernest Mafuta' },
-    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' }
+    { value: 'Huawei', label: 'Huawei' },
+    { value: 'NAPSA (National Pension Scheme Authority)', label: 'NAPSA (National Pension Scheme Authority)' },
+    { value: 'ZRA (Zambia Revenue Authority)', label: 'ZRA (Zambia Revenue Authority)' },
+    { value: 'SMART Zambia Institute', label: 'SMART Zambia Institute' }
   ]}
   {...field} 
 />
@@ -168,11 +168,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'ZTE Zambia Service Limited', label: 'ZTE Zambia Service Limited' },
-    { value: 'VIZTRANIX Information Technology Limited', label: 'VIZTRANIX Information Technology Limited' },
-    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
-    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
-    { value: 'Musekiwa Moyo', label: 'Musekiwa Moyo' }
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
+    { value: 'BongoHive', label: 'BongoHive' },
+    { value: 'AgriPredict', label: 'AgriPredict' },
+    { value: 'eMsika', label: 'eMsika' },
+    { value: 'Dawa Health', label: 'Dawa Health' }
   ]}
   {...field} 
 />
@@ -198,9 +198,9 @@ const NominationForm: React.FC<NominationProps> = () => {
   options={[
     { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
     { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
-    { value: 'Paratus Telecommunications (Pty) Ltd', label: 'Paratus Telecommunications (Pty) Ltd' },
-    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
-    { value: 'Bayobab Zambia', label: 'Bayobab Zambia' }
+    { value: 'ZAMREN', label: 'ZAMREN' },
+    { value: 'Mwabu', label: 'Mwabu' },
+    { value: 'Camara Education', label: 'Camara Education' }
   ]}
   {...field} 
 />
@@ -224,7 +224,8 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
     { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
     { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
-    { value: 'Camara Education', label: 'Camara Education' }
+    { value: 'Liquid Telecom Zambia', label: 'Liquid Telecom Zambia' },
+	{ value: 'Fibercom Limited', label: 'Fibercom Limited' }
 //need input
 	
   ]}
@@ -250,10 +251,12 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
-    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
+    { value: 'Liquid Telecom Limited', label: 'Liquid Telecom Limited' },
+    { value: 'Inq. Digital Zambia', label: 'Inq. Digital Zambia' },
     { value: 'Paratus Telecommunications (Pty) Ltd', label: 'Paratus Telecommunications (Pty) Ltd' },
-    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' }
+    { value: 'Fibercom Limited', label: 'Fibercom Limited' },
+	{ value: 'Airlink Broadband Limited', label: 'Airlink Broadband Limited' }
+
  //need guidance
   ]}
   {...field} 
@@ -277,8 +280,7 @@ const NominationForm: React.FC<NominationProps> = () => {
   options={[
     { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
     { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
-    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
-    { value: 'lastonsinkuyu@gmail.com', label: 'lastonsinkuyu@gmail.com' } //???
+    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' }
   //need guidance
   ]}
   {...field} 
@@ -307,7 +309,7 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Yafika Express', label: 'Yafika Express' },
     { value: 'ZAMPOST (Zambia Postal Services Corporation)', label: 'ZAMPOST (Zambia Postal Services Corporation)' },
     { value: 'Falcon Express', label: 'Falcon Express' },
-    { value: 'One World', label: 'One World' }
+    { value: 'One World Freight and Logistics', label: 'One World Freight and Logistics' }
   ]}
   {...field} 
 />
@@ -328,9 +330,9 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Eastlight Courier', label: 'Eastlight Courier' },
-    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
-    { value: 'Yango', label: 'Yango' },
+    { value: 'Eastlight Logistics Zambia Limited', label: 'Eastlight Logistics Zambia Limited' },
+    { value: 'Icypeed Logistics', label: 'Icypeed Logistics' },
+    { value: 'FedEx', label: 'FedEx' },
     { value: 'ZAMPOST (Zambia Postal Services Corporation)', label: 'ZAMPOST (Zambia Postal Services Corporation)' },
     { value: 'DHL', label: 'DHL' }
   ]}
@@ -356,9 +358,9 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
-    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
-    { value: 'Bayobab Zambia', label: 'Bayobab Zambia' },
+    { value: 'INFRATEL', label: 'INFRATEL' },
+    { value: 'Fibercom Limited', label: 'Fibercom Limited' },
+    { value: 'NetOne', label: 'NetOne' },
     { value: 'Paratus Telecommunications (Pty) Ltd', label: 'Paratus Telecommunications (Pty) Ltd' },
     { value: 'IHS Zambia Limited', label: 'IHS Zambia Limited' }
   ]}
@@ -382,7 +384,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<Combobox 
   options={[
     { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
-    { value: 'Bridging Gap Solutions', label: 'Bridging Gap Solutions' },
+    { value: 'Liquid Telecom Limited ', label: 'Liquid Telecom Limited' },
     { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
     { value: 'MTN Zambia', label: 'MTN Zambia' },
     { value: 'Paratus Telecommunications (Pty) Ltd', label: 'Paratus Telecommunications (Pty) Ltd' }
@@ -410,10 +412,10 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<Combobox 
   options={[
     { value: 'ZAMPOST (Zambia Postal Services Corporation)', label: 'ZAMPOST (Zambia Postal Services Corporation)' },
-    { value: 'Ali Kingston Mwila', label: 'Ali Kingston Mwila' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
-    { value: 'One World', label: 'One World' },
-    { value: 'Yango', label: 'Yango' }
+    { value: 'Mercury Express Logistics', label: 'Mercury Express Logistics' },
+    { value: 'Power Tools Logistics', label: 'Power Tools Logistics' },
+    { value: 'One World Freight and Logistics', label: 'One World Freight and Logistics' },
+    { value: 'DHL', label: 'DHL' }
   ]}
   {...field} 
 />
@@ -434,10 +436,12 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
-    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
-    { value: 'Tiyeni Mobility', label: 'Tiyeni Mobility' }
+    { value: 'Airtel Mobile Money', label: 'Airtel Mobile Money' },
+    { value: 'MTN Mobile Money', label: 'MTN Mobile Money' },
+    { value: 'Zamtel Mobile Money', label: 'Zamtel Mobile Money' },
+    { value: 'Tiyeni Mobility', label: 'Tiyeni Mobility' },
+	{ value: 'AfriDelivery', label: 'AfriDelivery' }
+
  // need advice
   ]}
   {...field} 
@@ -464,8 +468,8 @@ const NominationForm: React.FC<NominationProps> = () => {
   options={[
     { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
     { value: 'Paratus Telecommunications (Pty) Ltd', label: 'Paratus Telecommunications (Pty) Ltd' },
-    { value: 'VIZTRANIX Information Technology Limited', label: 'VIZTRANIX Information Technology Limited' },
-    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
+    { value: 'Liquid Telecom Limited', label: 'Liquid Telecom Limited' },
+    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
     { value: 'Bayobab Zambia', label: 'Bayobab Zambia' }
   ]}
   {...field} 
@@ -488,9 +492,10 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<Combobox 
   options={[
     { value: 'ZAMPOST (Zambia Postal Services Corporation)', label: 'ZAMPOST (Zambia Postal Services Corporation)' },
-    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
-    { value: 'Yango', label: 'Yango' },
-    { value: 'Eastlight Courier', label: 'Eastlight Courier' }
+    { value: 'Road Shopper Logistics', label: 'Road Shopper Logistics' },
+    { value: 'DHL', label: 'DHL' },
+    { value: 'Eastlight Courier', label: 'Eastlight Courier' },
+	{ value: 'AmeZam Shipping Zambia', label: 'AmeZam Shipping Zambia' }
 //need guidance
   ]}
   {...field} 
@@ -516,9 +521,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<Combobox 
   options={[
     { value: 'Digital Safe Limited', label: 'Digital Safe Limited' },
-    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
-    { value: 'MTN Zambia', label: 'MTN Zambia' },
-    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' }
+    { value: 'Copperbelt Energy Corporation', label: 'Copperbelt Energy Corporation' },
+    { value: 'Standard Chartered Bank', label: 'Standard Chartered Bank' },
+    { value: 'Liquid Telecom Limited', label: 'Liquid Telecom Limited' },
+	{ value: 'INFRATEL', label: 'INFRATEL' }
+
  //need guidance
   ]}
   {...field} 
@@ -540,11 +547,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
-    { value: 'Ali Kingston Mwila', label: 'Ali Kingston Mwila' },
-    { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
-    { value: 'Zamtel (Zambia Telecommunications Company Limited)', label: 'Zamtel (Zambia Telecommunications Company Limited)' },
-    { value: 'Liquid Intelligent Technologies', label: 'Liquid Intelligent Technologies' }
+    { value: 'Diamond TV Zambia', label: 'Diamond TV Zambia' },
+    { value: 'Zambia Business Times', label: 'Zambia Business Times' },
+    { value: 'Tech Trends Zambia', label: 'Tech Trends Zambia' },
+    { value: 'ZNBC (Zambia National Broadcasting Corporation)', label: 'ZNBC (Zambia National Broadcasting Corporation)' },
+    { value: 'Zambia National Broadcasting Corporation', label: 'Zambia National Broadcasting Corporation' }
   ]}
   {...field} 
 />
@@ -568,10 +575,11 @@ const NominationForm: React.FC<NominationProps> = () => {
 								<FormControl>
 								<Combobox 
   options={[
-    { value: 'Airtel Networks Zambia', label: 'Airtel Networks Zambia' },
+    { value: 'Asikana Network', label: 'Asikana Network' },
     { value: 'MTN Zambia Limited', label: 'MTN Zambia Limited' },
-    { value: 'Triple Alliance Digital Academy', label: 'Triple Alliance Digital Academy' },
-    { value: 'Zambian Cyber Security Initiative Foundation', label: 'Zambian Cyber Security Initiative Foundation' }
+    { value: 'Triple A Digital Academy', label: 'Triple A Digital Academy' },
+    { value: 'Zambian Cyber Security Initiative Foundation', label: 'Zambian Cyber Security Initiative Foundation' },
+	{ value: 'Jacaranda Hub', label: 'Jacaranda Hub' }
   ]}
   {...field} 
 />
