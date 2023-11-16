@@ -17,13 +17,12 @@ const Awards = () => {
 							<div className="text-center">
 								<h1 className="relative text-4xl rounded-full font-bold tracking-tight text-white   p-2 mt-3">
 									<Balancer>
-										We officially invite you to vote in the Inaugural ICT &
-										Postal/Courier Sector Awards
+										We officially invite you to vote in the Inaugural ICT, POSTAL AND COURIER AWARDS 
 									</Balancer>
 								</h1>
 								<p className="mt-6 leading-8 text-gray-100 max-w-3xl">
 									Welcome to the Inaugural Awards for Excellence and Innovation
-									in the ICT & Postal/Courier Sector! You are officially invited
+									in the ICT, Postal and Courier Sector! You are officially invited
 									to join us in celebrating outstanding achievements and voting
 									for your favorites in the fields of Information and
 									Communication Technology, Postal, and Courier services.
@@ -32,7 +31,7 @@ const Awards = () => {
 									<Link
 										href="#learn-more"
 										className="text-sm font-semibold leading-6 text-gray-900">
-										Learn more <span aria-hidden="true">→</span>
+										About the Awards <span aria-hidden="true">→</span>
 									</Link>
 								</div>
 							</div>

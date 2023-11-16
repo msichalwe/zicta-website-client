@@ -26,12 +26,11 @@ const Awards = () => {
 							<div className="text-center">
 								<h1 className="text-4xl font-bold tracking-tight text-gray-100 ">
 									<Balancer>
-										We officially invite you to the Inaugural ICT &
-										Postal/Courier Sector Awards
+										We officially invite you to the Inaugural ICT, POSTAL AND COURIER AWARDS 
 									</Balancer>
 								</h1>
 								<p className="mt-6 leading-8 text-gray-100">
-									Welcome to the Inaugural ICT & Postal/Courier Sector Awards!
+									Welcome to the Inaugural ICT, Postal and Courier Sector Awards!
 									You are officially invited to celebrate excellence and
 									innovation in the world of Information and Communication
 									Technology, Postal, and Courier services.
@@ -40,7 +39,7 @@ const Awards = () => {
 									<Link
 										href="#learn-more"
 										className="text-sm font-semibold leading-6 text-gray-100">
-										Learn more <span aria-hidden="true">→</span>
+										About the Awards <span aria-hidden="true">→</span>
 									</Link>
 								</div>
 							</div>

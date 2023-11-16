@@ -321,23 +321,23 @@ model votes{
   id        String    @id @default(auto()) @map("_id") @db.ObjectId
   createdAt   DateTime? @default(now())
   voter_email      String
-  the_digital_transformation_champion_award    String
-  the_tech_for_good_trailblazer_award   String
-  the_connected_communities_crusader_award String
-  the_best_bang_for_your_byte_award String
-  the_steadfast_stream_award String
-  the_mobile_marvel_award String
-  express_delivery_champions_award String
-  the_captain_of_the_ship_award String
-  the_pillars_of_the_digital_economy_award String
-  the_consumer_centric_award_ict String
-  the_consumer_centric_award_postal_courier String
-  the_digital_disruptor_award String
-  the_model_corporate_citizen_award_ict String
-  the_model_corporate_citizen_award_postal String
-  the_cyber_sentinel_award String
-  the_best_digital_economy_coverage_award String
-  the_digital_literacy_champion_award String
+  the_digital_transformation_champion_award    String?
+  the_tech_for_good_trailblazer_award   String?
+  the_connected_communities_crusader_award String?
+  the_best_bang_for_your_byte_award String?
+  the_steadfast_stream_award String?
+  the_mobile_marvel_award String?
+  express_delivery_champions_award String?
+  the_captain_of_the_ship_award String?
+  the_pillars_of_the_digital_economy_award String?
+  the_consumer_centric_award_ict String?
+  the_consumer_centric_award_postal_courier String?
+  the_digital_disruptor_award String?
+  the_model_corporate_citizen_award_ict String?
+  the_model_corporate_citizen_award_postal String?
+  the_cyber_sentinel_award String?
+  the_best_digital_economy_coverage_award String?
+  the_digital_literacy_champion_award String?
 
   @@unique([voter_email])
 }

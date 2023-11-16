@@ -24,23 +24,23 @@ import { Textarea } from '@/components/ui/textarea'
 
 const formSchema = z.object({
 	voter_email: z.string().email(),
-	the_digital_transformation_champion_award: z.string().min(1),
-	the_tech_for_good_trailblazer_award: z.string().min(1),
-	the_connected_communities_crusader_award: z.string().min(1),
-	the_best_bang_for_your_byte_award: z.string().min(1),
-	the_steadfast_stream_award: z.string().min(1),
-	the_mobile_marvel_award: z.string().min(1),
-	express_delivery_champions_award: z.string().min(1),
-	the_captain_of_the_ship_award: z.string().min(1),
-	the_pillars_of_the_digital_economy_award: z.string().min(1),
-	the_consumer_centric_award_ict: z.string().min(1),
-	the_consumer_centric_award_postal_courier: z.string().min(1),
-	the_digital_disruptor_award: z.string().min(1),
-	the_model_corporate_citizen_award_ict: z.string().min(1),
-	the_model_corporate_citizen_award_postal: z.string().min(1),
-	the_cyber_sentinel_award: z.string().min(1),
-	the_best_digital_economy_coverage_award: z.string().min(1),
-	the_digital_literacy_champion_award: z.string().min(1),
+	the_digital_transformation_champion_award: z.string().optional(),
+	the_tech_for_good_trailblazer_award: z.string().optional(),
+	the_connected_communities_crusader_award: z.string().optional(),
+	the_best_bang_for_your_byte_award: z.string().optional(),
+	the_steadfast_stream_award: z.string().optional(),
+	the_mobile_marvel_award: z.string().optional(),
+	express_delivery_champions_award: z.string().optional(),
+	the_captain_of_the_ship_award: z.string().optional(),
+	the_pillars_of_the_digital_economy_award: z.string().optional(),
+	the_consumer_centric_award_ict: z.string().optional(),
+	the_consumer_centric_award_postal_courier: z.string().optional(),
+	the_digital_disruptor_award: z.string().optional(),
+	the_model_corporate_citizen_award_ict: z.string().optional(),
+	the_model_corporate_citizen_award_postal: z.string().optional(),
+	the_cyber_sentinel_award: z.string().optional(),
+	the_best_digital_economy_coverage_award: z.string().optional(),
+	the_digital_literacy_champion_award: z.string().optional(),
 
 })
 
@@ -112,7 +112,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 					</p>
 				
 					
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+			<div className="grid grid-cols-1 md:grid-cols-1 gap-5">
 				
 						<FormField
 							control={form.control}
