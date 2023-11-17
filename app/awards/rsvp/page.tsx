@@ -12,12 +12,21 @@ const Awards = () => {
 			<Navbar />
 			<div className="min-h-[80vh] bg-vote-bg bg-cover bg-no-repeat pb-20">
 				<div className="relative isolate px-6 py-14 lg:px-8">
+				<div className="space-y-8 mt-5">
+					<h1 className="text-2xl md:text-4xl font-bold text-center tracking-tight text-white  sm:text-5xl mt-9">
+						Countdown to the Awards
+					</h1>
+					<Timer />
+				</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+						
 						<div className="h-full w-full flex items-center justify-center md:order-1 order-last">
 							<NominationForm />
 						</div>
 						<div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+							
 							<div className="hidden sm:mb-8 sm:flex sm:justify-center">
+								
 								<div className="relative rounded-full px-3 py-1 text-sm leading-6 text-white ring-1 ring-gray-100 hover:ring-gray-100">
 									RSVP now to secure your spot at the Inaugural ICT &
 									Postal/Courier Sector Awards{' '}
@@ -46,13 +55,8 @@ const Awards = () => {
 						</div>
 					</div>
 				</div>
-				<div className="space-y-8 mt-5">
-					<h1 className="text-2xl md:text-4xl font-bold text-center tracking-tight text-white  sm:text-5xl">
-						Countdown to the Awards
-					</h1>
-					<Timer />
-				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2  px-6 pt-14 lg:px-8 min-h-[80vh] h-full mt-10 md:mt-20">
+			
+				<div className="grid grid-cols-1 md:grid-cols-2  px-6 pt-1 lg:px-8 min-h-[80vh] h-full mt-4 md:mt-5">
 					<div className=" h-full flex flex-col justify-center space-y-8 p-5 mx-auto w-full md:w-4/6">
 						<h1
 							id="learn-more"

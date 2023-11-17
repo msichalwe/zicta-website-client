@@ -106,10 +106,19 @@ const NominationForm: React.FC<NominationProps> = () => {
 				<form
 					className="space-y-4 bg-white p-10 rounded shadow max-w-7xl"
 					onSubmit={form.handleSubmit(onSubmit)}>
-					<p className="font-medium text-center">
+					<p className="font-medium text-center mb-8">
 
-					Get ready to cast your votes and electrify the ZICTA ICT Awards! Vote now and join us as we celebrate the tech world's brightest stars - your votes are the key to making this night unforgettable.
+					Get ready to cast your votes and electrify the ZICTA ICT, Postal and Courier Sector Awards! Vote now and join us as we celebrate the tech world's brightest stars - your votes are the key to making this night unforgettable.
 					</p>
+					<p className='font-medium text-center mb-16 text-zicta-yellow'> 
+					Voting is open from 16th November 2023 to 29th November 2023 at 17:00 hours
+					</p>
+					<div className='mt-16'>
+					<p className="font-medium text-center text-zicta-blue">
+						Vote for your favorite candidates in each category and help them win the Inaugural ICT, Postal and Courier Sector Awards.
+					</p>
+				
+					</div>
 				
 					
 			<div className="grid grid-cols-1 md:grid-cols-1 gap-5">
@@ -128,10 +137,6 @@ const NominationForm: React.FC<NominationProps> = () => {
 							)}
 						/>
 					</div>
-					<hr style={{ marginTop: '41px', marginBottom: '41px' }} />
-					<p className="font-medium text-center text-zicta-blue">
-						Vote for your favorite candidates in each category and help them win the Inaugural ICT & Postal/Courier Sector Awards.
-					</p>
 					<hr style={{ marginTop: '41px', marginBottom: '41px' }} />
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-24">
 					<FormField

@@ -80,9 +80,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 					className="space-y-4 bg-white p-10 rounded shadow"
 					onSubmit={form.handleSubmit(onSubmit)}>
 					<p className="font-black text-lg text-center text-zicta-blue">
-						Get ready to electrify the ZICTA ICT Awards! RSVP now and join us as
-						we celebrate the tech world's brightest stars - your presence is the
-						key to making this night unforgettable.
+					You are officially invited to celebrate excellence and innovation in the world of ICT, Postal and Courier services. Please note that the dress code for this prestigious event is black tie. See you there!
 					</p>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 						<FormField
