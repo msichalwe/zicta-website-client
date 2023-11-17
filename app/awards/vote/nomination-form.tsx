@@ -556,7 +556,7 @@ const NominationForm: React.FC<NominationProps> = () => {
     { value: 'Zambia Business Times', label: 'Zambia Business Times' },
     { value: 'Tech Trends Zambia', label: 'Tech Trends Zambia' },
     { value: 'ZNBC (Zambia National Broadcasting Corporation)', label: 'ZNBC (Zambia National Broadcasting Corporation)' },
-    { value: 'Zambia National Broadcasting Corporation', label: 'Zambia National Broadcasting Corporation' }
+    { value: 'Zambia Daily mail', label: 'Zambia Daily mail' }
   ]}
   {...field} 
 />
