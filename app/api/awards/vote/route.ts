@@ -5,7 +5,7 @@ export async function POST(req: Request) {
 	try {
 		const body = await req.json()
 
-		const {voter_email} = body
+		const { voter_email } = body
 
 		const dbEmail = await prisma.votes.findUnique({
 			where: {
@@ -17,7 +17,6 @@ export async function POST(req: Request) {
 			return new NextResponse('Email already voted', { status: 400 })
 		}
 
-
 		const vote = await prisma.votes.create({
 			data: {
 				...body,
@@ -25,6 +24,17 @@ export async function POST(req: Request) {
 		})
 
 		return NextResponse.json(vote)
+	} catch (error) {
+		console.log('[vote]', error)
+		return new NextResponse('Internal Error', { status: 500 })
+	}
+}
+
+export async function GET(req: Request) {
+	try {
+		const votes = await prisma.votes.findMany({})
+
+		return NextResponse.json(votes)
 	} catch (error) {
 		console.log('[vote]', error)
 		return new NextResponse('Internal Error', { status: 500 })

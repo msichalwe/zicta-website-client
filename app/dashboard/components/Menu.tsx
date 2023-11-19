@@ -203,8 +203,14 @@ const items: MenuProps['items'] = [
 		],
 	},
 	{
-		label: <Link href={'/dashboard/awards'}>Awards</Link>,
+		label: 'Awards',
 		key: 'awards',
+		children: [
+			{
+				label: <Link href={'/dashboard/awards/votes'}>Votes</Link>,
+				key: 'votes',
+			},
+		],
 	},
 ]
 
