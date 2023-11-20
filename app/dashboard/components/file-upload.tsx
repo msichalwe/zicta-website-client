@@ -84,7 +84,7 @@ const UploadFile: React.FC<FileUploadProps> = ({
 				},
 			}
 			const response = await axios.post(
-				'https://www.zicta.zm:89/api/submit-document',
+				`${process.env.NEXT_PUBLIC_STORAGE_URL}`,
 				formData,
 				config,
 			)
