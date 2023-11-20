@@ -42,6 +42,7 @@ const Header = () => {
 					<div></div>
 				</div>
 			</div>
+
 			<div className="w-5/6 mx-auto flex flex-col md:flex-row space-x-4 space-y-6 md:space-y-0 py-6 items-center justify-center">
 				<p className="text-xl font-semibold">
 					Get started with some quick links.
