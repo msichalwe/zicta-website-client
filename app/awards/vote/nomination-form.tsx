@@ -128,7 +128,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 							name="voter_email"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Email</FormLabel>
+									<FormLabel>Email <span className='text-red-500 ml-2'>*</span></FormLabel>
 									<FormControl>
 										<Input disabled={isSubmitting} {...field} />
 									</FormControl>
