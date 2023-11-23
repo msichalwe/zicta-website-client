@@ -70,6 +70,7 @@
 		"react-portable-text": "^0.6.0",
 		"react-quill": "^2.0.0",
 		"react-redux": "^8.1.1",
+		"react-scroll": "^1.9.0",
 		"react-slick": "^0.29.0",
 		"react-social-icons": "^5.15.0",
 		"react-spinners": "^0.13.8",
@@ -88,6 +89,7 @@
 		"@types/fuzzyset": "^1.0.6",
 		"@types/nodemailer": "^6.4.11",
 		"@types/react-csv": "^1.1.7",
+		"@types/react-scroll": "^1.8.10",
 		"@types/react-slick": "^0.23.10",
 		"prisma": "^5.0.0"
 	}
