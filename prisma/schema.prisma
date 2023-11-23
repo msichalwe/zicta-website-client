@@ -312,7 +312,7 @@ model rsvp {
   guest_phone      String
   guest_organization    String
   guest_position   String
-  guest_dietary_requirements String
+  guest_dietary_requirements String?
   attending String
 
 }

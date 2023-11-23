@@ -29,7 +29,7 @@ const formSchema = z.object({
 	guest_phone: z.string().min(10),
 	guest_organization: z.string().min(1),
 	guest_position: z.string().min(1),
-	guest_dietary_requirements: z.string().min(1),
+	guest_dietary_requirements: z.string().optional(),
 	attending: z.string().min(1),
 })
 
@@ -88,7 +88,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 							name="guest_first_name"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>First Name</FormLabel>
+									<FormLabel>First Name<span className='text-red-500 ml-2'>*</span></FormLabel>
 									<FormControl>
 										<Input disabled={isSubmitting} {...field} />
 									</FormControl>
@@ -104,7 +104,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 							name="guest_last_name"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Last Name</FormLabel>
+									<FormLabel>Last Name<span className='text-red-500 ml-2'>*</span></FormLabel>
 									<FormControl>
 										<Input disabled={isSubmitting} {...field} />
 									</FormControl>
@@ -122,7 +122,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 							name="guest_organization"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Organization</FormLabel>
+									<FormLabel>Organization<span className='text-red-500 ml-2'>*</span></FormLabel>
 									<FormControl>
 										<Input disabled={isSubmitting} {...field} />
 									</FormControl>
@@ -138,7 +138,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 							name="guest_position"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Position</FormLabel>
+									<FormLabel>Position<span className='text-red-500 ml-2'>*</span></FormLabel>
 									<FormControl>
 										<Input disabled={isSubmitting} {...field} />
 									</FormControl>
@@ -156,7 +156,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 							name="guest_phone"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Contact Number</FormLabel>
+									<FormLabel>Contact Number<span className='text-red-500 ml-2'>*</span></FormLabel>
 									<FormControl>
 										<Input disabled={isSubmitting} {...field} />
 									</FormControl>
@@ -169,7 +169,7 @@ const NominationForm: React.FC<NominationProps> = () => {
 							name="guest_email"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Email</FormLabel>
+									<FormLabel>Email<span className='text-red-500 ml-2'>*</span></FormLabel>
 									<FormControl>
 										<Input disabled={isSubmitting} {...field} />
 									</FormControl>
