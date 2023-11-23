@@ -37,37 +37,95 @@ const Complaint = async ({ params }: { params: { complaintId: string } }) => {
 				<Separator />
 
 				<div className="flex flex-col space-y-4">
-					<Card>
-						<CardHeader>
-							<p className="text-lg uppercase font-bold">Name</p>
-						</CardHeader>
-						<CardContent>
-							<p className="font-medium">{complaint?.name}</p>
-						</CardContent>
-					</Card>
-					<Card>
-						<CardHeader>
-							<p className="text-lg uppercase font-bold">Email Address</p>
-						</CardHeader>
-						<CardContent>
-							<p className="font-medium">{complaint?.email}</p>
-						</CardContent>
-					</Card>
-					<Card>
-						<CardHeader>
-							<p className=" text-lg uppercase font-bold">Subject</p>
-						</CardHeader>
-						<CardContent>
-							<p className=" font-medium">{complaint?.subject}</p>
-						</CardContent>
-					</Card>
+					<p>General Information</p>
+					<div className="grid grid-cols-3 gap-2">
+						<Card>
+							<CardHeader>
+								<p className="text-lg uppercase font-bold">Name</p>
+							</CardHeader>
+							<CardContent>
+								<p className="font-medium">{complaint?.name}</p>
+							</CardContent>
+						</Card>
+						<Card>
+							<CardHeader>
+								<p className="text-lg uppercase font-bold">Email Address</p>
+							</CardHeader>
+							<CardContent>
+								<p className="font-medium">{complaint?.email}</p>
+							</CardContent>
+						</Card>
+						<Card>
+							<CardHeader>
+								<p className="text-xl uppercase font-bold">Phone Number</p>
+							</CardHeader>
+							<CardContent>
+								<p className=" font-medium">{complaint?.phone}</p>
+							</CardContent>
+						</Card>
 
+						<Card>
+							<CardHeader>
+								<p className=" text-lg uppercase font-bold">Mobile Operator</p>
+							</CardHeader>
+							<CardContent>
+								<p className=" font-medium">{complaint?.operator}</p>
+							</CardContent>
+						</Card>
+						<Card>
+							<CardHeader>
+								<p className=" text-lg uppercase font-bold">Gender</p>
+							</CardHeader>
+							<CardContent>
+								<p className=" font-medium">{complaint?.gender}</p>
+							</CardContent>
+						</Card>
+						<Card>
+							<CardHeader>
+								<p className=" text-lg uppercase font-bold">Age</p>
+							</CardHeader>
+							<CardContent>
+								<p className=" font-medium">{complaint?.age}</p>
+							</CardContent>
+						</Card>
+					</div>
+					<p>Location</p>
+					<div className="grid grid-cols-3 gap-2">
+						<Card>
+							<CardHeader>
+								<p className="text-xl uppercase font-bold">Area</p>
+							</CardHeader>
+							<CardContent>
+								<p className=" font-medium">{complaint?.area}</p>
+							</CardContent>
+						</Card>
+						<Card>
+							<CardHeader>
+								<p className="text-xl uppercase font-bold">District</p>
+							</CardHeader>
+							<CardContent>
+								<p className=" font-medium">{complaint?.district}</p>
+							</CardContent>
+						</Card>
+						<Card>
+							<CardHeader>
+								<p className="text-xl uppercase font-bold">Province</p>
+							</CardHeader>
+							<CardContent>
+								<p className=" font-medium">{complaint?.province}</p>
+							</CardContent>
+						</Card>
+					</div>
 					<Card>
 						<CardHeader>
-							<p className="text-xl uppercase font-bold">Phone Number</p>
+							<p className="text-xl uppercase font-bold">Subject</p>
 						</CardHeader>
 						<CardContent>
-							<p className=" font-medium">{complaint?.phone}</p>
+							<p className=" font-medium">
+								{complaint?.subject === 'other'
+									? complaint?.other
+									: complaint?.subject}
+							</p>
 						</CardContent>
 					</Card>
 					<Card>

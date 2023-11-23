@@ -16,6 +16,10 @@ const DashboardPage = () => {
 		if (session?.data?.user?.email === 'awards@zicta.zm') {
 			redirect('/dashboard/awards')
 		}
+
+		if (session?.data?.user?.email === 'complaints@zicta.zm') {
+			redirect('/dashboard/complaints-queries')
+		}
 	}, [session])
 
 	return (

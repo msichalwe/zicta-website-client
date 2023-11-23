@@ -12,7 +12,20 @@ export async function POST(request: Request) {
 			return new NextResponse('Unauthorized', { status: 401 })
 		}
 		const body = await request.json()
-		const { name, email, phone, message, subject } = body
+		const {
+			name,
+			email,
+			phone,
+			message,
+			subject,
+			other,
+			gender,
+			province,
+			district,
+			age,
+			area,
+			operator,
+		} = body
 
 		if (!name) {
 			return new NextResponse('Missing name', { status: 400 })
@@ -41,6 +54,13 @@ export async function POST(request: Request) {
 				phone,
 				message,
 				subject,
+				other,
+				age,
+				area,
+				province,
+				district,
+				gender,
+				operator,
 			},
 		})
 

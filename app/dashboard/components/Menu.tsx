@@ -184,14 +184,7 @@ const items: MenuProps['items'] = [
 					},
 				],
 			},
-			{
-				label: (
-					<Link href={'/dashboard/complaints-queries'}>
-						Complaints & Queries
-					</Link>
-				),
-				key: 'complaints-queries',
-			},
+
 			{
 				label: <Link href={'/dashboard/ict-stats'}>ICT Statistics</Link>,
 				key: 'ict-stats',
@@ -201,6 +194,12 @@ const items: MenuProps['items'] = [
 				key: 'faqs',
 			},
 		],
+	},
+	{
+		label: (
+			<Link href={'/dashboard/complaints-queries'}>Complaints & Queries</Link>
+		),
+		key: 'complaints-queries',
 	},
 	{
 		label: 'Awards',
@@ -221,6 +220,8 @@ const rootSubmenuKeys = [
 	'categories',
 	'resources',
 	'pages',
+	'awards',
+	'complaints-queries',
 ]
 
 const Menu = async () => {
@@ -238,6 +239,7 @@ const Menu = async () => {
 	const canAccess = (email: string, itemKey: string) => {
 		const rolePermissions: { [key: string]: string[] } = {
 			'awards@zicta.zm': ['awards'],
+			'complaints@zicta.zm,': ['complaints-queries'],
 			'test@zicta.zm': [
 				'dashboard',
 				'media',
