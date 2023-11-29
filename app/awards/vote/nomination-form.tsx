@@ -15,13 +15,14 @@ import {
 	FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { useRouter } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import axios from 'axios'
 import { useToast } from '@/components/ui/use-toast'
 
 import { Combobox } from '@/components/ui/combobox'
 import { Textarea } from '@/components/ui/textarea'
 import { Loader } from 'lucide-react'
+import { useEffect } from 'react'
 
 const formSchema = z.object({
 	voter_email: z.string().email(),
@@ -49,6 +50,9 @@ type NominationFormValues = z.infer<typeof formSchema>
 interface NominationProps {}
 
 const NominationForm: React.FC<NominationProps> = () => {
+	useEffect(() => {
+		redirect('/')
+	}, [])
 	const router = useRouter()
 	const { toast } = useToast()
 	const form = useForm<NominationFormValues>({

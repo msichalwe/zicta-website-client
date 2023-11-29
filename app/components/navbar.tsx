@@ -21,7 +21,7 @@ const Navbar = () => {
 			<nav>
 				<div
 					className={`bg-white shadow text-zicta-blue fixed top-0 z-30 w-full pb-4 `}>
-					<Banner />
+					{/* <Banner /> */}
 					<div className={`${flexBetween} mx-auto w-5/6 pt-4`}>
 						<div className={`${flexBetween} w-full z-[1000] gap-16`}>
 							<Link href={'/'}>
