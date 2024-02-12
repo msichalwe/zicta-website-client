@@ -45,9 +45,9 @@ const NominationForm: React.FC<NominationProps> = () => {
 		resolver: zodResolver(formSchema),
 	})
 
-	useEffect(() => {
+	/*useEffect(() => {
 		redirect('/')
-	}, [])
+	}, [])*/
 
 	const { isSubmitting, isValid } = form.formState
 

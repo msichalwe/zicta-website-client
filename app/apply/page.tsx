@@ -81,13 +81,13 @@ const Apply = () => {
 export default Apply
 
 const cardData: Array<CardProps> = [
-	{
-		title: 'Dealer Certificate',
-		description:
-			'Elevate your credentials with a prestigious Dealer Certificate. Join the league of certified professionals, backed by a legacy of expertise and excellence.',
-		color: '#7CA5B8',
-		bgColor: true,
-	},
+	//{
+	//	title: 'Dealer Certificate',
+	//	description:
+	//		'Elevate your credentials with a prestigious Dealer Certificate. Join the league of certified professionals, backed by a legacy of expertise and excellence.',
+	//	color: '#7CA5B8',
+	//	bgColor: true,
+	//},
 	{
 		title: 'Domain',
 		description:
