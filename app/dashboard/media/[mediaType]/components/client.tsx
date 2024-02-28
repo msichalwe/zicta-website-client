@@ -24,6 +24,7 @@ const MediaClient: React.FC<MediaProps> = ({ data }) => {
 					description={`Manage ${params.mediaType} available on the platform`}
 				/>
 				<Button
+
 					onClick={() =>
 						router.push(
 							`/dashboard/media/${params.mediaType}/6e65772d70726f7065727479`,

@@ -127,9 +127,9 @@ const ContactForm = () => {
 	}
 
 	return (
-		<div className="h-full sm-mx-auto w-full sm:max-w-4xl ">
+		<div className="h-full sm-mx-auto w-full sm:max-w-4xl">
 			<Form {...form}>
-				<form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
+				<form className="md:space-y-3 space-y-4 " onSubmit={form.handleSubmit(onSubmit)}>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-2">
 						<FormField
 							name="name"
@@ -383,7 +383,7 @@ const ContactForm = () => {
 					/>
 
 					<div>
-						<Button disabled={isLoading} type="submit">
+						<Button  disabled={isLoading} type="submit">
 							Submit
 						</Button>
 					</div>

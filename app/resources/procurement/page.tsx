@@ -152,9 +152,9 @@ const Procurement = () => {
 	return (
 		<>
 			<Navbar />
-			<div>
-				<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
-					<h1 className="sm:text-4xl text-2xl  text-white font-medium">
+			<div className="flex gap-10 w-full flex-col my-10">
+				<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8]  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px] text-justify  mb-10 flex items-center justify-center py-10">
+					<h1 className="sm:text-3xl pt-10 text-2xl  text-white font-medium ">
 						<Balancer>Procurement</Balancer>
 					</h1>
 					<p className="max-w-4xl mt-5 text-lg text-white">

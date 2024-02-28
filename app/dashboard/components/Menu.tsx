@@ -7,8 +7,7 @@ import {
 	FolderCog,
 	ScrollText,
 	Paperclip,
-	Layers,
-	Folder,
+	Layers, FileCog,
 } from 'lucide-react'
 
 import React, { useState } from 'react'
@@ -113,6 +112,11 @@ const items: MenuProps['items'] = [
 		icon: <ScrollText className="h-4 w-4 text-zicta-blue" />,
 	},
 	{
+		label: <Link href="/dashboard/developer-projects">Developer Projects</Link>,
+		key: 'developer-projects',
+		icon: <FileCog className="h-4 w-4 text-zicta-blue" />,
+	},
+	{
 		label: 'Resources',
 		key: 'resources',
 		icon: <Paperclip className="h-4 w-4 text-zicta-blue" />,
@@ -211,6 +215,7 @@ const items: MenuProps['items'] = [
 			},
 		],
 	},
+
 ]
 
 const rootSubmenuKeys = [
@@ -222,6 +227,8 @@ const rootSubmenuKeys = [
 	'pages',
 	'awards',
 	'complaints-queries',
+	'developer-projects',
+
 ]
 
 const Menu = async () => {
@@ -248,6 +255,7 @@ const Menu = async () => {
 				'resources',
 				'pages',
 				'awards',
+				'developer-projects',
 			],
 		}
 

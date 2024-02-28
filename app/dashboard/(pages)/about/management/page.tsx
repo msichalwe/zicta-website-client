@@ -18,7 +18,7 @@ const Management = () => {
 	if (isLoading) {
 		return <div>Loading...</div>
 	}
-	console.log('🚀 ~ file: page.tsx:16 ~ Management ~ data:', data)
+	console.log('🚀 ~ file: route.ts:16 ~ Management ~ data:', data)
 
 	return (
 		<div className="flex-col ">

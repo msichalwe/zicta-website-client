@@ -40,7 +40,7 @@ const WrapperContext: React.FC<WrapperContextProps> = ({ children }) => {
 			{/* <Navbar /> */}
 			<Layout hasSider>
 				<UserProvider value={user}>
-					<Sider theme="light">
+					<Sider collapsible={true} theme="light">
 						<Menu />
 					</Sider>
 				</UserProvider>

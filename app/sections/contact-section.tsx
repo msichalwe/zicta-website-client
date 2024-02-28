@@ -53,22 +53,20 @@ interface contactSideItemProps {
 
 const ContactSection = () => {
 	return (
-		<div
-			id="contact"
-			className=" h-screen  flex items-center flex-col-reverse lg:flex-row w-full bg-zicta-blue">
-			<div className="basis-2/6  h-full py-16  flex flex-col px-4 lg:pl-10 ">
+		<div id="contact" className="flex flex-col lg:flex-row w-full bg-zicta-blue">
+			<div className="lg:w-2/6 w-full bg-zicta-blue">
 				<motion.div
 					initial={{ x: -600, opacity: 0 }}
 					animate={{ x: 0, opacity: 1 }}
 					transition={{ duration: 1.2 }}
-					className="flex flex-col justify-center h-full">
-					<div className="">
-						<h2 className=" text-xl md:text-3xl font-bold text-center  md:text-left  text-white pb-5">
+					className="flex flex-col justify-center h-full py-16 px-4 lg:pl-10"
+				>
+					<div>
+						<h2 className="text-xl md:text-3xl font-bold text-center md:text-left text-white pb-5">
 							Get in touch
 						</h2>
-						<p className="text-white text-sm text-center  md:text-left  md:text-md">
-							We’d love to hear from you! Our friendly team is always here to
-							chat.{' '}
+						<p className="text-white text-sm text-center md:text-left md:text-md">
+							We’d love to hear from you! Our friendly team is always here to chat.{' '}
 						</p>
 					</div>
 					<div className="space-y-6">
@@ -77,14 +75,12 @@ const ContactSection = () => {
 						))}
 					</div>
 				</motion.div>
-
 				<motion.div
 					initial={{ x: -500, opacity: 0, scale: 0.5 }}
 					animate={{ x: 0, opacity: 1, scale: 1 }}
 					transition={{ duration: 1.5 }}
-					className="flex items-center justify-center
-					">
-					{/* Social Icons  */}
+					className="flex items-center justify-center py-2"
+				>
 					{socialIcons.map((icon, index) => (
 						<SocialIcon
 							key={index}
@@ -95,17 +91,18 @@ const ContactSection = () => {
 					))}
 				</motion.div>
 			</div>
-			<div className="basis-4/6 w-full h-full bg-white py-10 px-10 flex items-center justify-center flex-col ">
-				<h2 className=" text-3xl md:text-4xl mb-1 text-center  md:mb-5 font-bold">
+
+			<div className="lg:w-4/6 w-full bg-white py-10 px-5 flex items-center justify-center flex-col">
+				<h2 className="text-3xl md:text-4xl mb-1 text-center md:mb-5 font-bold">
 					You’ve got this far, Reach out.
 				</h2>
-				<p className="text-gray-400 text-sm text-center mb-5 md:mb-10 ">
+				<p className="text-gray-400 text-sm text-center mb-5 md:mb-10">
 					Fill in the form below and we’ll get back to you as soon as possible.
 				</p>
-
 				<ContactForm />
 			</div>
 		</div>
+
 	)
 }
 

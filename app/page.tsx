@@ -16,7 +16,7 @@ export default async function Home() {
 				<LatestNews />
 				<Services />
 				<FaqSection />
-				<div className="mt-[36rem] md:mt-0">
+				<div className="mt-[5rem] md:mt-0">
 					<ContactSection />
 				</div>
 			</main>

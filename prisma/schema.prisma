@@ -312,16 +312,15 @@ model AwardCategory {
 }
 
 model rsvp {
-  id        String    @id @default(auto()) @map("_id") @db.ObjectId
-  guest_first_name String
-  guest_last_name  String
-  guest_email      String
-  guest_phone      String
-  guest_organization    String
-  guest_position   String
+  id                         String  @id @default(auto()) @map("_id") @db.ObjectId
+  guest_first_name           String
+  guest_last_name            String
+  guest_email                String
+  guest_phone                String
+  guest_organization         String
+  guest_position             String
   guest_dietary_requirements String?
-  attending String
-
+  attending                  String
 }
 
 model votes {
@@ -347,4 +346,31 @@ model votes {
   the_digital_literacy_champion_award       String?
 
   @@unique([voter_email])
+}
+
+model DeveloperProject {
+  id                  String             @id @default(auto()) @map("_id") @db.ObjectId
+  startDate           String
+  endDate             String
+  name                String
+  status              String
+  description         String
+  tasks               Json[]
+  team                Json[]
+  budget              Int
+  publicUserImpact    Int
+  institutionalImpact Int
+  rating              Int
+  requestedBy         String
+  contactPerson       String
+  department          String
+  fileURL             String
+  comments            ProjectsComments[]
+}
+
+model ProjectsComments {
+  id                 String            @id @default(auto()) @map("_id") @db.ObjectId
+  comment            String
+  DeveloperProject   DeveloperProject? @relation(fields: [developerProjectId], references: [id])
+  developerProjectId String?           @db.ObjectId
 }
