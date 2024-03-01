@@ -9,7 +9,7 @@ const ISPStatistics = () => {
 	const formattedResource: StatsColumn[] = stats.map((data) => {
 		const createdAt = data.createdAt ? new Date(data.createdAt) : null
 		const formattedCreatedAt = createdAt
-			? format(createdAt, 'MMMM do, yyyy')
+			? format(createdAt, 'yyyy')
 			: ''
 
 		return {
@@ -43,6 +43,6 @@ const stats: Array<StatsColumn> = [
 		id: '1',
 		title: 'ISP Statistics',
 		file: '/isp-website-statistics-updates.xlsx',
-		createdAt: '2021-09-01T00:00:00.000Z',
+		createdAt: '2024-09-01T00:00:00.000Z',
 	},
 ]

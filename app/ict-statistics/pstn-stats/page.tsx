@@ -9,7 +9,7 @@ const PSTNStatistics = () => {
 	const formattedResource: StatsColumn[] = stats.map((data) => {
 		const createdAt = data.createdAt ? new Date(data.createdAt) : null
 		const formattedCreatedAt = createdAt
-			? format(createdAt, 'MMMM do, yyyy')
+			? format(createdAt, 'yyyy')
 			: ''
 
 		return {
@@ -40,8 +40,27 @@ export default PSTNStatistics
 const stats: Array<StatsColumn> = [
 	{
 		id: '1',
-		title: 'PSTN Statistics',
-		file: '/pstn-website-statistics-updates.xlsx',
-		createdAt: '2021-09-01T00:00:00.000Z',
+		title: 'Volume Statistics',
+		file: '/pstn-website-statistics-updates-volume.xlsx',
+		createdAt: '2024-09-01T00:00:00.000Z',
+	},
+	{
+		id: '1',
+		title: 'Employment Statistics',
+		file: '/pstn-website-statistics-updates-employment.xlsx',
+		createdAt: '2024-09-01T00:00:00.000Z',
+	},
+
+	{
+		id: '1',
+		title: 'Financials Statistics',
+		file: '/pstn-website-statistics-updates-financials.xlsx',
+		createdAt: '2024-09-01T00:00:00.000Z',
+	},
+	{
+		id: '1',
+		title: 'Interconnection Statistics',
+		file: '/pstn-website-statistics-updates-interconnection.xlsx',
+		createdAt: '2024-09-01T00:00:00.000Z',
 	},
 ]

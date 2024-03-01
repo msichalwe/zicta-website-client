@@ -9,7 +9,7 @@ const Report = () => {
 	const formattedResource: StatsColumn[] = stats.map((data) => {
 		const createdAt = data.createdAt ? new Date(data.createdAt) : null
 		const formattedCreatedAt = createdAt
-			? format(createdAt, 'MMMM do, yyyy')
+			? format(createdAt, 'yyyy')
 			: ''
 
 		return {
@@ -42,18 +42,18 @@ const stats: Array<StatsColumn> = [
 		id: '1',
 		title: '2022 National ICT Survey Report',
 		file: '/2022_report.pdf',
-		createdAt: '2022-12-01T00:00:00.000Z',
+		createdAt: '2023-12-01T00:00:00.000Z',
 	},
 	{
 		id: '2',
 		title: '2018 National ICT Survey Report',
 		file: '/2018_report.pdf',
-		createdAt: '2018-12-01T00:00:00.000Z',
+		createdAt: '2019-12-01T00:00:00.000Z',
 	},
 	{
 		id: '3',
 		title: '2015 National ICT Survey Report',
 		file: '/2015_report.pdf',
-		createdAt: '2015-12-01T00:00:00.000Z',
+		createdAt: '2016-12-01T00:00:00.000Z',
 	},
 ]
