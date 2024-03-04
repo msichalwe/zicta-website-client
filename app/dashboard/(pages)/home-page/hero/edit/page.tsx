@@ -12,7 +12,7 @@ const EditPage = async () => {
 			images: true,
 		},
 	})
-	console.log('🚀 ~ file: page.tsx:15 ~ EditPage ~ hero:', hero)
+	console.log('🚀 ~ file: route.ts:15 ~ EditPage ~ hero:', hero)
 
 	return (
 		<div className="flex-col">

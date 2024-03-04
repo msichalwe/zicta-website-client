@@ -29,7 +29,7 @@ const StatisticsWrapper: React.FC<StatisticsProps> = ({ children }) => {
 	const routes = [
 		{
 			href: `/ict-statistics`,
-			label: 'Statistics',
+			label: 'Overview Of ICT Statistics',
 			active: pathname === '/ict-statistics',
 		},
 		{
@@ -52,12 +52,17 @@ const StatisticsWrapper: React.FC<StatisticsProps> = ({ children }) => {
 			label: 'National ICT Survey Report',
 			active: pathname === '/ict-statistics/report',
 		},
+		{
+			href: `/ict-statistics/market-performance-reports`,
+			label: 'Market Performance Reports',
+			active: pathname === '/ict-statistics/market-performance-reports',
+		},
 	]
 	return (
 		<>
 			<Navbar />
-			<div className="flex gap-10 w-full mt-16 flex-col">
-				<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8] p-10  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-20 flex items-center justify-center">
+			<div className="flex gap-6 w-full mt-6 flex-col">
+				<div className="bg-gradient-to-l  to-zicta-blue from-[#7CA5B8] p-2  w-full flex-col bg-cover  h-full sm:min-h-[400px] min-h-[200px]  mb-12 flex items-center justify-center">
 					<h1 className="sm:text-4xl text-center w-full text-2xl  text-white font-medium">
 						<Balancer>Exploring ICT in Numbers: ICT Statistics</Balancer>
 					</h1>

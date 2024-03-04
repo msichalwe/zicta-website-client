@@ -16,7 +16,7 @@ const DealerRegistry = async () => {
 
 	if (isLoading) return <Loader />
 
-	const formattedRegistry: RegistryColumn[] = dealerRegistry.map(
+	const formattedRegistry: RegistryColumn[] = dealerRegistry?.map(
 		(data: any) => {
 			return {
 				id: data.id,
@@ -30,7 +30,7 @@ const DealerRegistry = async () => {
 		<div className="w-5/6 mx-auto">
 			<div className="space-y-5">
 				<Heading
-					title={`Dealer Registry (${dealerRegistry.length})`}
+					title={`Dealer Registry (${dealerRegistry?.length})`}
 					description="The Authority periodically updates this list of all licensed dealers for the benefit of customers who would like to access their services"
 				/>
 				<Separator />
