@@ -13,8 +13,7 @@ import Heading from '@/app/dashboard/components/Heading'
 import {Separator} from '@/components/ui/separator'
 import axios from 'axios'
 import {toast} from 'react-hot-toast'
-import {Project, TeamMember, Task} from "@/app/dashboard/developer-projects/miscelleneous/types";
-import {Textarea} from "@/components/ui/textarea";
+import {Project} from "@/app/dashboard/developer-projects/miscelleneous/types";
 
 const FormSchema = z.object({
     id: z.string({required_error: 'This field is required', invalid_type_error: 'An invalid type was entered'}),
@@ -112,6 +111,17 @@ export const DeveloperProjectsForm = ({initialData, id}: { initialData: Project 
         defaultValues: defaultValues
     })
 
+    const generateSlug = (name: string) => {
+        return name
+            .toLowerCase()
+            .replace(/[^.\w ]+/g, '')
+            .replace(/ +/g, '-')
+    }
+
+    const getFileExtension = (fileName: string) => {
+        return fileName.split('.').pop()
+    }
+
     const handleUpload = async (URL: string, file: File | null) => {
         if (!file) {
             alert('Please select a file to upload');
@@ -119,15 +129,30 @@ export const DeveloperProjectsForm = ({initialData, id}: { initialData: Project 
         }
 
         try {
-            const formData = new FormData();
-            formData.append('files', file);
-
-            // Send the file to the server
-            return await axios.post(URL, formData, {
+            const config = {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
+                    'Content-Format': 'multipart/form-data', // Set content format for file upload
+                    Accept: 'application/json', // Set the Accept header to JSON
+                },
+            }
+            const formData = new FormData()
+            formData.append('files[]', file)
+            formData.append('slug', `${generateSlug(file.name)}`)
+
+
+            //
+            let res = await axios.post(
+                URL,
+                formData,
+                config
+            )
+
+            let filenameWithoutExtension = file.name.replace('.', '');
+            let fileURL = res.data.file_urls.replace(filenameWithoutExtension, file.name)
+
+
+
+            return fileURL;
         } catch (error) {
             console.error('Error uploading file:', error);
             toast.error('Something went wrong')
@@ -142,30 +167,30 @@ export const DeveloperProjectsForm = ({initialData, id}: { initialData: Project 
         try {
             let fileResponse;
             if (file) {
-                fileResponse = await handleUpload('https://www.zicta.zm:448/api/submit-document', file);
+                fileResponse = await handleUpload(`${process.env.NEXT_PUBLIC_STORAGE_URL}`, file);
             }
             let res;
 
             console.log(fileResponse)
 
 
-            // if (initialData) {
-            //     data = {...data, fileURL: file !== null ? fileResponse?.data.path : ''}
-            //     res = await axios.put(`/api/developer-projects/${id}`, {
-            //         ...data,
-            //     },)
-            // } else {
-            //     data = {...data, fileURL: file !== null ? fileResponse?.data.path : ''}
-            //     res = await axios.post(`/api/developer-projects/`, {
-            //         ...data,
-            //     },)
-            // }
+            if (initialData) {
+                data = {...data, fileURL: file !== null ? fileResponse : ''}
+                res = await axios.put(`/api/developer-projects/${id}`, {
+                    ...data,
+                },)
+            } else {
+                data = {...data, fileURL: file !== null ? fileResponse : ''}
+                res = await axios.post(`/api/developer-projects/`, {
+                    ...data,
+                },)
+            }
 
 
-            // router.refresh()
-            // if (res.data.message == 'success') {
-            //     router.push(`/dashboard/developer-projects/${res.data.data.id}/tasks/create/`)
-            // }
+            router.refresh()
+            if (res.data.message == 'success') {
+                router.push(`/dashboard/developer-projects/${res.data.data.id}/tasks/create/`)
+            }
             toast.success('Successfully added')
         } catch (error) {
             toast.error('Something went wrong')
