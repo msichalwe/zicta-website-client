@@ -11,7 +11,7 @@ import {Task} from "@/app/dashboard/developer-projects/miscelleneous/types";
 
 
 
-export default function Page({params }: { params: { id: string }, data: Task[] | null }) {
+export default function Page({params }: { params: { id: string }}){
     const [tasks, setTasks] = useState<Task[]>([])
 
     const [taskName, setTaskName] = useState('')
