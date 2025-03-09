@@ -20,7 +20,7 @@ const ResourcesClient: React.FC<ResourcesProps> = ({ data }) => {
 		<>
 			<div className="flex items-center justify-between">
 				<Heading
-					title={`${params.resource.toUpperCase()} (${data.length})`}
+					title={`${typeof params.resource === 'string' ? params.resource.toUpperCase() : Array.isArray(params.resource) ? params.resource[0].toUpperCase() : ''} (${data.length})`}
 					description="Manage resources available on the platform"
 				/>
 				<Button

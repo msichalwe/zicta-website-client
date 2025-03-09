@@ -20,7 +20,7 @@ const MediaClient: React.FC<MediaProps> = ({ data }) => {
 		<>
 			<div className="flex items-center justify-between">
 				<Heading
-					title={`${params.mediaType.toUpperCase()} (${data.length})`}
+					title={`${typeof params.mediaType === 'string' ? params.mediaType.toUpperCase() : Array.isArray(params.mediaType) ? params.mediaType[0].toUpperCase() : ''} (${data.length})`}
 					description={`Manage ${params.mediaType} available on the platform`}
 				/>
 				<Button

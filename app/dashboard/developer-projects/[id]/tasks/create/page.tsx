@@ -1,17 +1,17 @@
 'use client'
 
-import {useEffect, useState} from "react";
-import {toast} from "react-hot-toast";
-import {ConfirmModal} from "@/app/dashboard/developer-projects/components/confirm";
-import {useRouter} from "next/navigation";
+import { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
+import { ConfirmModal } from "@/app/dashboard/developer-projects/components/confirm";
+import { useRouter } from "next/navigation";
 import axios from "axios";
-import {Task} from "@/app/dashboard/developer-projects/miscelleneous/types";
+import { Task } from "@/app/dashboard/developer-projects/miscelleneous/types";
 
 
 
 
 
-export default function Page({params }: { params: { id: string }, data: Task[] | null }) {
+export default function Page({ params }: { params: { id: string } }) {
     const [tasks, setTasks] = useState<Task[]>([])
 
     const [taskName, setTaskName] = useState('')
@@ -24,7 +24,7 @@ export default function Page({params }: { params: { id: string }, data: Task[] |
 
 
     useEffect(() => {
-        async function getPossibleData(){
+        async function getPossibleData() {
             setLoading(true)
             try {
                 let response = await axios.get(`/api/developer-projects/${params.id}/tasks`);
@@ -53,7 +53,7 @@ export default function Page({params }: { params: { id: string }, data: Task[] |
 
 
         try {
-            const res = await axios.patch(`/api/developer-projects/${params.id}/tasks/`, {tasks: tasks})
+            const res = await axios.patch(`/api/developer-projects/${params.id}/tasks/`, { tasks: tasks })
 
             if (res.data.message === 'success') {
                 router.refresh()
@@ -119,37 +119,37 @@ export default function Page({params }: { params: { id: string }, data: Task[] |
             <div className="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
                     <label htmlFor="first_name"
-                           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task Name</label>
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task Name</label>
                     <input disabled={loading} type="text" id="first_name"
-                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                           placeholder="Finish dashboard" onChange={(e) => setTaskName(e.target.value)} value={taskName}
-                           required/>
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Finish dashboard" onChange={(e) => setTaskName(e.target.value)} value={taskName}
+                        required />
                 </div>
                 <div>
                     <label htmlFor="last_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task
                         Description</label>
                     <input disabled={loading} onChange={(e) => setTaskDescription(e.target.value)} value={taskDescription} type="text"
-                           id="last_name"
-                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                           placeholder="Finish the dashboard" required/>
+                        id="last_name"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Finish the dashboard" required />
                 </div>
 
 
                 <button type="submit"
-                        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        onClick={addTask}>Add
+                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    onClick={addTask}>Add
                     Task
                 </button>
 
                 <button onClick={() => setOpen(true)} type="submit"
-                        className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 disabled:bg-red-400"
-                        disabled={tasks.length != 0}>Skip
+                    className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 disabled:bg-red-400"
+                    disabled={tasks.length != 0}>Skip
                 </button>
 
 
                 <button onClick={finish} type="button"
-                        className="text-gray-900 bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-800 disabled:bg-green-300"
-                        disabled={tasks.length === 0}>Finish
+                    className="text-gray-900 bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-800 disabled:bg-green-300"
+                    disabled={tasks.length === 0}>Finish
                 </button>
             </div>
 
@@ -159,40 +159,40 @@ export default function Page({params }: { params: { id: string }, data: Task[] |
                     <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         <thead
                             className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" className="px-6 py-3">
-                                Task Name
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Description
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                <span className="sr-only">Action</span>
-                            </th>
-                        </tr>
+                            <tr>
+                                <th scope="col" className="px-6 py-3">
+                                    Task Name
+                                </th>
+                                <th scope="col" className="px-6 py-3">
+                                    Description
+                                </th>
+                                <th scope="col" className="px-6 py-3">
+                                    <span className="sr-only">Action</span>
+                                </th>
+                            </tr>
                         </thead>
                         <tbody>
-                        {
+                            {
 
-                            tasks.map((task, index) =>
-                                <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                    <th scope="row"
-                                        className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {task.name}
+                                tasks.map((task, index) =>
+                                    <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                        <th scope="row"
+                                            className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            {task.name}
 
-                                    </th>
-                                    <td className="px-6 py-4">
-                                        {task.description}
-                                    </td>
+                                        </th>
+                                        <td className="px-6 py-4">
+                                            {task.description}
+                                        </td>
 
-                                    <td className="px-6 py-4 text-right">
-                                        <button onClick={() => removeTask(index)}
+                                        <td className="px-6 py-4 text-right">
+                                            <button onClick={() => removeTask(index)}
                                                 className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Remove
-                                        </button>
-                                    </td>
-                                </tr>)
+                                            </button>
+                                        </td>
+                                    </tr>)
 
-                        }
+                            }
 
                         </tbody>
                     </table>
